@@ -3,18 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<artifactId>learn-demos</artifactId>
+		<artifactId>learn-config</artifactId>
 		<groupId>com.xzchaoo.learn</groupId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-config</artifactId>
-	<packaging>pom</packaging>
+	<artifactId>learn-archaius2</artifactId>
 
-	<modules>
-		<module>learn-config-2</module>
-		<module>learn-archaius2</module>
-	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>com.netflix.archaius</groupId>
+			<artifactId>archaius2-core</artifactId>
+		</dependency>
+	</dependencies>
 
 </project>

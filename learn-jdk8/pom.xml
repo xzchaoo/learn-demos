@@ -9,14 +9,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-ehcache2</artifactId>
+	<artifactId>learn-jdk8</artifactId>
 
-	<dependencies>
-		<dependency>
-			<groupId>net.sf.ehcache</groupId>
-			<artifactId>ehcache</artifactId>
-			<version>2.10.4</version>
-		</dependency>
-	</dependencies>
 
 </project>

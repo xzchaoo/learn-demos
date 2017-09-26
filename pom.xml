@@ -12,12 +12,11 @@
 	<modules>
 		<module>learn-hibernate-validator</module>
 		<module>learn-config</module>
-		<module>learn-ehcache2</module>
-		<module>learn-ehcache3</module>
 		<module>learn-rxjava</module>
-		<module>learn-archaius2</module>
 		<module>learn-guava</module>
 		<module>learn-test</module>
+		<module>learn-jdk8</module>
+		<module>learn-cache</module>
 	</modules>
 
 	<parent>
