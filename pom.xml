@@ -17,6 +17,9 @@
 		<module>learn-test</module>
 		<module>learn-jdk8</module>
 		<module>learn-cache</module>
+		<module>learn-jackson</module>
+		<module>learn-metrics</module>
+		<module>learn-log</module>
 	</modules>
 
 	<parent>
