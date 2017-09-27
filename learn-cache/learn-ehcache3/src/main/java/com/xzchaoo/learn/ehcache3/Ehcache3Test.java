@@ -6,12 +6,9 @@ import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.CacheEventListenerConfigurationBuilder;
 import org.ehcache.config.builders.CacheManagerBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
-import org.ehcache.event.CacheEvent;
-import org.ehcache.event.CacheEventListener;
 import org.ehcache.event.EventType;
 import org.ehcache.expiry.Duration;
 import org.ehcache.expiry.Expirations;
-import org.ehcache.spi.copy.Copier;
 import org.junit.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -29,26 +26,11 @@ public class Ehcache3Test {
 			.withCache("a",
 				CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class, Long.class, ResourcePoolsBuilder.heap(10))
 					.withExpiry(Expirations.timeToLiveExpiration(Duration.of(1, TimeUnit.SECONDS)))
-					.withValueCopier(new Copier<Long>() {
-						@Override
-						public Long copyForRead(Long obj) {
-							System.out.println("copyForRead");
-							return obj;
-						}
-
-						@Override
-						public Long copyForWrite(Long obj) {
-							System.out.println("copyForWrite");
-							return obj;
-						}
-					})
+					//.withExpiry(Expirations.noExpiration())
+					.withValueCopier(new MyCopier())
+					.withLoaderWriter(new MyCacheLoaderWriter())
 					//添加监听器
-					.add(CacheEventListenerConfigurationBuilder.newEventListenerConfiguration(new CacheEventListener<String, Long>() {
-						@Override
-						public void onEvent(CacheEvent<? extends String, ? extends Long> event) {
-							System.out.println(event);
-						}
-					}, EventType.CREATED, EventType.UPDATED, EventType.EXPIRED).unordered().asynchronous())
+					.add(CacheEventListenerConfigurationBuilder.newEventListenerConfiguration(event -> System.out.println(event), EventType.CREATED, EventType.UPDATED, EventType.EXPIRED).unordered().asynchronous())
 			)
 			.build(true);
 		//cm.init();
@@ -59,6 +41,8 @@ public class Ehcache3Test {
 
 		assertNull(ca.get("a"));
 		ca.put("a", 2L);
+		ca.put("b", 3L);
+		ca.remove("b");
 		assertEquals(2, ca.get("a").longValue());
 		Thread.sleep(900);
 		assertEquals(2, ca.get("a").longValue());
