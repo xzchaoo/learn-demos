@@ -16,6 +16,9 @@
 		<module>learn-eclipse-collections</module>
 		<module>learn-jmx</module>
 		<module>learn-hibernate-validator</module>
+		<module>learn-guava</module>
+		<module>learn-metrics</module>
+		<module>learn-log</module>
 	</modules>
 
 	<dependencies>

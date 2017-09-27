@@ -12,13 +12,10 @@
 	<modules>
 		<module>learn-config</module>
 		<module>learn-rxjava</module>
-		<module>learn-guava</module>
 		<module>learn-test</module>
 		<module>learn-jdk8</module>
 		<module>learn-cache</module>
 		<module>learn-apache-common</module>
-		<module>learn-metrics</module>
-		<module>learn-log</module>
 		<module>learn-http</module>
 		<module>learn-other</module>
 		<module>learn-db</module>
