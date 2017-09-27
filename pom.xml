@@ -17,6 +17,7 @@
 		<module>learn-test</module>
 		<module>learn-jdk8</module>
 		<module>learn-cache</module>
+		<module>learn-apache-common</module>
 	</modules>
 
 	<parent>
