@@ -1,0 +1,14 @@
+option java_package = "com.xzchaoo.test";
+
+message User1 {
+  optional int32 id = 2;
+  optional string username = 1;
+  optional int64 date = 3;
+  optional double money = 4;
+  optional Card card = 5;
+}
+
+message Card {
+  optional int32 id = 1;
+  optional string name = 2;
+}

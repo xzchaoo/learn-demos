@@ -15,6 +15,7 @@
 		<module>learn-mapdb</module>
 		<module>learn-eclipse-collections</module>
 		<module>learn-jmx</module>
+		<module>learn-hibernate-validator</module>
 	</modules>
 
 	<dependencies>

@@ -9,7 +9,11 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-jackson</artifactId>
+	<artifactId>learn-serialization</artifactId>
+	<packaging>pom</packaging>
 
+	<modules>
+		<module>learn-jackson</module>
+	</modules>
 
 </project>

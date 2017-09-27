@@ -10,7 +10,6 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<modules>
-		<module>learn-hibernate-validator</module>
 		<module>learn-config</module>
 		<module>learn-rxjava</module>
 		<module>learn-guava</module>
@@ -18,12 +17,12 @@
 		<module>learn-jdk8</module>
 		<module>learn-cache</module>
 		<module>learn-apache-common</module>
-		<module>learn-jackson</module>
 		<module>learn-metrics</module>
 		<module>learn-log</module>
 		<module>learn-http</module>
 		<module>learn-other</module>
 		<module>learn-db</module>
+		<module>learn-serialization</module>
 	</modules>
 
 	<parent>
