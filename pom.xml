@@ -20,6 +20,7 @@
 		<module>learn-other</module>
 		<module>learn-db</module>
 		<module>learn-serialization</module>
+		<module>learn-spring</module>
 	</modules>
 
 	<parent>

@@ -9,16 +9,17 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-http</artifactId>
-	<packaging>pom</packaging>
-	<modules>
-		<module>learn-httpclient</module>
-		<module>learn-asynchttpclient</module>
-		<module>learn-okhttp</module>
-		<module>learn-httpasyncclient</module>
-		<module>learn-nanohttpd</module>
-		<module>learn-fluent-hc</module>
-	</modules>
+	<artifactId>learn-spring</artifactId>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+		</dependency>
+	</dependencies>
 
 </project>

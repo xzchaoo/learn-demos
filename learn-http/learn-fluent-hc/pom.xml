@@ -3,22 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<artifactId>learn-demos</artifactId>
+		<artifactId>learn-http</artifactId>
 		<groupId>com.xzchaoo.learn</groupId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-http</artifactId>
-	<packaging>pom</packaging>
-	<modules>
-		<module>learn-httpclient</module>
-		<module>learn-asynchttpclient</module>
-		<module>learn-okhttp</module>
-		<module>learn-httpasyncclient</module>
-		<module>learn-nanohttpd</module>
-		<module>learn-fluent-hc</module>
-	</modules>
+	<artifactId>learn-fluent-hc</artifactId>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>fluent-hc</artifactId>
+			<version>4.5.3</version>
+		</dependency>
+	</dependencies>
 
 </project>
