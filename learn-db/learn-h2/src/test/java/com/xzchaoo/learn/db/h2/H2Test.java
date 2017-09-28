@@ -35,7 +35,7 @@ public class H2Test {
 	@Test
 	public void test_init() throws Exception {
 		Class.forName("org.h2.Driver");
-		Connection c = DriverManager.getConnection("jdbc:h2:mem:");
+		Connection c = DriverManager.getConnection("jdbc:h2:mem:;MODE=MSSQLServer");
 		File file = new File(getClass().getClassLoader().getResource("init.sql").toURI());
 		//RunScript.execute(c, new FileReader(url));
 		String sql = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
@@ -55,6 +55,8 @@ public class H2Test {
 
 	@Test
 	public void test1() throws Exception {
+		//TRACE_LEVEL_SYSTEM_OUT=3 0off 1error 2info 3debug 4=slf4j
+
 		Class.forName("org.h2.Driver");
 		Connection c = DriverManager.getConnection("jdbc:h2:./test.mv.db;MODE=MSSQLServer");
 		PreparedStatement ps = c.prepareStatement("select * from users with (nolock)");
