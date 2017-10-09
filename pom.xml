@@ -35,6 +35,13 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>1.4.196</version>
+				<scope>test</scope>
+			</dependency>
+
 			<!--覆盖hibernate-validator的版本-->
 			<dependency>
 				<groupId>org.hibernate</groupId>
