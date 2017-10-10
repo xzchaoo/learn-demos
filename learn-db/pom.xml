@@ -16,6 +16,9 @@
 		<module>learn-h2</module>
 		<module>learn-jdbc</module>
 		<module>learn-spring-data-jpa</module>
+		<module>learn-mongodb</module>
+		<module>learn-redis</module>
+		<module>learn-spring-data-redis</module>
 	</modules>
 
 

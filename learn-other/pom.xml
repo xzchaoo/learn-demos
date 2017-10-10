@@ -19,6 +19,10 @@
 		<module>learn-guava</module>
 		<module>learn-metrics</module>
 		<module>learn-log</module>
+		<module>learn-zookeeper</module>
+		<module>learn-activemq</module>
+		<module>learn-kafka</module>
+		<module>learn-siguar</module>
 	</modules>
 
 	<dependencies>
