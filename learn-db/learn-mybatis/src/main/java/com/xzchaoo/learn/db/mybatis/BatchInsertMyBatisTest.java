@@ -26,16 +26,20 @@ public class BatchInsertMyBatisTest {
 	private int count = 100;
 	private SqlSessionFactory ssf;
 
+	private String getIp() {
+		return System.getProperty("ip57151", System.getenv("ip57151"));
+	}
+
 	@Before
 	public void before() throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");
-		c = DriverManager.getConnection("jdbc:mysql://" + System.getProperty("ip57151") + ":3306/test?rewriteBatchedStatements=true", "root", "70862045");
+		c = DriverManager.getConnection("jdbc:mysql://" + getIp() + ":3306/test?rewriteBatchedStatements=true", "root", "70862045");
 		c.setAutoCommit(false);
-		c.createStatement().execute("truncate table bi");
+		//c.createStatement().execute("truncate table bi");
 		Configuration cfg = new Configuration();
 		cfg.setLogImpl(NoLoggingImpl.class);
 		cfg.addMapper(BIMapper.class);
-		UnpooledDataSource uds = new UnpooledDataSource("com.mysql.jdbc.Driver", "jdbc:mysql://" + System.getProperty("ip57151") + ":3306/test?rewriteBatchedStatements=true", "root", "70862045");
+		UnpooledDataSource uds = new UnpooledDataSource("com.mysql.jdbc.Driver", "jdbc:mysql://" + getIp() + ":3306/test?rewriteBatchedStatements=true", "root", "70862045");
 		cfg.setEnvironment(new Environment("default", new JdbcTransactionFactory(), uds));
 		ssf = new SqlSessionFactoryBuilder().build(cfg);
 	}
@@ -90,4 +94,18 @@ public class BatchInsertMyBatisTest {
 		System.out.println(bm.count());
 	}
 
+	@Test
+	public void test_batchUpdate() {
+		SqlSession ss = ssf.openSession(ExecutorType.BATCH, false);
+		BIMapper bm = ss.getMapper(BIMapper.class);
+		System.out.println(bm.count());
+		long begin = System.currentTimeMillis();
+		for (int i = 0; i < 100; ++i) {
+			bm.update(i + 1, "d" + i);
+		}
+		ss.commit();
+		long end = System.currentTimeMillis();
+		System.out.println("更新了" + count + "条数据 耗时=" + (end - begin) + "毫秒");
+		System.out.println(bm.count());
+	}
 }

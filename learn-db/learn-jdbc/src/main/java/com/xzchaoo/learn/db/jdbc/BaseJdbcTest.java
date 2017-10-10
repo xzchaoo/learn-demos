@@ -13,7 +13,7 @@ public class BaseJdbcTest {
 	@Before
 	public void before() throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");
-		c = DriverManager.getConnection("jdbc:mysql://" + System.getProperty("ip57151") + ":3306/test?rewriteBatchedStatements=true", "root", "70862045");
+		c = DriverManager.getConnection("jdbc:mysql://" + System.getenv("ip57151") + ":3306/test?rewriteBatchedStatements=true", "root", "70862045");
 		c.setAutoCommit(false);
 		c.createStatement().execute("truncate table bi");
 	}

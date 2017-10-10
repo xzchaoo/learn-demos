@@ -23,6 +23,9 @@
 		<module>learn-activemq</module>
 		<module>learn-kafka</module>
 		<module>learn-siguar</module>
+		<module>learn-curator</module>
+		<module>learn-geoip</module>
+		<module>learn-security</module>
 	</modules>
 
 	<dependencies>

@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class JDBCTest {
+public class JDBCTemplateTest {
 	@Test
 	public void test1() {
 		EmbeddedDatabase ed = new EmbeddedDatabaseBuilder()

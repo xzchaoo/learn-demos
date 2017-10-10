@@ -21,6 +21,7 @@
 		<module>learn-db</module>
 		<module>learn-serialization</module>
 		<module>learn-spring</module>
+		<module>learn-akka</module>
 	</modules>
 
 	<parent>

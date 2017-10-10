@@ -2,6 +2,9 @@ package com.xzchaoo.learn.db.jdbc;
 
 import org.junit.Test;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  * 批零更新有几种方式:
  * 1. 如果是要按某些条件进行统一的更新则可以: update ... set ... where ...
@@ -10,8 +13,34 @@ import org.junit.Test;
  * 4. TODO 临时表
  */
 public class BatchUpdateJdbcTest extends BaseJdbcTest {
-	@Test
-	public void test1() {
+	private int count = 100;
 
+	@Test
+	public void test_single() throws SQLException {
+		long begin = System.currentTimeMillis();
+		PreparedStatement ps = c.prepareStatement("update bi set k1 = ? where id = ?");
+		for (int i = 0; i < count; ++i) {
+			ps.setString(1, "b" + i);
+			ps.setInt(2, i + 1);
+			ps.execute();
+		}
+		c.commit();
+		long end = System.currentTimeMillis();
+		System.out.println("更新" + count + "条数据 耗时=" + (end - begin) + "毫秒");
+	}
+
+	@Test
+	public void test_batch() throws SQLException {
+		long begin = System.currentTimeMillis();
+		PreparedStatement ps = c.prepareStatement("update bi set k1 = ? where id = ?");
+		for (int i = 0; i < count; ++i) {
+			ps.setString(1, "b" + i);
+			ps.setInt(2, i + 1);
+			ps.addBatch();
+		}
+		ps.executeBatch();
+		c.commit();
+		long end = System.currentTimeMillis();
+		System.out.println("更新" + count + "条数据 耗时=" + (end - begin) + "毫秒");
 	}
 }
