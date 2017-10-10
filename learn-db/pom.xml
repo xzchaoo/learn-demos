@@ -15,6 +15,7 @@
 		<module>learn-mybatis</module>
 		<module>learn-h2</module>
 		<module>learn-jdbc</module>
+		<module>learn-spring-data-jpa</module>
 	</modules>
 
 
