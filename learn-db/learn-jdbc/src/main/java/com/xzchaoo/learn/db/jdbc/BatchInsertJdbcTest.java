@@ -1,16 +1,13 @@
 package com.xzchaoo.learn.db.jdbc;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
+ * 从这个测试类的结果可以看出来最快的批量插入方式是 insert into 的batch语法 [强无敌], 缺点是一些框架不太直接支持这种方式
  * 批量插入的方式
  * 1. 在一个事务里, 发送多次单条语句
  * 2. 在一个事务里, 发送单次多条语句 [不知道如何实现]
@@ -20,24 +17,8 @@ import java.sql.Statement;
  * 5. 最后应该考虑多事务的情况, 在1个事务里批量插入1W个记录, 其实server端为了支持回滚, 需要缓存足够多的数据
  * 运行这个例子需要实际数据库的支持(为了放大网络耗时) 因此放到 main 目录下
  */
-public class BatchInsertJdbcTest {
-
-	private Connection c;
-	private int count = 1000;
-
-	@Before
-	public void before() throws Exception {
-		Class.forName("com.mysql.jdbc.Driver");
-		c = DriverManager.getConnection("jdbc:mysql://" + System.getProperty("ip57151") + ":3306/test", "root", "70862045");
-		c.setAutoCommit(false);
-		c.createStatement().execute("truncate table bi");
-	}
-
-	@After
-	public void after() throws SQLException {
-		c.close();
-		c = null;
-	}
+public class BatchInsertJdbcTest extends BaseJdbcTest {
+	private int count = 100;
 
 	@Test
 	public void test_single() throws SQLException {
@@ -86,12 +67,14 @@ public class BatchInsertJdbcTest {
 	}
 
 	/**
-	 * 本质上还是 发出多次请求
+	 * 需要启动 rewriteBatchedStatements=true 开关 否则会退化成发出多条语句 并且要求 5.1.13 以上的驱动
 	 *
 	 * @throws SQLException
 	 */
 	@Test
 	public void test_jdbcBatch() throws SQLException {
+		//http://blog.csdn.net/tolcf/article/details/52102849
+		//http://blog.csdn.net/zhuxinquan61/article/details/52388101
 		long begin = System.currentTimeMillis();
 		PreparedStatement ps = c.prepareStatement("insert into bi(k1) values(?)", Statement.RETURN_GENERATED_KEYS);
 		for (int i = 0; i < count; ++i) {

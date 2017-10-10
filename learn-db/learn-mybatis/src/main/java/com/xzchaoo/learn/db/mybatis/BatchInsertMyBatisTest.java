@@ -1,6 +1,7 @@
 package com.xzchaoo.learn.db.mybatis;
 
 import org.apache.ibatis.datasource.unpooled.UnpooledDataSource;
+import org.apache.ibatis.logging.nologging.NoLoggingImpl;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.ExecutorType;
@@ -28,12 +29,13 @@ public class BatchInsertMyBatisTest {
 	@Before
 	public void before() throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");
-		c = DriverManager.getConnection("jdbc:mysql://" + System.getProperty("ip57151") + ":3306/test", "root", "70862045");
+		c = DriverManager.getConnection("jdbc:mysql://" + System.getProperty("ip57151") + ":3306/test?rewriteBatchedStatements=true", "root", "70862045");
 		c.setAutoCommit(false);
 		c.createStatement().execute("truncate table bi");
 		Configuration cfg = new Configuration();
+		cfg.setLogImpl(NoLoggingImpl.class);
 		cfg.addMapper(BIMapper.class);
-		UnpooledDataSource uds = new UnpooledDataSource("com.mysql.jdbc.Driver", "jdbc:mysql://" + System.getProperty("ip57151") + ":3306/test", "root", "70862045");
+		UnpooledDataSource uds = new UnpooledDataSource("com.mysql.jdbc.Driver", "jdbc:mysql://" + System.getProperty("ip57151") + ":3306/test?rewriteBatchedStatements=true", "root", "70862045");
 		cfg.setEnvironment(new Environment("default", new JdbcTransactionFactory(), uds));
 		ssf = new SqlSessionFactoryBuilder().build(cfg);
 	}
@@ -60,8 +62,10 @@ public class BatchInsertMyBatisTest {
 
 	@Test
 	public void test_batch() {
+		//添加了mysql添加参数之后 这个batch的效率也提升上来了
 		SqlSession ss = ssf.openSession(ExecutorType.BATCH, false);
 		BIMapper bm = ss.getMapper(BIMapper.class);
+		System.out.println(bm.count());
 		long begin = System.currentTimeMillis();
 		for (int i = 0; i < count; ++i) {
 			bm.insert("a" + i);
