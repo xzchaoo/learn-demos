@@ -7,6 +7,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * 不好用 准备废弃了
+ */
+@Deprecated
 public class ConfigTest {
 	@Test
 	public void test1() {
