@@ -20,6 +20,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import okhttp3.WebSocket;
+import okhttp3.WebSocketListener;
 
 import static org.junit.Assert.*;
 
@@ -49,6 +51,20 @@ public class App {
 			}
 		});
 		client = b.build();
+		WebSocket ws = client.newWebSocket(null, new WebSocketListener() {
+			/**
+			 * Invoked when a web socket has been accepted by the remote peer and may begin transmitting
+			 * messages.
+			 */
+			public void onOpen(WebSocket webSocket, Response response) {
+				System.out.println("ws打开了");
+			}
+
+			/** Invoked when a text (type {@code 0x1}) message has been received. */
+			public void onMessage(WebSocket webSocket, String text) {
+				System.out.println("收到消息了");
+			}
+		});
 	}
 
 	@Ignore

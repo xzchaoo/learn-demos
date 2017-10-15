@@ -25,6 +25,10 @@
 		<module>learn-curator</module>
 		<module>learn-geoip</module>
 		<module>learn-security</module>
+		<module>learn-compress</module>
+		<module>learn-quartz</module>
+		<module>learn-guice</module>
+		<module>learn-plexus-container</module>
 	</modules>
 
 	<dependencies>

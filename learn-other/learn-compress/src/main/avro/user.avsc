@@ -1,0 +1,12 @@
+{
+"namespace": "example.avro",
+ "name": "User",
+ "type": "record",
+ "fields": [
+     {"name": "id", "type": "int"},
+     {"name": "name",  "type": "string"},
+     {"name":"lastLoginAt","type":"example.avro.Gender"},
+     {"name":"names","type":{"type":"array","items":"string"}},
+     {"name":"kv","type":{"type":"map","values":"string"}}
+ ]
+}
