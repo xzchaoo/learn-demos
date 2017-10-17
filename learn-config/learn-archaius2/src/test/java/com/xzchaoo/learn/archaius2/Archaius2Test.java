@@ -3,6 +3,7 @@ package com.xzchaoo.learn.archaius2;
 import com.netflix.archaius.ConfigProxyFactory;
 import com.netflix.archaius.DefaultConfigLoader;
 import com.netflix.archaius.DefaultPropertyFactory;
+import com.netflix.archaius.api.Config;
 import com.netflix.archaius.api.Property;
 import com.netflix.archaius.api.PropertyFactory;
 import com.netflix.archaius.api.PropertyListener;
@@ -14,6 +15,7 @@ import com.netflix.archaius.api.config.PollingStrategy;
 import com.netflix.archaius.api.exceptions.ConfigException;
 import com.netflix.archaius.cascade.ConcatCascadeStrategy;
 import com.netflix.archaius.config.DefaultCompositeConfig;
+import com.netflix.archaius.config.DefaultConfigListener;
 import com.netflix.archaius.config.DefaultSettableConfig;
 import com.netflix.archaius.config.EnvironmentConfig;
 import com.netflix.archaius.config.MapConfig;
@@ -60,10 +62,10 @@ public class Archaius2Test {
 
 		DefaultPropertyFactory dpf = DefaultPropertyFactory.from(dsc);
 		Property<Integer> pa = dpf.getProperty("a").asInteger(1);
+		//添加监听器的时候会立即触发回调
 		pa.addListener(new PropertyListener<Integer>() {
 			@Override
 			public void onChange(Integer value) {
-				//添加监听器的时候会立即触发回调
 				System.out.println("new value is " + value);
 			}
 
@@ -72,22 +74,49 @@ public class Archaius2Test {
 				error.printStackTrace();
 			}
 		});
+
+		//当config改变的 时候会回调这里
+		dsc.addListener(new DefaultConfigListener() {
+			@Override
+			public void onConfigAdded(Config config) {
+				super.onConfigAdded(config);
+			}
+
+			@Override
+			public void onConfigUpdated(Config config) {
+				System.out.println("onConfigUpdated " + config.getInteger("a"));
+			}
+		});
 		assertEquals("a", pa.getKey());
 		assertEquals(2, pa.get().intValue());
 		dsc.setProperty("a", 3);
+		dsc.setProperty("a", 4);
+		dsc.setProperty("a", 5);
 	}
 
 	@Test
 	public void test_DefaultCompositeConfig() throws ConfigException {
 		DefaultCompositeConfig dcc = new DefaultCompositeConfig();
+		DefaultSettableConfig dsc = new DefaultSettableConfig();
 		MapConfig mc1 = MapConfig.builder().put("a", "1").build();
 		MapConfig mc2 = MapConfig.builder().put("a", "11").put("b", "22").build();
 		//靠前的优先级更高
+		dcc.addConfig("dsc", dsc);
 		dcc.addConfig("mc1", mc1);
 		dcc.addConfig("mc2", mc2);
 		assertEquals("1", dcc.getString("a"));
 		assertEquals("22", dcc.getString("b"));
-
+		dcc.addListener(new DefaultConfigListener() {
+			@Override
+			public void onConfigUpdated(Config config) {
+				//这里拿到的是dcc
+				System.out.println(config.hashCode());
+				System.out.println("onConfigUpdated");
+			}
+		});
+		System.out.println(dcc.hashCode());
+		System.out.println(dsc.hashCode());
+		dsc.setProperty("aaa", 3);
 	}
 
 

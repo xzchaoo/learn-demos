@@ -21,6 +21,7 @@
 		<module>learn-spring-data-redis</module>
 		<module>learn-influxdb</module>
 		<module>learn-spring-data-jpa-batch</module>
+		<module>learn-spring-data-mongodb</module>
 	</modules>
 
 
