@@ -2,8 +2,7 @@ package com.xzchaoo.learn.db.mongodb;
 
 import org.mongodb.morphia.annotations.Embedded;
 
-@Embedded
-public class EmbeddedObject1 {
+public class EmbeddedObject2 {
     private int int1;
     private float float1;
     private double double1;

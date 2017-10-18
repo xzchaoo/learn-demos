@@ -1,6 +1,7 @@
 package com.xzchaoo.learn.db.mongodb;
 
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.EntityListeners;
 import org.mongodb.morphia.annotations.Id;
@@ -23,117 +24,138 @@ import java.time.LocalDateTime;
 //@PostPersist
 //@PostLoad
 @EntityListeners({})
+/**
+ * 被entity标记的是顶级文档
+ */
 @Entity("users")
+//类级别的索引 这里可以定义复合索引
 @Indexes({
 
 })
 public class User {
-	@Id
-	private ObjectId id;
+    //最终会是文档的_id字段
+    /**
+     * 这里有没有可能自动实现主键递增呢?
+     */
+    @Id
+    private ObjectId id;
 
-	@Indexed(options = @IndexOptions(unique = true))
-	private String username;
+    @Indexed(options = @IndexOptions(unique = true))
+    private String username;
 
-	//用于定制属性 否则会使用java属性
-	@Property("password2")
-	private String password;
 
-	@Property
-	@Indexed
-	private LocalDate birthday;
+    //用于定制属性 否则会使用java bean规范的属性
+    @Property("password2")
+    private String password;
 
-	@Property
-	private LocalDateTime lastLoginAt;
+    @Property
+    @Indexed
+    private LocalDate birthday;
 
-	@Indexed
-	@Property
-	private int status;
+    @Property
+    private LocalDateTime lastLoginAt;
 
-	//@Embedded()
-	//EO1已经是一个内嵌类型了 所以这里不用
-	private EmbeddedObject1 embeddedObject1;
+    @Indexed
+    @Property
+    private int status;
 
-	@Transient
-	private int ignoreMe;
+    //@Embedded()
+    //EO1已经是一个内嵌类型了 所以这里不用
+    private EmbeddedObject1 embeddedObject1;
 
-	@NotSaved
-	private int notSaveButCanRead;
+    @Embedded
+    private EmbeddedObject2 eo2;
 
-	//@AlsoLoad("password")
-	@Transient
-	private String password2;
+    @Transient
+    private int ignoreMe;
 
-	//@Reference 可以保存其他对象的引用
+    @NotSaved
+    private int notSaveButCanRead;
 
-	public ObjectId getId() {
-		return id;
-	}
+    //@AlsoLoad("password")
+    @Transient
+    private String password2;
 
-	public void setId(ObjectId id) {
-		this.id = id;
-	}
+    //@Reference 可以保存其他对象的引用 DBRef
 
-	public String getUsername() {
-		return username;
-	}
+    public ObjectId getId() {
+        return id;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public void setId(ObjectId id) {
+        this.id = id;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public LocalDate getBirthday() {
-		return birthday;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setBirthday(LocalDate birthday) {
-		this.birthday = birthday;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public LocalDateTime getLastLoginAt() {
-		return lastLoginAt;
-	}
+    public LocalDate getBirthday() {
+        return birthday;
+    }
 
-	public void setLastLoginAt(LocalDateTime lastLoginAt) {
-		this.lastLoginAt = lastLoginAt;
-	}
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
 
-	public int getStatus() {
-		return status;
-	}
+    public LocalDateTime getLastLoginAt() {
+        return lastLoginAt;
+    }
 
-	public void setStatus(int status) {
-		this.status = status;
-	}
+    public void setLastLoginAt(LocalDateTime lastLoginAt) {
+        this.lastLoginAt = lastLoginAt;
+    }
 
-	public EmbeddedObject1 getEmbeddedObject1() {
-		return embeddedObject1;
-	}
+    public int getStatus() {
+        return status;
+    }
 
-	public void setEmbeddedObject1(EmbeddedObject1 embeddedObject1) {
-		this.embeddedObject1 = embeddedObject1;
-	}
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-	@Override
-	public String toString() {
-		return "User{" +
-			"id=" + id +
-			", username='" + username + '\'' +
-			", password='" + password + '\'' +
-			", birthday=" + birthday +
-			", lastLoginAt=" + lastLoginAt +
-			", status=" + status +
-			", embeddedObject1=" + embeddedObject1 +
-			", ignoreMe=" + ignoreMe +
-			", notSaveButCanRead=" + notSaveButCanRead +
-			", password2='" + password2 + '\'' +
-			'}';
-	}
+    public EmbeddedObject1 getEmbeddedObject1() {
+        return embeddedObject1;
+    }
+
+    public void setEmbeddedObject1(EmbeddedObject1 embeddedObject1) {
+        this.embeddedObject1 = embeddedObject1;
+    }
+
+    public EmbeddedObject2 getEo2() {
+        return eo2;
+    }
+
+    public void setEo2(EmbeddedObject2 eo2) {
+        this.eo2 = eo2;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+            "id=" + id +
+            ", username='" + username + '\'' +
+            ", password='" + password + '\'' +
+            ", birthday=" + birthday +
+            ", lastLoginAt=" + lastLoginAt +
+            ", status=" + status +
+            ", embeddedObject1=" + embeddedObject1 +
+            ", eo2=" + eo2 +
+            ", ignoreMe=" + ignoreMe +
+            ", notSaveButCanRead=" + notSaveButCanRead +
+            ", password2='" + password2 + '\'' +
+            '}';
+    }
 }
