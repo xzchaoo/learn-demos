@@ -27,135 +27,135 @@ import java.time.LocalDateTime;
 /**
  * 被entity标记的是顶级文档
  */
-@Entity("users")
+@Entity(value = "users", noClassnameStored = true)
 //类级别的索引 这里可以定义复合索引
 @Indexes({
 
 })
 public class User {
-    //最终会是文档的_id字段
-    /**
-     * 这里有没有可能自动实现主键递增呢?
-     */
-    @Id
-    private ObjectId id;
+	//最终会是文档的_id字段
+	/**
+	 * 这里有没有可能自动实现主键递增呢?
+	 */
+	@Id
+	private ObjectId id;
 
-    @Indexed(options = @IndexOptions(unique = true))
-    private String username;
+	@Indexed(options = @IndexOptions(unique = true))
+	private String username;
 
 
-    //用于定制属性 否则会使用java bean规范的属性
-    @Property("password2")
-    private String password;
+	//用于定制属性 否则会使用java bean规范的属性
+	@Property("password2")
+	private String password;
 
-    @Property
-    @Indexed
-    private LocalDate birthday;
+	@Property
+	@Indexed
+	private LocalDate birthday;
 
-    @Property
-    private LocalDateTime lastLoginAt;
+	@Property
+	private LocalDateTime lastLoginAt;
 
-    @Indexed
-    @Property
-    private int status;
+	@Indexed
+	@Property
+	private int status;
 
-    //@Embedded()
-    //EO1已经是一个内嵌类型了 所以这里不用
-    private EmbeddedObject1 embeddedObject1;
+	//@Embedded()
+	//EO1已经是一个内嵌类型了 所以这里不用
+	private EmbeddedObject1 embeddedObject1;
 
-    @Embedded
-    private EmbeddedObject2 eo2;
+	@Embedded
+	private EmbeddedObject2 eo2;
 
-    @Transient
-    private int ignoreMe;
+	@Transient
+	private int ignoreMe;
 
-    @NotSaved
-    private int notSaveButCanRead;
+	@NotSaved
+	private int notSaveButCanRead;
 
-    //@AlsoLoad("password")
-    @Transient
-    private String password2;
+	//@AlsoLoad("password")
+	@Transient
+	private String password2;
 
-    //@Reference 可以保存其他对象的引用 DBRef
+	//@Reference 可以保存其他对象的引用 DBRef
 
-    public ObjectId getId() {
-        return id;
-    }
+	public ObjectId getId() {
+		return id;
+	}
 
-    public void setId(ObjectId id) {
-        this.id = id;
-    }
+	public void setId(ObjectId id) {
+		this.id = id;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public LocalDate getBirthday() {
-        return birthday;
-    }
+	public LocalDate getBirthday() {
+		return birthday;
+	}
 
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
-    }
+	public void setBirthday(LocalDate birthday) {
+		this.birthday = birthday;
+	}
 
-    public LocalDateTime getLastLoginAt() {
-        return lastLoginAt;
-    }
+	public LocalDateTime getLastLoginAt() {
+		return lastLoginAt;
+	}
 
-    public void setLastLoginAt(LocalDateTime lastLoginAt) {
-        this.lastLoginAt = lastLoginAt;
-    }
+	public void setLastLoginAt(LocalDateTime lastLoginAt) {
+		this.lastLoginAt = lastLoginAt;
+	}
 
-    public int getStatus() {
-        return status;
-    }
+	public int getStatus() {
+		return status;
+	}
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
+	public void setStatus(int status) {
+		this.status = status;
+	}
 
-    public EmbeddedObject1 getEmbeddedObject1() {
-        return embeddedObject1;
-    }
+	public EmbeddedObject1 getEmbeddedObject1() {
+		return embeddedObject1;
+	}
 
-    public void setEmbeddedObject1(EmbeddedObject1 embeddedObject1) {
-        this.embeddedObject1 = embeddedObject1;
-    }
+	public void setEmbeddedObject1(EmbeddedObject1 embeddedObject1) {
+		this.embeddedObject1 = embeddedObject1;
+	}
 
-    public EmbeddedObject2 getEo2() {
-        return eo2;
-    }
+	public EmbeddedObject2 getEo2() {
+		return eo2;
+	}
 
-    public void setEo2(EmbeddedObject2 eo2) {
-        this.eo2 = eo2;
-    }
+	public void setEo2(EmbeddedObject2 eo2) {
+		this.eo2 = eo2;
+	}
 
-    @Override
-    public String toString() {
-        return "User{" +
-            "id=" + id +
-            ", username='" + username + '\'' +
-            ", password='" + password + '\'' +
-            ", birthday=" + birthday +
-            ", lastLoginAt=" + lastLoginAt +
-            ", status=" + status +
-            ", embeddedObject1=" + embeddedObject1 +
-            ", eo2=" + eo2 +
-            ", ignoreMe=" + ignoreMe +
-            ", notSaveButCanRead=" + notSaveButCanRead +
-            ", password2='" + password2 + '\'' +
-            '}';
-    }
+	@Override
+	public String toString() {
+		return "User{" +
+			"id=" + id +
+			", username='" + username + '\'' +
+			", password='" + password + '\'' +
+			", birthday=" + birthday +
+			", lastLoginAt=" + lastLoginAt +
+			", status=" + status +
+			", embeddedObject1=" + embeddedObject1 +
+			", eo2=" + eo2 +
+			", ignoreMe=" + ignoreMe +
+			", notSaveButCanRead=" + notSaveButCanRead +
+			", password2='" + password2 + '\'' +
+			'}';
+	}
 }
