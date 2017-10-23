@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration debug="false" scan="false" scanPeriod="30 seconds" packagingData="false">
+	<!--
+	如果不指定seconds 那么就认为是毫秒
+	packagingData=true的话 打印异常的时候回打印出这个语句在哪个包里
+	-->
+
+	<contextName>learn-jmx</contextName>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss} [%thread] %highlight(%-5level) %logger{36} - %msg%n</pattern>
+			<charset>utf-8</charset>
+		</encoder>
+	</appender>
+
+	<root level="info">
+		<appender-ref ref="STDOUT"/>
+	</root>
+</configuration>

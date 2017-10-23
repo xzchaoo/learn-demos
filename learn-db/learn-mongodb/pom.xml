@@ -11,15 +11,29 @@
 
 	<artifactId>learn-mongodb</artifactId>
 
+	<properties>
+		<mongo.java.driver.version>3.4.2</mongo.java.driver.version>
+		<morphia.version>1.3.2</morphia.version>
+	</properties>
 	<dependencies>
-
+		<dependency>
+			<groupId>io.dropwizard.metrics</groupId>
+			<artifactId>metrics-core</artifactId>
+			<version>3.2.5</version>
+		</dependency>
 		<!--官方出品-->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>${mongo.java.driver.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.mongodb.morphia</groupId>
 			<artifactId>morphia</artifactId>
-			<version>1.3.2</version>
+			<version>${morphia.version}</version>
 		</dependency>
 
+		<!--最新版的querydsl 可能不能很好地支持最新版的mongodb driver-->
 		<dependency>
 			<groupId>com.querydsl</groupId>
 			<artifactId>querydsl-apt</artifactId>
