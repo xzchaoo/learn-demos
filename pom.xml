@@ -22,6 +22,7 @@
 		<module>learn-serialization</module>
 		<module>learn-spring</module>
 		<module>learn-akka</module>
+		<module>learn-springboot</module>
 	</modules>
 
 	<parent>
