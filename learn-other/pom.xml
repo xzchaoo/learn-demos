@@ -29,6 +29,7 @@
 		<module>learn-quartz</module>
 		<module>learn-guice</module>
 		<module>learn-plexus-container</module>
+		<module>learn-hystrix</module>
 	</modules>
 
 	<dependencies>
