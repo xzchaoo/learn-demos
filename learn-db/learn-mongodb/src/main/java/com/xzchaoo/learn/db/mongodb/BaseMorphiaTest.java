@@ -37,6 +37,6 @@ public class BaseMorphiaTest {
 		//保证索引都创建了
 		datastore.ensureIndexes();
 
-		datastore.createAggregation(null).skip(1)
+		//datastore.createAggregation(null).skip(1)
 	}
 }
