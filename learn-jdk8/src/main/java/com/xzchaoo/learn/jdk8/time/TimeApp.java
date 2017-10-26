@@ -15,40 +15,52 @@ import static org.junit.Assert.assertEquals;
  * Created by Administrator on 2017/3/21.
  */
 public class TimeApp {
-	@Test
-	public void test1() {
-		//System.out.println(DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.FULL, Locale.JAPANESE).format(0L));
-		//1970年1月1日 8時00分00秒 CST
+    @Test
+    public void test_mills_to_LocalDateTime() {
+        long mills = 1;
+        System.out.println(LocalDateTime.ofInstant(Instant.ofEpochMilli(mills), ZoneId.systemDefault()));
+    }
 
-		//本地日期
-		//TimeZone sh = TimeZone.getTimeZone("");
-		ZoneId sh = ZoneId.of("Asia/Shanghai");
-		long mills = 1490080296204L;
-		Instant instant = Instant.ofEpochMilli(mills);
+    @Test
+    public void test_mills_to_LocalDate() {
+        long mills = 1;
+        System.out.println(LocalDateTime.ofInstant(Instant.ofEpochMilli(mills), ZoneId.systemDefault()).toLocalDate());
+    }
 
-		LocalDate ld = LocalDate.now(Clock.fixed(instant, sh));
+    @Test
+    public void test1() {
+        //System.out.println(DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.FULL, Locale.JAPANESE).format(0L));
+        //1970年1月1日 8時00分00秒 CST
 
-		assertEquals(2017, ld.getYear());
-		assertEquals(3, ld.getMonthValue());
-		assertEquals(21, ld.getDayOfMonth());
+        //本地日期
+        //TimeZone sh = TimeZone.getTimeZone("");
+        ZoneId sh = ZoneId.of("Asia/Shanghai");
+        long mills = 1490080296204L;
+        Instant instant = Instant.ofEpochMilli(mills);
 
-		LocalDateTime ldt = ld.atStartOfDay();
-		assertEquals(2017, ldt.getYear());
-		assertEquals(3, ldt.getMonthValue());
-		assertEquals(21, ldt.getDayOfMonth());
-		assertEquals(0, ldt.getHour());
-		assertEquals(0, ldt.getMinute());
-		assertEquals(0, ldt.getSecond());
+        LocalDate ld = LocalDate.now(Clock.fixed(instant, sh));
 
-		ldt = LocalDateTime.ofInstant(instant, sh);
-		assertEquals(2017, ldt.getYear());
-		assertEquals(3, ldt.getMonthValue());
-		assertEquals(21, ldt.getDayOfMonth());
-		assertEquals(15, ldt.getHour());
-		assertEquals(11, ldt.getMinute());
-		assertEquals(36, ldt.getSecond());
+        assertEquals(2017, ld.getYear());
+        assertEquals(3, ld.getMonthValue());
+        assertEquals(21, ld.getDayOfMonth());
 
-		assertEquals("20170321 151136", ldt.format(DateTimeFormatter.ofPattern("yyyyMMdd HHmmss")));
+        LocalDateTime ldt = ld.atStartOfDay();
+        assertEquals(2017, ldt.getYear());
+        assertEquals(3, ldt.getMonthValue());
+        assertEquals(21, ldt.getDayOfMonth());
+        assertEquals(0, ldt.getHour());
+        assertEquals(0, ldt.getMinute());
+        assertEquals(0, ldt.getSecond());
 
-	}
+        ldt = LocalDateTime.ofInstant(instant, sh);
+        assertEquals(2017, ldt.getYear());
+        assertEquals(3, ldt.getMonthValue());
+        assertEquals(21, ldt.getDayOfMonth());
+        assertEquals(15, ldt.getHour());
+        assertEquals(11, ldt.getMinute());
+        assertEquals(36, ldt.getSecond());
+
+        assertEquals("20170321 151136", ldt.format(DateTimeFormatter.ofPattern("yyyyMMdd HHmmss")));
+
+    }
 }

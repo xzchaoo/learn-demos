@@ -38,18 +38,19 @@ public class MongoDriverTest {
             .build();
         reporter.start(1, TimeUnit.SECONDS);
 
+        //new MongoClientURI()
         ServerAddress serverAddress = new ServerAddress("10.32.129.143", 5356);
         MongoClientOptions options = MongoClientOptions.builder()
-            .socketKeepAlive(true)
             .socketTimeout(10000)
             .connectTimeout(1000)
             .maxWaitTime(30000)
 //            .threadsAllowedToBlockForConnectionMultiplier(50)
             .build();
         MongoClient client = new MongoClient(serverAddress, options);
-
         MongoDatabase db = client.getDatabase("test1");
         MongoCollection<Document> coll = db.getCollection("users");
+        Document d = new Document();
+
         ExecutorService es = Executors.newFixedThreadPool(16);
         IntStream.range(0, 16).forEach(i -> {
             es.execute(() -> {
