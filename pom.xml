@@ -23,6 +23,7 @@
 		<module>learn-spring</module>
 		<module>learn-akka</module>
 		<module>learn-springboot</module>
+		<module>learn-utils</module>
 	</modules>
 
 	<parent>
