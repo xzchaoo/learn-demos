@@ -15,6 +15,7 @@
 	<modules>
 		<module>learn-jackson</module>
 		<module>learn-protobuf</module>
+		<module>learn-gson</module>
 	</modules>
 
 </project>

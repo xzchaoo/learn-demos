@@ -48,13 +48,20 @@ public class UtilTest {
 	}
 
 	@Test
-	public void test_PublishSubject() {
+	public void test_PublishSubject() throws InterruptedException {
 		//PublishSubject 是一个 Observable
 		PublishSubject<Integer> ps = PublishSubject.create();
-		ps.forEach(System.out::println);
+		//ps.forEach(System.out::println);
+		ps.subscribeOn(Schedulers.io())
+			.flatMapSingle(x -> Single.timer(1, TimeUnit.SECONDS).map(a -> x))
+			.map(x -> x * x)
+			.subscribe(x -> {
+				System.out.println(x);
+			});
 		for (int i = 0; i < 100; ++i) {
 			ps.onNext(i);
 		}
+		Thread.sleep(2000);
 		ps.onComplete();
 	}
 
@@ -89,6 +96,7 @@ public class UtilTest {
 		}
 		pp.onComplete();
 	}
+
 	@Ignore
 	@Test
 	public void test_parallel() {
@@ -225,6 +233,7 @@ public class UtilTest {
 		Observable.range(1, 100).forEach(System.out::println);
 		System.out.println("end");
 	}
+
 	@Ignore
 	@Test
 	public void test_thread() throws Exception {
