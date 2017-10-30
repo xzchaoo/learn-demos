@@ -13,7 +13,7 @@ import org.junit.Test;
 public class CuratorTest2 {
 	@Test
 	public void test() throws Exception {
-		CuratorFramework cf = CuratorFrameworkFactory.newClient("106.14.175.164:2181", new RetryForever(5000));
+		CuratorFramework cf = CuratorFrameworkFactory.newClient("106.14.175.164:12181", new RetryForever(5000));
 		cf.start();
 		System.out.println(cf.getData().forPath("/a"));
 	}
