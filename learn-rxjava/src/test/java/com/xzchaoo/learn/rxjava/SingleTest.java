@@ -2,7 +2,10 @@ package com.xzchaoo.learn.rxjava;
 
 import org.junit.Test;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Single;
+import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.SingleSubject;
 
 /**
@@ -11,6 +14,24 @@ import io.reactivex.subjects.SingleSubject;
  * @author zcxu
  */
 public class SingleTest {
+    @Test
+    public void test_sleep_block_mainThread() {
+        System.out.println(
+            Single.create(se -> {
+                System.out.println(Thread.currentThread().getName());
+                try {
+                    Thread.sleep(2000);
+                } catch (Exception e) {
+                    System.out.println("线程被打断了 " + e);
+                }
+                System.out.println("完了");
+                se.onSuccess(1);
+            }).subscribeOn(Schedulers.io())
+                .timeout(1, TimeUnit.SECONDS)//timeout并不会打断线程
+                .blockingGet()
+        );
+    }
+
     @Test
     public void test3() {
         Single.just(1).doOnSuccess(x -> {

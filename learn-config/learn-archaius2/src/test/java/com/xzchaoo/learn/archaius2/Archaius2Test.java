@@ -62,7 +62,7 @@ public class Archaius2Test {
 
         DefaultPropertyFactory dpf = DefaultPropertyFactory.from(dsc);
         Property<Integer> pa = dpf.getProperty("a").asInteger(1);
-        dsc.addListener(new DefaultConfigListener(){
+        dsc.addListener(new DefaultConfigListener() {
             @Override
             public void onConfigUpdated(Config config) {
                 System.out.println("onConfigUpdated");
@@ -277,7 +277,7 @@ public class Archaius2Test {
         property.addListener(new PropertyListener<Integer>() {
             @Override
             public void onChange(Integer value) {
-
+                System.out.println("值该变了");
             }
 
             @Override

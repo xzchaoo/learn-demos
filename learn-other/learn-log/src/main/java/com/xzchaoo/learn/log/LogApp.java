@@ -1,5 +1,6 @@
 package com.xzchaoo.learn.log;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +10,6 @@ public class LogApp {
 
 	@Test
 	public void test1() {
-		LOGGER.info("xxx");
+		LOGGER.info("{}", StringUtils.leftPad("xxx",5));
 	}
 }
