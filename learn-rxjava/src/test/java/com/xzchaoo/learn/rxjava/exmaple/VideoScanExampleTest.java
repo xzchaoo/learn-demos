@@ -3,6 +3,7 @@ package com.xzchaoo.learn.rxjava.exmaple;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
 
 import org.junit.Ignore;
@@ -47,7 +48,7 @@ public class VideoScanExampleTest {
 			ctx.aid = aid;
 			return ctx;
 		}).flatMapSingle(ctx -> Single.<ScanVideoContext>create(e -> {
-			System.out.println("1. 现在的并发量是  " + ai.incrementAndGet() + " " + Thread.currentThread());
+			System.out.println("1. 现在的并发量是  " + ai.incrementAndGet() + " " + Thread.currentThread().getName());
 			//这里模拟发送异步HTTP请求
 			ListenableFuture<String> future = getVideoByAid(ctx.aid);
 			Futures.addCallback(future, new FutureCallback<String>() {
@@ -63,16 +64,21 @@ public class VideoScanExampleTest {
 				public void onFailure(Throwable t) {
 					e.onError(t);
 				}
-			});
+			}, MoreExecutors.directExecutor());
 			//这里限制了最多16并发
+		}).observeOn(Schedulers.computation()).doOnSuccess(ctx2 -> {
+			//假设每个ctx请求完之后需要做一些计算 那么需要在这里完成
+			//这里也在16个并发的限制理论
 		}), true, 16)
 			//在IO线程上订阅 其实无所谓的 因为请求是异步的 不阻塞
 			.subscribeOn(Schedulers.io())
 			//在计算线程回调
 			.observeOn(Schedulers.computation())
-			.doOnNext(ctx -> {
+			//.flatMap() 也可以在这里做并发做context的处理
+			.doOnNext(ctx -> {//这里是同步执行
 				//这里仅仅是为了打印信息而已
 				System.out.println(ctx.aid + " " + ctx.response + " " + Thread.currentThread());
+				Thread.sleep(5000);
 			})
 			.toList()//聚合成list
 			.subscribe(contexts -> {
