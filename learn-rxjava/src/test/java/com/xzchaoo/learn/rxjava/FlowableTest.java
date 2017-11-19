@@ -1,14 +1,15 @@
 package com.xzchaoo.learn.rxjava;
 
 import org.junit.Test;
-import org.omg.PortableServer.THREAD_POLICY_ID;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
+import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 
 import static org.junit.Assert.*;
@@ -19,6 +20,137 @@ import static org.junit.Assert.*;
  * @author xzchaoo
  */
 public class FlowableTest {
+	private static String tname() {
+		return Thread.currentThread().getName();
+	}
+
+	private static void mark(String tag) {
+		System.out.println(tag + " " + tname());
+	}
+
+	@Test
+	public void test_delay() {
+		Flowable.just(1, 2, 3)
+			.delay(1, TimeUnit.SECONDS)//会延迟1秒 然后突然发射出3个对象
+			.blockingForEach(System.out::println);
+	}
+
+	@Test
+	public void test_reduce() {
+		Integer sum = Flowable.range(1, 10)
+			.reduce(0, (sum0, x) -> sum0 + x)
+			.blockingGet();
+		System.out.println(sum);
+	}
+
+	@Test
+	public void test_zip() {
+		Flowable.zip(
+			Flowable.interval(1, TimeUnit.MILLISECONDS).take(100).doOnNext(System.out::println),
+			Flowable.interval(1, TimeUnit.SECONDS).map(x -> (char) ('a' + x.intValue())).map(Object::toString),
+			(a, b) -> a + b,
+			true, 3
+		).blockingForEach(System.out::println);
+	}
+
+	@Test
+	public void test_retry() {
+		//这是一个比较复杂的retry版本
+		//最多重试3次, 第一次失败过1秒才重试 第2次失败过2秒才重试 第3次失败3秒后才重试
+		AtomicInteger ai = new AtomicInteger(0);
+		Flowable.just(1, 2, 3)
+			.doOnNext(e -> {
+				if (e == 2 && ai.get() < 2) {
+					ai.incrementAndGet();
+					throw new IllegalStateException();
+				}
+			})
+			.retryWhen(ef -> {
+				//retryWhen会给你一个 Flowable<Throwable> 用于发射失败事件
+				return ef.zipWith(
+					//这里的3表示最多重试3次
+					Flowable.range(1, 3),
+					(e, i) -> {
+						//这里需要传递一个合并函数
+						System.out.println("第" + i + "次失败");
+						//返回i*i 可以实现 第i次失败 间隔i*i 秒后才重试
+						return i;
+					}
+				).flatMapSingle(s -> Single.timer(s, TimeUnit.SECONDS));
+			})
+			.blockingForEach(System.out::println);
+	}
+
+	@Test
+	public void test_materialize() {
+		Flowable.just(1, 2, 3)
+			.materialize()
+			.blockingForEach(n -> {
+				System.out.println(n);
+			});
+	}
+
+	@Test
+	public void test_timestamp() {
+		//为每个元素带上一个时间戳
+		Flowable.just(1, 2, 3)
+			.timestamp()
+			.blockingForEach(e -> {
+				System.out.println(e.time());
+				System.out.println(e.value());
+			});
+	}
+
+	@Test
+	public void test_amb() {
+		//哪个flowable先发射出第一个元素, 那么此后就只从它这里消费了
+		List<Integer> list = Flowable.ambArray(
+			Flowable.just(1, 2, 3).delay(200, TimeUnit.MILLISECONDS),
+			Flowable.just(2, 3, 4).delay(100, TimeUnit.MILLISECONDS)
+		).toList(3)
+			.blockingGet();
+		assertEquals(Arrays.asList(2, 3, 4), list);
+	}
+
+	@Test
+	public void test() {
+		AtomicInteger ai = new AtomicInteger();
+		List<Integer> list = Flowable.just(1, 2, 3, 4)
+			.subscribeOn(Schedulers.io())
+			.flatMapSingle(x -> Single.fromCallable(() -> {
+				System.out.println(ai.incrementAndGet());
+				Thread.sleep(1000);
+				ai.decrementAndGet();
+				return x;
+			}).subscribeOn(Schedulers.io()), true, 2)
+			.toList()
+			.blockingGet();
+		System.out.println(list);
+	}
+
+	@Test
+	public void test_parallel() {
+		//将4个元素 放到2个线程里去执行 每个耗时大概是1秒
+		//parallel 不支持工作窃取(你需要使用flatMap)
+		//最后合并结果为一个list
+		AtomicInteger ai = new AtomicInteger(0);
+		List<Integer> list = Flowable.just(1, 2, 3, 4)
+			.parallel(2, 5)
+			.runOn(Schedulers.io())
+			.map(x -> {
+				if (x == 1) {
+					Thread.sleep(5000);
+				}
+				System.out.println(ai.incrementAndGet());
+				ai.decrementAndGet();
+				return x * x;
+			})
+			.sequential()
+			.toList()
+			.blockingGet();
+		System.out.println(list);
+	}
+
 	@Test
 	public void test_merged() {
 		//将两个F合并起来发射, 这个过程是线程安全的
@@ -43,6 +175,7 @@ public class FlowableTest {
 	 */
 	@Test
 	public void test_buffer_1_group() {
+		//每2个元素放一组
 		List<List<Integer>> list = Flowable.just(1, 2, 3, 4, 5)
 			.buffer(2)
 			.toList()

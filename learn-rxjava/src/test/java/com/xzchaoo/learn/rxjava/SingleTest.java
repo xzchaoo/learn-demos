@@ -28,18 +28,20 @@ public class SingleTest {
 	@Test
 	public void test_lifecycle() {
 		Single.create(se -> {
+			//create的执行线程 默认是当前线程, 如果调用了 subscribeOn 那么就是指定的线程
 			mark("1");
 			Thread.sleep(500);
 			se.onSuccess("ok");
 		}).subscribeOn(Schedulers.io())
 			.doAfterTerminate(() -> {
+				//terminal只会在 onError 和 onSuccess 之后执行, onDispose 是不执行的!
 				mark("2");
 			})
-			.doAfterTerminate(() -> {//terminal只会在 onError 和 onSuccess 之后执行, onDispose 是不执行的!
-				mark("6");//6比2早
+			.doAfterTerminate(() -> {
+				mark("6");//6比2早 越晚注册越早执行
 			})
 			.doFinally(() -> {
-				mark("7");//finally早于terminal
+				mark("7");//finally早于terminal finally会在 onError onSuccess onDispose 后执行
 			})
 			.doFinally(() -> {
 				mark("8");//8比7早
@@ -47,7 +49,7 @@ public class SingleTest {
 			.doOnSuccess(e -> {
 				mark("3");
 			})
-			.observeOn(Schedulers.computation())
+			.observeOn(Schedulers.computation())//会影响之后的执行
 			.doOnSuccess(e -> {
 				mark("4");
 			})

@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Flowable;
 import io.reactivex.Single;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -22,24 +23,28 @@ class SearchContext {
 
 public class AggTest {
 	@Test
-	public void test() {
+	public void test() throws InterruptedException {
 		SearchContext ctx = new SearchContext();
-		Single.just(ctx)
+		Disposable d = Single.just(ctx)
 			.doOnSuccess(this::doSearchControl)
 			.flatMapPublisher(this::splitToSubContexts)
 			.observeOn(Schedulers.io())
-			.flatMapSingle(this::doConcurrentSearch, true, 40)
+			.flatMapSingle(this::doConcurrentSearch, true, 8)
 			.observeOn(Schedulers.computation())
-			.flatMapSingle(this::executeFirstStrategy, true, 8)
+			.flatMapSingle(this::executeFirstStrategy, true, 2)
 			.toList()
 			.map(contexts -> mergeContext(ctx, contexts))
 			.doOnSuccess(this::executeMergedStrategy)
 			.subscribe(success -> {
+				System.out.println("成功");
 				//success
 			}, error -> {
 				//error
 				error.printStackTrace();
 			});
+		while (!d.isDisposed()) {
+			Thread.sleep(1000);
+		}
 	}
 
 	private Flowable<SearchContext> splitToSubContexts(SearchContext searchContext) {
@@ -48,6 +53,7 @@ public class AggTest {
 	}
 
 	private void executeMergedStrategy(SearchContext context) {
+		System.out.println("执行merged策略");
 	}
 
 	private SearchContext mergeContext(SearchContext ctx, List<SearchContext> contexts) {
@@ -57,15 +63,14 @@ public class AggTest {
 
 	private Single<SearchContext> doConcurrentSearch(SearchContext searchContext) {
 		if (searchContext.engines.size() == 1) {
-			return Single.just(searchContext).flatMap(this::coreEngineSearch);
+			return this.coreEngineSearch(searchContext);
 		} else {
-			//do other search
-			return Single.just(searchContext).flatMap(this::coreEngineSearch);
+			return this.coreEngineSearch(searchContext);
 		}
 	}
 
 	private Single<SearchContext> executeFirstStrategy(SearchContext searchContext) {
-		//execute first strategy
+		System.out.println("execute first strategy");
 		return Single.just(searchContext);
 	}
 
