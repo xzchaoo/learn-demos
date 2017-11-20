@@ -2,6 +2,7 @@ package com.xzchaoo.learn.other.kafka;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.header.Header;
 import org.junit.Test;
 
 import java.util.Properties;
@@ -26,7 +27,8 @@ public class ProducerTest2 {
 		props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 		//线程安全
 		KafkaProducer<String, String> producer = new KafkaProducer<>(props);
-		producer.send(new ProducerRecord<String, String>("test", "a", "b"));
+		int partition = producer.partitionsFor("sdf").get(0).partition();
+		producer.send(new ProducerRecord<String, String>("test", partition,"a", "b"));
 		producer.close();
 	}
 }
