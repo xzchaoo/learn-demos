@@ -17,6 +17,7 @@ import java.util.Arrays;
 import static org.junit.Assert.*;
 
 /**
+ * snappy依赖了一些外部的DLL和SO文件, 这些文件被打在jar包里, 运行时解压到临时目录 然后利用 System.load 进行加载
  * http://ning.github.io/jvm-compressor-benchmark/results/canterbury-roundtrip-2011-07-28/index.html
  */
 public class SnappyTest {
@@ -33,7 +34,7 @@ public class SnappyTest {
 	}
 
 	/**
-	 * 注意格式 不同的压缩方式和解压方式不一定兼容
+	 * 注意格式 不同的压缩方式和解压方式不一定兼容, 具体看官方文档
 	 *
 	 * @throws Exception
 	 */
