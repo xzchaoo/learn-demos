@@ -1,6 +1,11 @@
 package com.xzchaoo.learn.apache.commons.io;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOCase;
+import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;
+import org.apache.commons.io.monitor.FileAlterationMonitor;
+import org.apache.commons.io.monitor.FileAlterationObserver;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -13,6 +18,26 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class FileUtilsTest {
+	@Ignore
+	@Test
+	public void test() throws Exception {
+		FileAlterationMonitor monitor = new FileAlterationMonitor(5000);
+		FileAlterationObserver fab = new FileAlterationObserver(
+			"C:/temp",
+			file -> file.getName().equals("1.txt"),
+			IOCase.SENSITIVE
+		);
+		fab.addListener(new FileAlterationListenerAdaptor() {
+			@Override
+			public void onFileChange(File file) {
+				System.out.println("onFileChange");
+			}
+		});
+		monitor.addObserver(fab);
+		monitor.start();
+		//JDK7以下可以用 Charsets.UTF_8
+	}
+
 	@Test
 	public void test1() throws IOException, URISyntaxException {
 		URL url = getClass().getClassLoader().getResource("1.txt");
@@ -28,6 +53,5 @@ public class FileUtilsTest {
 
 		//FileUtils.writeLines();
 		//FileUtils.write();
-
 	}
 }

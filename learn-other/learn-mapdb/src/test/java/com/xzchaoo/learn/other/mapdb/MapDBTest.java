@@ -46,7 +46,7 @@ public class MapDBTest {
 	@Test
 	public void test_composite() {
 		//插入100W个元素 需要18秒
-		DB db = DBMaker.memoryDB().make();
+		DB db = DBMaker.tempFileDB().make();
 		HTreeMap.KeySet<Object[]> set1 = db.hashSet("set1", new SerializerArrayTuple(Serializer.STRING, Serializer.STRING))
 			.counterEnable()
 			.createOrOpen();
