@@ -28,7 +28,7 @@ public class TypeTest {
 		List<Integer> list = c.getList("a", Integer.class);
 		System.out.println(list);
 
-		ConfigWrapper cw = new ConfigWrapper();
+		ConfigWrapper2 cw = new ConfigWrapper2();
 		PropertyFactory pf = DefaultPropertyFactory.from(c);
 		//addListener 之后会马上触发一次
 		c.addListener(new ConfigListener() {
