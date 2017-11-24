@@ -30,6 +30,7 @@
 		<module>learn-guice</module>
 		<module>learn-plexus-container</module>
 		<module>learn-hystrix</module>
+		<module>learn-mapstruct</module>
 	</modules>
 
 	<dependencies>
