@@ -24,6 +24,8 @@
 		<module>learn-akka</module>
 		<module>learn-springboot</module>
 		<module>learn-utils</module>
+		<module>learn-alg</module>
+		<module>learn-leetcode</module>
 	</modules>
 
 	<parent>
