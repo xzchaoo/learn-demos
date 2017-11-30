@@ -6,6 +6,15 @@ package com.xzchaoo.learn.leetcode;
  * @author xzchaoo
  */
 public class P83 {
+	static class ListNode{
+		int val;
+		ListNode next;
+
+		ListNode(int x) {
+			val = x;
+			next = null;
+		}
+	}
 	public ListNode deleteDuplicates(ListNode li) {
 		ListNode head = null;
 		ListNode tail = null;
