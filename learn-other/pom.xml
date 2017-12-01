@@ -31,6 +31,7 @@
 		<module>learn-plexus-container</module>
 		<module>learn-hystrix</module>
 		<module>learn-mapstruct</module>
+		<module>learn-jmh</module>
 	</modules>
 
 	<dependencies>
