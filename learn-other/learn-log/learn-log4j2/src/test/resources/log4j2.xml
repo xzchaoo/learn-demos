@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration status="OFF">
+<Configuration status="OFF" shutdownHook="true">
+	<!--
+	shutdownHook 默认是true
+	-->
 
+	<Properties>
+		<Property name="a" value="b"/>
+		<Property name="a">b</Property>
+	</Properties>
 
-	<appenders>
+	<!--<ThresholdFilter level="trace"/>-->
+
+	<Appenders>
 		<!--输出到控制台-->
 		<Console name="Console" target="SYSTEM_OUT">
 			<!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
 			<ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+			<!--<Filters>-->
+				<!--<Filter type="MarkerFilter" marker="FLOW" onMatch="ACCEPT" onMismatch="NEUTRAL"/>-->
+				<!--<Filter type="MarkerFilter" marker="EXCEPTION" onMatch="ACCEPT" onMismatch="DENY"/>-->
+			<!--</Filters>-->
 		</Console>
 
 		<!-- 这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
@@ -20,16 +33,20 @@
 			<DefaultRolloverStrategy max="20"/>
 		</RollingFile>
 
-	</appenders>
+	</Appenders>
 
-	<loggers>
-		<logger name="com.xzchaoo" level="debug" additivity="false">
-			<appender-ref ref="Console"/>
-			<appender-ref ref="RollingFile"/>
-		</logger>
+	<Loggers>
+		<Logger name="com.xzchaoo" level="trace" additivity="false">
+			<!--<ThreadContextMapFilter>-->
+				<!--<KeyValuePair key="test" value="123"/>-->
+			<!--</ThreadContextMapFilter>-->
+
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="RollingFile"/>
+		</Logger>
 		<root level="info">
-			<appender-ref ref="Console"/>
+			<AppenderRef ref="Console"/>
 		</root>
-	</loggers>
+	</Loggers>
 
-</configuration>
+</Configuration>
