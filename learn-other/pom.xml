@@ -32,6 +32,7 @@
 		<module>learn-hystrix</module>
 		<module>learn-mapstruct</module>
 		<module>learn-disruptor</module>
+		<module>learn-jmh</module>
 	</modules>
 
 	<dependencies>
