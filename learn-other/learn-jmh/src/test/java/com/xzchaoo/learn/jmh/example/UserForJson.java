@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author zcxu
  */
-public class UserForJson {
+public class UserForJson implements Cloneable {
 	private int id;
 	private String username;
 	private float float1;
@@ -71,5 +71,13 @@ public class UserForJson {
 
 	public void setDate1(Date date1) {
 		this.date1 = date1;
+	}
+
+	public UserForJson clone() {
+		try {
+			return (UserForJson) super.clone();
+		} catch (CloneNotSupportedException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }
