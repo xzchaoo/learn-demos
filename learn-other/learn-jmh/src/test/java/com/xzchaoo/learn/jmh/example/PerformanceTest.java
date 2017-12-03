@@ -65,7 +65,6 @@ public class PerformanceTest {
 	public static final int n = 1000000;
 
 	@Benchmark
-	@OperationsPerInvocation(n)
 	public void test1() throws InterruptedException {
 		AtomicLong sum = new AtomicLong(0);
 		AtomicLong counter = new AtomicLong(0);
@@ -102,7 +101,6 @@ public class PerformanceTest {
 	}
 
 	@Benchmark
-	@OperationsPerInvocation(n)
 	public void test_abq(ABQState state) throws InterruptedException {
 		ArrayBlockingQueue<FooEvent> abq = state.abq;
 		AtomicLong counter = state.counter;
@@ -117,7 +115,6 @@ public class PerformanceTest {
 	}
 
 	@Benchmark
-	@OperationsPerInvocation(n)
 	public void test_rx() throws Exception {
 		AtomicLong counter = new AtomicLong(0);
 		AtomicLong sum = new AtomicLong(0);
@@ -207,7 +204,6 @@ public class PerformanceTest {
 	}
 
 	@Benchmark
-	@OperationsPerInvocation(n)
 	public void test_disruptor(DState state) throws Exception {
 		AtomicLong counter = state.counter;
 		counter.set(0);

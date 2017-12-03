@@ -12,17 +12,13 @@
 	<artifactId>learn-jmh</artifactId>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-core -->
 		<dependency>
 			<groupId>org.openjdk.jmh</groupId>
 			<artifactId>jmh-core</artifactId>
-			<version>1.19</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-generator-annprocess -->
 		<dependency>
 			<groupId>org.openjdk.jmh</groupId>
 			<artifactId>jmh-generator-annprocess</artifactId>
-			<version>1.19</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -39,12 +35,11 @@
 		<dependency>
 			<groupId>io.reactivex.rxjava2</groupId>
 			<artifactId>rxjava</artifactId>
-			<version>2.1.2</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.lmax</groupId>
 			<artifactId>disruptor</artifactId>
-			<version>3.3.7</version>
 		</dependency>
 	</dependencies>
 
