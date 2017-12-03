@@ -20,11 +20,17 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.annotations.Warmup;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
+
+import io.reactivex.Flowable;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * created by xzchaoo at 2017/12/2
@@ -52,8 +58,8 @@ class Helper {
 }
 
 @BenchmarkMode({Mode.Throughput, Mode.SingleShotTime})
-@Warmup(iterations = 2)
-@Measurement(iterations = 3)
+@Warmup(iterations = 5, time = 2)
+@Measurement(iterations = 5, time = 6)
 @Fork(1)
 public class PerformanceTest {
 	public static final int n = 1000000;
@@ -110,6 +116,47 @@ public class PerformanceTest {
 		}
 	}
 
+	@Benchmark
+	@OperationsPerInvocation(n)
+	public void test_rx() throws Exception {
+		AtomicLong counter = new AtomicLong(0);
+		AtomicLong sum = new AtomicLong(0);
+		CountDownLatch cdl = new CountDownLatch(12);
+		Subscriber<FooEvent>[] ss = new Subscriber[12];
+		for (int i = 0; i < 12; ++i) {
+			ss[i] = new Subscriber<FooEvent>() {
+				@Override
+				public void onSubscribe(Subscription s) {
+					s.request(Integer.MAX_VALUE);
+				}
+
+				@Override
+				public void onNext(FooEvent e) {
+					Helper.process(e);
+					counter.incrementAndGet();
+					sum.addAndGet(e.getValue());
+				}
+
+				@Override
+				public void onError(Throwable t) {
+
+				}
+
+				@Override
+				public void onComplete() {
+					cdl.countDown();
+				}
+			};
+		}
+		Flowable.range(1, n)
+			.map(FooEvent::new)
+			.parallel(12)
+			.runOn(Schedulers.computation())
+			.subscribe(ss);
+		cdl.await();
+	}
+
+
 	@State(Scope.Benchmark)
 	public static class DState {
 		int threads = 12;
@@ -131,9 +178,9 @@ public class PerformanceTest {
 //				new FooEventHandler(counter)
 //			);
 
-			FooWorkHandler[] workers=new FooWorkHandler[threads];
-			for(int i=0;i<threads;++i){
-				workers[i]=new FooWorkHandler(counter);
+			FooWorkHandler[] workers = new FooWorkHandler[threads];
+			for (int i = 0; i < threads; ++i) {
+				workers[i] = new FooWorkHandler(counter);
 			}
 			d.handleEventsWithWorkerPool(
 				workers

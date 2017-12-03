@@ -33,6 +33,7 @@
 		<module>learn-mapstruct</module>
 		<module>learn-disruptor</module>
 		<module>learn-jmh</module>
+		<module>learn-jctools</module>
 	</modules>
 
 	<dependencies>
