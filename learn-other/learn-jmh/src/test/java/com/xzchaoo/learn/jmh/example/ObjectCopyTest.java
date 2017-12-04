@@ -1,5 +1,9 @@
 package com.xzchaoo.learn.jmh.example;
 
+import com.xzchaoo.learn.jmh.UserCopyMapper;
+import com.xzchaoo.learn.jmh.UserForJson;
+
+import org.apache.commons.beanutils.BeanUtilsBean2;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -11,6 +15,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
 import org.openjdk.jmh.infra.Blackhole;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -42,11 +47,13 @@ public class ObjectCopyTest {
 		}
 	}
 
+	//重载clone方法 利用浅复制
 	@Benchmark
 	public void clone2(CloneState state, Blackhole b) {
 		b.consume(state.user.clone());
 	}
 
+	//手动赋值
 	@Benchmark
 	public void manual(CloneState state, Blackhole b) {
 		UserForJson u1 = state.user;
@@ -59,5 +66,19 @@ public class ObjectCopyTest {
 		u2.setList1(u1.getList1());
 		u2.setDate1(u1.getDate1());
 		b.consume(u2);
+	}
+
+	//使用beanutils, 基于反射
+	@Benchmark
+	public void beanUtils(CloneState state, Blackhole b) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+		Object u = BeanUtilsBean2.getInstance().cloneBean(state.user);
+		b.consume(u);
+	}
+
+	@Benchmark
+	public void mapstruct(CloneState state, Blackhole b) {
+		UserCopyMapper m = UserCopyMapper.INSTANCE;
+		UserForJson u = m.shadowCopy(state.user);
+		b.consume(u);
 	}
 }

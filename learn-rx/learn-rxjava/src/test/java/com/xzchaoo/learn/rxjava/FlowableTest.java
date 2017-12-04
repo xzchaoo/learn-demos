@@ -12,9 +12,10 @@ import io.reactivex.Flowable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
+ * 千万注意,flowable不支持null元素, 遇到这种情况可以考虑用 flatMapSingle 先处理一下
  * created by xzchaoo at 2017/11/17
  *
  * @author xzchaoo
