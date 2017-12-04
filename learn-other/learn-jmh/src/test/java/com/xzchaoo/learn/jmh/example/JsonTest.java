@@ -3,6 +3,7 @@ package com.xzchaoo.learn.jmh.example;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.xzchaoo.learn.jmh.UserForJson;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;

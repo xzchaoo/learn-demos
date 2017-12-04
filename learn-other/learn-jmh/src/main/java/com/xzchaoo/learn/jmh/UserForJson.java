@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.jmh.example;
+package com.xzchaoo.learn.jmh;
 
 import java.util.Date;
 import java.util.List;
