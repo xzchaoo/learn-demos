@@ -14,16 +14,16 @@ public class GroupAndPrice {
 	//TODO 我如何知道 原始的segmentCount, 通过取最后一个的 SegmentNo行吗
 	private final int segmentCount;
 	private final int flightCount;
-	private final int groupId;
+	private final int priceId;
 	private final FlightPrice price;
 	//根据需要 这里可能还需要一些其它的变量, 不过可以用lazy运算
 
-	public GroupAndPrice(int groupId, FlightGroup group, int segmentCount, int flightCount, int groupId, FlightPrice price) {
+	public GroupAndPrice(int groupId, FlightGroup group, int segmentCount, int flightCount, int priceId, FlightPrice price) {
 		this.groupId = groupId;
 		this.group = group;
 		this.segmentCount = segmentCount;
 		this.flightCount = flightCount;
-		this.groupId = groupId;
+		this.priceId = groupId;
 		this.price = price;
 	}
 
@@ -43,8 +43,8 @@ public class GroupAndPrice {
 		return flightCount;
 	}
 
-	public int getgroupId() {
-		return groupId;
+	public int getPriceID() {
+		return priceId;
 	}
 
 	public FlightPrice getPrice() {

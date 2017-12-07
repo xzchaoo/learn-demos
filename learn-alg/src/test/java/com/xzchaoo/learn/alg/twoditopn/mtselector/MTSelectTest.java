@@ -29,7 +29,7 @@ public class MTSelectTest {
 		//1. 将gs分裂成多个gaps, 并初始化一些id
 		List<GroupAndPrice> gaps = new ArrayList<>();
 		int groupId = 0;
-		int groupId = 0;
+		int priceId = 0;
 		//这里还是先假设gaps的大小规模和gs差不多
 		for (FlightGroup g : gs) {
 			int segmentCount = 1;
@@ -104,10 +104,10 @@ public class MTSelectTest {
 		List<FlightGroup> newGs = new ArrayList<>();
 		for (MultiTicketSelectUnit u : units) {
 			for (GroupAndPrice gap : u.getSelectResult()) {
-				if (groupIdSet.add(gap.getgroupId())) {
+				if (groupIdSet.add(gap.getGroupId())) {
 					continue;
 				}
-				if (groupIndexSet.add(gap.getgroupId())) {
+				if (groupIndexSet.add(gap.getGroupId())) {
 					gap.getGroup().getPrices().clear();
 					newGs.add(gap.getGroup());
 				}
@@ -117,10 +117,10 @@ public class MTSelectTest {
 
 		for (MultiTicketSelectUnit u : fullUnits) {
 			for (GroupAndPrice gap : u.getSelectResult()) {
-				if (groupIdSet.add(gap.getgroupId())) {
+				if (groupIdSet.add(gap.getGroupId())) {
 					continue;
 				}
-				if (groupIndexSet.add(gap.getgroupId())) {
+				if (groupIndexSet.add(gap.getGroupId())) {
 					gap.getGroup().getPrices().clear();
 					newGs.add(gap.getGroup());
 				}
