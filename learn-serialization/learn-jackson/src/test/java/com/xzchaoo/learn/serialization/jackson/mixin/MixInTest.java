@@ -1,22 +1,21 @@
-package com.xzchaoo.learn.serialization.jackson.fastxmljackson;
+package com.xzchaoo.learn.serialization.jackson.mixin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.xzchaoo.learn.serialization.jackson.fastxmljackson.entity.SecurityUser;
-import com.xzchaoo.learn.serialization.jackson.fastxmljackson.mixin.SecurityUserMixin;
-import com.xzchaoo.learn.serialization.jackson.fastxmljackson.mixin.SecurityUserMixin2;
 
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created by Administrator on 2017/6/15.
+ * 如果你不能修改现有的entity对象(因此你不能在它们的类文件上加上jackson的注解), 那么你可以用mixin的方式, 来对它们进行定制
+ * Created by xzchaoo on 2017/6/15.
  */
 public class MixInTest {
 	ObjectMapper om;
 
 	@Before
-	public void before(){
+	public void before() {
 		om = new ObjectMapper();
 	}
 
@@ -27,8 +26,8 @@ public class MixInTest {
 		om.registerModule(new SimpleModule() {
 			@Override
 			public void setupModule(SetupContext context) {
-				super.setupModule(context);
 				context.setMixInAnnotations(SecurityUser.class, SecurityUserMixin.class);
+				super.setupModule(context);
 			}
 		});
 

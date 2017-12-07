@@ -26,7 +26,7 @@ public interface UserMapper {
 
 	//@Mapping(source = "numberOfSeats", target = "seatCount")
 	//@Mapping(source = "channels",expression = "")
-	@Mapping(target = "e4",dateFormat = "yyyyMMdd")
+	@Mapping(target = "e4", dateFormat = "yyyyMMdd")
 	User convertUserEntityToUser(UserEntity entity);
 
 	void fillUserEntityToUser(UserEntity entity, @MappingTarget User user);

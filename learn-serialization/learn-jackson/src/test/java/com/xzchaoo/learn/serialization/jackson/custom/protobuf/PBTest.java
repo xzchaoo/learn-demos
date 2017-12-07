@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.serialization.jackson.fastxmljackson.protobuf;
+package com.xzchaoo.learn.serialization.jackson.custom.protobuf;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleDeserializers;

@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.serialization.jackson.fastxmljackson.mixin;
+package com.xzchaoo.learn.serialization.jackson.mixin;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 

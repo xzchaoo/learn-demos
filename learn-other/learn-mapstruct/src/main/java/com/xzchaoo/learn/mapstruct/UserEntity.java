@@ -107,5 +107,9 @@ public class UserEntity {
 	public void setE4(String e4) {
 		this.e4 = e4;
 	}
+
+	public boolean hasE4() {
+		return true;
+	}
 }
 

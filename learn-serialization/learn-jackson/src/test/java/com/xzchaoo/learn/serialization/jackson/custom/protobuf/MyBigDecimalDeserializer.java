@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.serialization.jackson.fastxmljackson.protobuf;
+package com.xzchaoo.learn.serialization.jackson.custom.protobuf;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
