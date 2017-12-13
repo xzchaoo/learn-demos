@@ -34,6 +34,9 @@
 		<module>learn-disruptor</module>
 		<module>learn-jmh</module>
 		<module>learn-jctools</module>
+		<module>learn-cglib</module>
+		<module>learn-javasssist</module>
+		<module>learn-beanshell</module>
 	</modules>
 
 	<dependencies>
