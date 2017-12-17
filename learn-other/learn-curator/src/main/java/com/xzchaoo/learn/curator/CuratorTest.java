@@ -23,7 +23,7 @@ public class CuratorTest {
 	@Before
 	public void before() {
 		cf = CuratorFrameworkFactory.builder()
-			.connectString("127.0.0.1:2181")
+			.connectString("106.14.175.164:12181")
 			.retryPolicy(new RetryNTimes(3, 1000))
 			.build();
 		cf.start();
