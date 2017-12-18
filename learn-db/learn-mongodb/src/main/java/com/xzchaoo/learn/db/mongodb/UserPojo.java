@@ -12,43 +12,45 @@ import java.time.LocalDate;
  * @author zcxu
  */
 public class UserPojo {
-    @BsonId
-    private ObjectId id;
-    @BsonProperty
-    private String name;
-    @BsonProperty
-    private LocalDate birthday;
+	@BsonId
+	private ObjectId id;
 
-    public ObjectId getId() {
-        return id;
-    }
+	@BsonProperty
+	private String name;
 
-    public void setId(ObjectId id) {
-        this.id = id;
-    }
+	@BsonProperty
+	private LocalDate birthday;
 
-    public String getName() {
-        return name;
-    }
+	public ObjectId getId() {
+		return id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setId(ObjectId id) {
+		this.id = id;
+	}
 
-    public LocalDate getBirthday() {
-        return birthday;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    @Override
-    public String toString() {
-        return "UserPojo{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", birthday=" + birthday +
-            '}';
-    }
+	public LocalDate getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(LocalDate birthday) {
+		this.birthday = birthday;
+	}
+
+	@Override
+	public String toString() {
+		return "UserPojo{" +
+			"id=" + id +
+			", name='" + name + '\'' +
+			", birthday=" + birthday +
+			'}';
+	}
 }

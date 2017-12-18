@@ -9,8 +9,8 @@ import com.mongodb.rx.client.MongoClient;
 import com.mongodb.rx.client.MongoClients;
 import com.mongodb.rx.client.MongoCollection;
 import com.mongodb.rx.client.MongoDatabase;
-import com.xzchaoo.learn.db.mongodb.codec.LocalDateCodec;
-import com.xzchaoo.learn.db.mongodb.codec.LocalDateTimeCodec;
+import com.xzchaoo.learn.db.mongodb.mongopojo.codec.LocalDateCodec;
+import com.xzchaoo.learn.db.mongodb.mongopojo.codec.LocalDateTimeCodec;
 
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;

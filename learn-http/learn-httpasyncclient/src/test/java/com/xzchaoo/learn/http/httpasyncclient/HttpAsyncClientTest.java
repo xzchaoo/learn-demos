@@ -86,6 +86,7 @@ public class HttpAsyncClientTest {
 		// by default or for a specific host.
 		connManager.setDefaultConnectionConfig(connectionConfig);
 
+
 		// Configure total max or per route limits for persistent connections
 		// that can be kept in the pool or leased by the connection manager.
 		connManager.setMaxTotal(100);
