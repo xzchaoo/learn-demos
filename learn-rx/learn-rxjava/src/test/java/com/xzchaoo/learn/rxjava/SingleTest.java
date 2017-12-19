@@ -9,7 +9,7 @@ import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.SingleSubject;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 /**
  * created by zcxu at 2017/10/31
@@ -158,5 +158,26 @@ public class SingleTest {
 			System.out.println("失败了");
 		});
 		System.out.println(2);
+	}
+
+	@Test
+	public void test_create() throws InterruptedException {
+		Single.<String>create(se -> {
+			Thread t = new Thread(() -> {
+				System.out.println("睡觉1秒");
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				se.onSuccess("123");
+			});
+			t.setName("haha");
+			t.start();
+		}).doOnSuccess(e -> {
+			//这个回调在触发线程上
+			System.out.println(Thread.currentThread());
+		}).subscribe();
+		Thread.sleep(2000);
 	}
 }

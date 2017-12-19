@@ -50,4 +50,6 @@ public interface UserMapper {
 	}
 
 	UserEntity copy(UserEntity e);
+
+
 }

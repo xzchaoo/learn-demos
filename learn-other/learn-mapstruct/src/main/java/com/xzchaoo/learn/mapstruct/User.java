@@ -15,6 +15,7 @@ public class User {
 	private int id;
 	private String username;
 	private List<String> channels;
+	private List<String> channels2;
 	private LocalDateTime registerAt;
 	private Gender gender;
 	private UserType type;
@@ -100,5 +101,13 @@ public class User {
 
 	public void setE4(LocalDateTime e4) {
 		this.e4 = e4;
+	}
+
+	public List<String> getChannels2() {
+		return channels2;
+	}
+
+	public void setChannels2(List<String> channels2) {
+		this.channels2 = channels2;
 	}
 }

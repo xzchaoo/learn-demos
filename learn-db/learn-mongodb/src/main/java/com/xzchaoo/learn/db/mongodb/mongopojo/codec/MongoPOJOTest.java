@@ -23,6 +23,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 /**
+ * 新版的mongodb支持POJO, 这样可以避免你在POJO于Document文档之前做转换
  * created by zcxu at 2017/10/26
  *
  * @author zcxu
@@ -30,6 +31,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 public class MongoPOJOTest {
 	@Test
 	public void test1() {
+
 		//构建一个复合的Registry
 		CodecRegistry pojoCodecRegistry = fromRegistries(
 			MongoClient.getDefaultCodecRegistry(),//默认的registry

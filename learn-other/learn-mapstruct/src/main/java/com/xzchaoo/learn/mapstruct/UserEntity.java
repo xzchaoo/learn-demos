@@ -12,6 +12,7 @@ public class UserEntity {
 	private String username;
 	private String password;
 	private String channels;
+	private String channels2;
 	private Date registerAt;
 	private String gender;
 	private int userType;
@@ -110,6 +111,14 @@ public class UserEntity {
 
 	public boolean hasE4() {
 		return true;
+	}
+
+	public String getChannels2() {
+		return channels2;
+	}
+
+	public void setChannels2(String channels2) {
+		this.channels2 = channels2;
 	}
 }
 
