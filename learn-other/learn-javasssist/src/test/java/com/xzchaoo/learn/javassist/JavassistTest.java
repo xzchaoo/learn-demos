@@ -9,7 +9,6 @@ import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtField;
 import javassist.CtMethod;
-import javassist.CtPrimitiveType;
 import javassist.NotFoundException;
 import javassist.bytecode.AccessFlag;
 import javassist.expr.ExprEditor;

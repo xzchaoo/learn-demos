@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.db.mongodb;
+package com.xzchaoo.learn.db.mongodb.rx;
 
 
 import com.mongodb.ReadPreference;
@@ -9,6 +9,7 @@ import com.mongodb.rx.client.MongoClient;
 import com.mongodb.rx.client.MongoClients;
 import com.mongodb.rx.client.MongoCollection;
 import com.mongodb.rx.client.MongoDatabase;
+import com.xzchaoo.learn.db.mongodb.UserPojo;
 import com.xzchaoo.learn.db.mongodb.mongopojo.codec.LocalDateCodec;
 import com.xzchaoo.learn.db.mongodb.mongopojo.codec.LocalDateTimeCodec;
 

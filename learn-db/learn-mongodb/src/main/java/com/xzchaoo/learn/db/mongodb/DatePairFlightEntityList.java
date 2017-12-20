@@ -1,7 +1,6 @@
 package com.xzchaoo.learn.db.mongodb;
 
 import org.mongodb.morphia.annotations.Id;
-import org.mongodb.morphia.geo.LineString;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,13 +1,9 @@
 package com.xzchaoo.learn.eclipse.collections;
 
-import com.google.common.collect.Collections2;
-
 import org.eclipse.collections.api.list.MutableList;
 import org.eclipse.collections.api.multimap.list.MutableListMultimap;
 import org.eclipse.collections.impl.factory.Lists;
 import org.junit.Test;
-
-import java.util.stream.Collectors;
 
 /**
  * created by xzchaoo at 2017/11/25

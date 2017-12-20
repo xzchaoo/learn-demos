@@ -1,7 +1,6 @@
 package com.xzchaoo.learn.mapstruct;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 /**
  * @author zcxu

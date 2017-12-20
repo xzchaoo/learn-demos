@@ -1,7 +1,5 @@
 package com.xzchaoo.learn.leetcode;
 
-import java.util.Arrays;
-
 /**
  * created by xzchaoo at 2017/11/26
  *

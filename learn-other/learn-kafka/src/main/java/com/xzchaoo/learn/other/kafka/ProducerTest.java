@@ -20,8 +20,8 @@ public class ProducerTest {
 	public void test1() throws InterruptedException {
 
 		Properties props = new Properties();
-		props.put("bootstrap.servers", "106.14.13.32:19092");
-		props.put("acks", "all");
+		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "106.14.13.32:19092");
+		props.put(ProducerConfig.ACKS_CONFIG, "all");
 		props.put("retries", 0);
 		props.put("batch.size", 16384);
 		props.put("linger.ms", 1);

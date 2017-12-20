@@ -1,6 +1,5 @@
 package com.xzchaoo.learn.disruptor;
 
-import com.lmax.disruptor.EventTranslator;
 import com.lmax.disruptor.EventTranslatorOneArg;
 import com.lmax.disruptor.RingBuffer;
 

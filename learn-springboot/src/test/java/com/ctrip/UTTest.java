@@ -1,8 +1,8 @@
 package com.ctrip;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * created by zcxu at 2017/11/15

@@ -1,9 +1,11 @@
 package com.xzchaoo.learn.rxjava;
 
-import io.reactivex.Single;
+import org.junit.Test;
+
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.junit.Test;
+
+import io.reactivex.Single;
 
 /**
  * created by zcxu at 2017/11/14
