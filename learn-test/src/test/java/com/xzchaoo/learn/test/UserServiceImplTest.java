@@ -2,7 +2,6 @@ package com.xzchaoo.learn.test;
 
 import org.junit.Test;
 import org.mockito.ArgumentMatcher;
-import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 

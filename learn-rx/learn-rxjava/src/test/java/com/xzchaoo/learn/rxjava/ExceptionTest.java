@@ -1,7 +1,8 @@
 package com.xzchaoo.learn.rxjava;
 
-import io.reactivex.Single;
 import org.junit.Test;
+
+import io.reactivex.Single;
 
 /**
  * created by zcxu at 2017/11/20

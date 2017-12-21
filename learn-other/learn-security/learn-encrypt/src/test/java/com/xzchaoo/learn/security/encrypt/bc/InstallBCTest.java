@@ -9,10 +9,7 @@ import java.util.Iterator;
 
 import javax.crypto.Cipher;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * 这是手动安装法, 另外一种需要修改java的政策文件

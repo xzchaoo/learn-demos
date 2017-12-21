@@ -22,8 +22,9 @@ public class RedisPoolTest {
 
 		//或使用
 		try ( Jedis jedis2 = pool.getResource() ) {
-			jedis.ping();
+			jedis2.ping();
 		}
+		//关闭池
 		pool.destroy();
 	}
 }

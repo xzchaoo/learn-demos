@@ -10,9 +10,6 @@ import org.junit.Test;
 
 import java.lang.reflect.Method;
 
-import javax.tools.JavaCompiler;
-import javax.tools.ToolProvider;
-
 import static org.junit.Assert.*;
 
 /**

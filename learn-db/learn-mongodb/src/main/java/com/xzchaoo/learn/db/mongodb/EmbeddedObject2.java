@@ -1,7 +1,5 @@
 package com.xzchaoo.learn.db.mongodb;
 
-import org.mongodb.morphia.annotations.Embedded;
-
 public class EmbeddedObject2 {
     private int int1;
     private float float1;

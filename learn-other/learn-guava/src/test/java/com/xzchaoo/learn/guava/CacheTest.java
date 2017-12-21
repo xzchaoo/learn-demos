@@ -8,7 +8,6 @@
 
 package com.xzchaoo.learn.guava;
 
-import com.google.common.base.Ticker;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;

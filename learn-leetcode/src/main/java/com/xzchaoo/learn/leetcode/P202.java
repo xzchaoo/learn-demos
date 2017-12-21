@@ -2,8 +2,6 @@ package com.xzchaoo.learn.leetcode;
 
 import org.junit.Test;
 
-import java.util.Set;
-
 /**
  * created by xzchaoo at 2017/11/28
  *

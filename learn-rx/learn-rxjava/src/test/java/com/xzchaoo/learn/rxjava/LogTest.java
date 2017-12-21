@@ -10,8 +10,7 @@ import java.util.Map;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * @author zcxu
