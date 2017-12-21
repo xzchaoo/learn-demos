@@ -1,0 +1,10 @@
+{"namespace": "com.xzchaoo.learn.serialization.avro.generated",
+ "type": "record",
+ "name": "User",
+ "doc":"我是描述啊哈哈哈",
+ "fields": [
+     {"name": "name", "type": "string","doc":"我是描述 哈哈 field可以有default值"},
+     {"name": "favorite_number",  "type": ["int", "null"]},
+     {"name": "favorite_color", "type": ["string", "null"]}
+ ]
+}

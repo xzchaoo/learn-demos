@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package tutorial;
+
+option java_package = "com.xzhcaoo.learn";
+option java_outer_classname = "UserProtos";
+
+message User {
+    int64 id = 1;
+    string username = 2;
+    LocalDateWrapper birthday = 3;
+}
+
+message LocalDateWrapper {
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
+}
+
+message Address {
+    string countryCode = 1;
+    string cityCode = 2;
+}
