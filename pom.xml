@@ -26,6 +26,7 @@
 		<module>learn-alg</module>
 		<module>learn-leetcode</module>
 		<module>learn-rx</module>
+		<module>learn-netty</module>
 	</modules>
 
 	<parent>

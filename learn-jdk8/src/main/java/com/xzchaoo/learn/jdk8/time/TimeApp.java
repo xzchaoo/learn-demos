@@ -16,6 +16,11 @@ import static org.junit.Assert.assertEquals;
  * Created by Administrator on 2017/3/21.
  */
 public class TimeApp {
+	@Test
+	public void test_parse() {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-M-d");
+		System.out.println(dtf.parse("2017-11-23", LocalDate::from));
+	}
 
 	@Test
 	public void test_LocalTime() {

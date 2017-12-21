@@ -20,7 +20,6 @@
 		<module>learn-fluent-hc</module>
 		<module>learn-feign</module>
 		<module>learn-retrofit</module>
-		<module>learn-netty</module>
 		<module>learn-ribbon</module>
 		<module>learn-jetty</module>
 	</modules>

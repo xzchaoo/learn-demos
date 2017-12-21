@@ -25,11 +25,11 @@ public class ConsumerTest {
 		props.put("enable.auto.commit", "true");
 		props.put("auto.commit.interval.ms", "1000");
 		props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-		props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-		KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
+		props.put("value.deserializer", "org.apache.kafka.common.serialization.LongDeserializer");
+		KafkaConsumer<String, Long> consumer = new KafkaConsumer<>(props);
 		//手动拉模式
 		//consumer.subscribe(Arrays.asList("test"));
-		consumer.subscribe(Arrays.asList("test"), new ConsumerRebalanceListener() {
+		consumer.subscribe(Arrays.asList("WordsWithCountsTopic"), new ConsumerRebalanceListener() {
 			@Override
 			public void onPartitionsRevoked(Collection<TopicPartition> partitions) {
 
@@ -41,8 +41,8 @@ public class ConsumerTest {
 			}
 		});
 		while (true) {
-			ConsumerRecords<String, String> records = consumer.poll(100);
-			for (ConsumerRecord<String, String> record : records) {
+			ConsumerRecords<String, Long> records = consumer.poll(100);
+			for (ConsumerRecord<String, Long> record : records) {
 				System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
 			}
 		}
