@@ -37,6 +37,7 @@
 		<module>learn-cglib</module>
 		<module>learn-javasssist</module>
 		<module>learn-beanshell</module>
+		<module>learn-rabbitmq</module>
 	</modules>
 
 	<dependencies>
