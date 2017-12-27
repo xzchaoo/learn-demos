@@ -2,6 +2,7 @@ package com.xzchaoo.learn.rxjava.examples.agg;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -19,15 +20,17 @@ import io.reactivex.schedulers.Schedulers;
  */
 class SearchContext {
 	public List<String> engines;
+	public Object result;
 }
 
 public class AggTest {
 	@Test
 	public void test() throws InterruptedException {
+		Object requestDTO = new ArrayList<>();
 		SearchContext ctx = new SearchContext();
 		Disposable d = Single.just(ctx)
 			.doOnSuccess(this::doSearchControl)
-			.flatMapPublisher(this::splitToSubContexts)
+			.flatMapPublisher(this::splitToSubContexts)//10:10 0 0
 			.observeOn(Schedulers.io())
 			.flatMapSingle(this::doConcurrentSearch, true, 8)
 			.observeOn(Schedulers.computation())
@@ -42,6 +45,7 @@ public class AggTest {
 				//error
 				error.printStackTrace();
 			});
+		System.out.println("我在这里");
 		while (!d.isDisposed()) {
 			Thread.sleep(1000);
 		}

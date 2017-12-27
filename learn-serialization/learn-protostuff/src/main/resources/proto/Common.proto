@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package tutorial;
+
+option java_package = "com.xzhcaoo.learn";
+option java_outer_classname = "CommonProtos";
+
+
+message LocalDateWrapper {
+    optional int32 year = 1;
+    optional int32 month = 2;
+    optional int32 day = 3;
+}

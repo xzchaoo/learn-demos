@@ -17,6 +17,7 @@
 		<module>learn-protobuf</module>
 		<module>learn-gson</module>
 		<module>learn-avro</module>
+		<module>learn-protostuff</module>
 	</modules>
 
 </project>

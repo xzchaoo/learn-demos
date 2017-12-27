@@ -1,8 +1,13 @@
 package com.xzchaoo.learn.demos.serialization.protobuf;
 
-import com.fasterxml.jackson.databind.module.SimpleDeserializers;
+import com.fasterxml.jackson.databind.BeanDescription;
+import com.fasterxml.jackson.databind.DeserializationConfig;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.databind.SerializationConfig;
+import com.fasterxml.jackson.databind.deser.BeanDeserializerModifier;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.fasterxml.jackson.databind.module.SimpleSerializers;
+import com.fasterxml.jackson.databind.ser.BeanSerializerModifier;
 import com.fasterxml.jackson.dataformat.protobuf.ProtobufMapper;
 import com.fasterxml.jackson.dataformat.protobuf.schema.NativeProtobufSchema;
 import com.fasterxml.jackson.dataformat.protobuf.schema.ProtobufSchema;
@@ -10,6 +15,7 @@ import com.fasterxml.jackson.dataformat.protobuf.schemagen.ProtobufSchemaGenerat
 import com.xzhcaoo.learn.LocalDateDeserializer;
 import com.xzhcaoo.learn.LocalDateSerializer;
 import com.xzhcaoo.learn.User;
+import com.xzhcaoo.learn.User2;
 import com.xzhcaoo.learn.UserProtos;
 
 import org.junit.Test;
@@ -42,22 +48,32 @@ public class ProtobufTest {
 		pm.registerModule(new SimpleModule() {
 			@Override
 			public void setupModule(SetupContext context) {
-				SimpleSerializers sss = new SimpleSerializers();
-				sss.addSerializer(LocalDate.class, new LocalDateSerializer());
-				context.addSerializers(sss);
-				SimpleDeserializers sds = new SimpleDeserializers();
-				sds.addDeserializer(LocalDate.class, new LocalDateDeserializer());
-				context.addDeserializers(sds);
-//				context.addTypeModifier(new TypeModifier() {
-//					@Override
-//					public JavaType modifyType(JavaType type, Type jdkType, TypeBindings context, TypeFactory typeFactory) {
-//						if (type.getRawClass() == LocalDate.class) {
-//							return typeFactory.constructType(String.class);
-//						}
-//						System.out.println("heresdfsdfdsf");
-//						return type;
-//					}
-//				});
+//				SimpleSerializers sss = new SimpleSerializers();
+//				sss.addSerializer(LocalDate.class, new LocalDateSerializer());
+//				context.addSerializers(sss);
+//				SimpleDeserializers sds = new SimpleDeserializers();
+//				sds.addDeserializer(LocalDate.class, new LocalDateDeserializer());
+//				context.addDeserializers(sds);
+
+				context.addBeanSerializerModifier(new BeanSerializerModifier() {
+					@Override
+					public JsonSerializer<?> modifySerializer(SerializationConfig config, BeanDescription beanDesc, JsonSerializer<?> serializer) {
+						if (beanDesc.getBeanClass() == LocalDate.class) {
+							return new LocalDateSerializer();
+						}
+						return super.modifySerializer(config, beanDesc, serializer);
+					}
+				});
+				context.addBeanDeserializerModifier(new BeanDeserializerModifier() {
+					@Override
+					public JsonDeserializer<?> modifyDeserializer(DeserializationConfig config, BeanDescription beanDesc, JsonDeserializer<?> deserializer) {
+						if (beanDesc.getBeanClass() == LocalDate.class) {
+							return new LocalDateDeserializer();
+						}
+						return super.modifyDeserializer(config, beanDesc, deserializer);
+					}
+				});
+
 //				context.addBeanSerializerModifier(new BeanSerializerModifier() {
 //					@Override
 //					public JsonSerializer<?> modifySerializer(SerializationConfig config, BeanDescription beanDesc, JsonSerializer<?> serializer) {
@@ -70,11 +86,13 @@ public class ProtobufTest {
 //						return super.modifySerializer(config, beanDesc, serializer);
 //					}
 //				});
+
 				super.setupModule(context);
 			}
 		});
 		ProtobufSchemaGenerator gen = new ProtobufSchemaGenerator();
 		pm.acceptJsonFormatVisitor(User.class, gen);
+		pm.acceptJsonFormatVisitor(User2.class, gen);
 		ProtobufSchema schemaWrapper = gen.getGeneratedSchema();
 		NativeProtobufSchema nativeProtobufSchema = schemaWrapper.getSource();
 		String asProtofile = nativeProtobufSchema.toString();

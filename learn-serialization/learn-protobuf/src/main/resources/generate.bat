@@ -1,1 +1,1 @@
-.\protoc --java_out=../java/ *.proto
+.\protoc -I=. --java_out=../java/ *.proto

@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatVisitorWrapper;
-import com.xzhcaoo.learn.LocalDateWrapper;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -31,6 +30,7 @@ public class LocalDateSerializer extends JsonSerializer<LocalDate> {
 	public void acceptJsonFormatVisitor(JsonFormatVisitorWrapper visitor, JavaType type) throws JsonMappingException {
 		//super.acceptJsonFormatVisitor(visitor, type);
 		//visitor.expectObjectFormat();
-		visitor.getProvider().findValueSerializer(visitor.getProvider().constructType(LocalDateWrapper.class)).acceptJsonFormatVisitor(visitor, type);
+		JavaType ldwt = visitor.getProvider().constructType(LocalDateWrapper.class);
+		visitor.getProvider().findValueSerializer(ldwt).acceptJsonFormatVisitor(visitor, type);
 	}
 }

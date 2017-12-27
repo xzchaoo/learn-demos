@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+import "Common.proto";
+
+package tutorial;
+
+option java_package = "com.xzhcaoo.learn";
+option java_outer_classname = "UserProtos";
+
+message User {
+    optional int64 id = 1;
+    optional string username = 2;
+    optional LocalDateWrapper birthday = 3;
+}
+
+message Address {
+    optional string countryCode = 1;
+    optional string cityCode = 2;
+}
