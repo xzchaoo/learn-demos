@@ -1,11 +1,44 @@
 package com.xzchaoo.learn.security.encrypt;
 
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.junit.Test;
+
+import java.security.Provider;
+import java.security.Security;
+import java.util.Iterator;
+
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 public class SimplePolicyTest {
-	public static void main(String[] args) throws Exception {
+
+	@Test
+	public void test_provider_capacities() {
+		Security.addProvider(new BouncyCastleProvider());
+		Provider provider = Security.getProvider("BC");
+
+		Iterator it = provider.keySet().iterator();
+
+		while (it.hasNext()) {
+			String entry = (String) it.next();
+
+			// this indicates the entry actually refers to another entry
+
+			if (entry.startsWith("Alg.Alias.")) {
+				entry = entry.substring("Alg.Alias.".length());
+			}
+
+			String factoryClass = entry.substring(0, entry.indexOf('.'));
+			String name = entry.substring(factoryClass.length() + 1);
+
+			System.out.println(factoryClass + ": " + name);
+		}
+
+	}
+
+	@Test
+	public void test_policy() throws Exception {
 		byte[] data = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07};
 
 		// create a 64 bit secret key from raw bytes
