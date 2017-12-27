@@ -22,18 +22,8 @@ import java.util.concurrent.atomic.AtomicLong;
 class Helper {
 	public static double process(FooEvent e) {
 		double sum = 0;
-		for (int i = 0; i < 100; ++i) {
-			switch (i % 3) {
-				case 0:
-					sum += Math.sin(e.getValue());
-					break;
-				case 1:
-					sum += Math.cos(e.getValue());
-					break;
-				case 2:
-					sum += Math.sqrt(e.getValue());
-					break;
-			}
+		for (int i = 0; i < 1000; ++i) {
+			sum += Math.sin(e.getValue());
 		}
 		return sum;
 	}
@@ -43,7 +33,7 @@ public class PerformanceTest {
 	private int n = 1000000;
 
 	@Test
-	public void test1() throws InterruptedException {
+	public void test_singleThread() {
 		AtomicLong sum = new AtomicLong(0);
 		AtomicLong counter = new AtomicLong(0);
 		long begin = System.currentTimeMillis();
@@ -60,11 +50,11 @@ public class PerformanceTest {
 	public void test_abq() throws InterruptedException {
 		for (int k = 0; k < 100; ++k) {
 			ArrayBlockingQueue<FooEvent> abq = new ArrayBlockingQueue<FooEvent>(10000);
-			ABQConsumer consumer = new ABQConsumer(abq, new AtomicLong());
 			int threads = 6;
 			ExecutorService es = Executors.newFixedThreadPool(threads);
+			AtomicLong counter = new AtomicLong();
 			for (int i = 0; i < threads; ++i) {
-				es.execute(consumer);
+				es.execute(new ABQConsumer(abq, counter));
 			}
 			Thread.sleep(500);
 

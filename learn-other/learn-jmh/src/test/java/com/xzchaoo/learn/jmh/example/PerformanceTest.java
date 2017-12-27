@@ -1,5 +1,6 @@
 package com.xzchaoo.learn.jmh.example;
 
+import com.lmax.disruptor.BlockingWaitStrategy;
 import com.lmax.disruptor.BusySpinWaitStrategy;
 import com.lmax.disruptor.EventFactory;
 import com.lmax.disruptor.EventHandler;
@@ -22,6 +23,7 @@ import org.openjdk.jmh.annotations.Warmup;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
+import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -29,6 +31,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
 
 import io.reactivex.Flowable;
+import io.reactivex.processors.PublishProcessor;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -39,7 +42,7 @@ import io.reactivex.schedulers.Schedulers;
 class Helper {
 	public static double process(FooEvent e) {
 		double sum = 0;
-		for (int i = 0; i < 100; ++i) {
+		for (int i = 0; i < 300; ++i) {
 			switch (i % 3) {
 				case 0:
 					sum += Math.sin(e.getValue());
@@ -56,12 +59,17 @@ class Helper {
 	}
 }
 
-@BenchmarkMode({Mode.Throughput, Mode.SingleShotTime})
-@Warmup(iterations = 5, time = 2)
-@Measurement(iterations = 5, time = 6)
+@BenchmarkMode({Mode.Throughput})
+@Warmup(iterations = 1, time = 5)
+@Measurement(iterations = 2, time = 5)
 @Fork(1)
 public class PerformanceTest {
-	public static final int n = 1000000;
+	public static final int n = 100000;
+
+	@Benchmark
+	public void single() {
+		Helper.process(new FooEvent(n));
+	}
 
 	@Benchmark
 	public void test1() throws InterruptedException {
@@ -80,16 +88,15 @@ public class PerformanceTest {
 		ArrayBlockingQueue<FooEvent> abq;
 		ExecutorService es;
 		AtomicLong counter;
-		int threads = 12;
+		int threads = 6;
 
 		@Setup
 		public void setup() {
-			abq = new ArrayBlockingQueue<FooEvent>(16384);
+			abq = new ArrayBlockingQueue<FooEvent>(32768);
 			es = Executors.newFixedThreadPool(threads);
 			counter = new AtomicLong();
-			ABQConsumer consumer = new ABQConsumer(abq, counter);
 			for (int i = 0; i < threads; ++i) {
-				es.execute(consumer);
+				es.execute(new ABQConsumer(abq, counter));
 			}
 		}
 
@@ -117,9 +124,9 @@ public class PerformanceTest {
 	public void test_rx() throws Exception {
 		AtomicLong counter = new AtomicLong(0);
 		AtomicLong sum = new AtomicLong(0);
-		CountDownLatch cdl = new CountDownLatch(12);
-		Subscriber<FooEvent>[] ss = new Subscriber[12];
-		for (int i = 0; i < 12; ++i) {
+		CountDownLatch cdl = new CountDownLatch(6);
+		Subscriber<FooEvent>[] ss = new Subscriber[6];
+		for (int i = 0; i < 6; ++i) {
 			ss[i] = new Subscriber<FooEvent>() {
 				@Override
 				public void onSubscribe(Subscription s) {
@@ -146,18 +153,68 @@ public class PerformanceTest {
 		}
 		Flowable.range(1, n)
 			.map(FooEvent::new)
-			.parallel(12)
+			.parallel(6)
 			.runOn(Schedulers.computation())
 			.subscribe(ss);
+		cdl.await();
+	}
+
+	@Benchmark
+	public void test_rx2() throws Exception {
+		AtomicLong counter = new AtomicLong(0);
+		AtomicLong sum = new AtomicLong(0);
+		CountDownLatch cdl = new CountDownLatch(6);
+		Subscriber<List<FooEvent>>[] ss = new Subscriber[6];
+		for (int i = 0; i < 6; ++i) {
+			ss[i] = new Subscriber<List<FooEvent>>() {
+				@Override
+				public void onSubscribe(Subscription s) {
+					s.request(Integer.MAX_VALUE);
+				}
+
+				@Override
+				public void onNext(List<FooEvent> list) {
+					for (FooEvent e : list) {
+						Helper.process(e);
+						counter.incrementAndGet();
+						sum.addAndGet(e.getValue());
+					}
+				}
+
+				@Override
+				public void onError(Throwable t) {
+
+				}
+
+				@Override
+				public void onComplete() {
+					cdl.countDown();
+				}
+			};
+		}
+		PublishProcessor<Integer> objectPublishProcessor = PublishProcessor.create();
+		objectPublishProcessor
+			.map(FooEvent::new)
+			.buffer(10)
+			.parallel(6)
+			.runOn(Schedulers.computation())
+			.subscribe(ss);
+		new Thread(() -> {
+
+			for (int i = 1; i <= n; ++i) {
+				objectPublishProcessor.onNext(i);
+			}
+			objectPublishProcessor.onComplete();
+		}).start();
 		cdl.await();
 	}
 
 
 	@State(Scope.Benchmark)
 	public static class DState {
-		int threads = 12;
+		int threads = 6;
 		ExecutorService es;
-		int bufferSize = 131072;
+		int bufferSize = 32768;
 		FooEventFactory lef = new FooEventFactory();
 		private Disruptor<FooEvent> d;
 		private AtomicLong counter;
@@ -169,6 +226,7 @@ public class PerformanceTest {
 			es = Executors.newFixedThreadPool(threads);
 			//YieldingWaitStrategy BusySpinWaitStrategy
 			d = new Disruptor<>(lef, bufferSize, es, ProducerType.SINGLE, new BusySpinWaitStrategy());
+			//d = new Disruptor<>(lef, bufferSize, es, ProducerType.SINGLE, new BlockingWaitStrategy());
 			counter = new AtomicLong();
 //			d.handleEventsWith(
 //				new FooEventHandler(counter)
