@@ -12,7 +12,7 @@ import io.reactivex.Flowable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
  * 千万注意,flowable不支持null元素, 遇到这种情况可以考虑用 flatMapSingle 先处理一下
@@ -27,6 +27,15 @@ public class FlowableTest {
 
 	private static void mark(String tag) {
 		System.out.println(tag + " " + tname());
+	}
+
+	@Test
+	public void test2() {
+		Flowable.using(
+			() -> 1,
+			source -> Flowable.range(1, source),
+			source -> {
+			});
 	}
 
 	@Test
