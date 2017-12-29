@@ -45,7 +45,7 @@ public class AggTest {
 				//error
 				error.printStackTrace();
 			});
-		System.out.println("我在这里");
+		System.out.println("请求是异步的 所以马上就会执行到这里 不会阻塞在上面");
 		while (!d.isDisposed()) {
 			Thread.sleep(1000);
 		}

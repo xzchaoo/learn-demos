@@ -6,10 +6,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.reactivex.Single;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.SingleSubject;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 /**
  * created by zcxu at 2017/10/31
@@ -26,25 +27,26 @@ public class SingleTest {
 	}
 
 	@Test
-	public void test_lifecycle() {
-		Single.create(se -> {
+	public void test_lifecycle() throws InterruptedException {
+		Disposable ss = Single.create(se -> {
 			//create的执行线程 默认是当前线程, 如果调用了 subscribeOn 那么就是指定的线程
-			mark("1");
-			Thread.sleep(500);
-			se.onSuccess("ok");
+			mark("create 1");
+			se.onError(new RuntimeException());
+			//Thread.sleep(500);
+			//se.onSuccess("ok");
 		}).subscribeOn(Schedulers.io())
 			.doAfterTerminate(() -> {
 				//terminal只会在 onError 和 onSuccess 之后执行, onDispose 是不执行的!
-				mark("2");
+				mark("dat 2");
 			})
 			.doAfterTerminate(() -> {
-				mark("6");//6比2早 越晚注册越早执行
+				mark("dat 6");//6比2早 越晚注册越早执行
 			})
 			.doFinally(() -> {
-				mark("7");//finally早于terminal finally会在 onError onSuccess onDispose 后执行
+				mark("finally 7");//finally早于terminal finally会在 onError onSuccess onDispose 后执行
 			})
 			.doFinally(() -> {
-				mark("8");//8比7早
+				mark("finally 8");//8比7早
 			})
 			.doOnSuccess(e -> {
 				mark("3");
@@ -53,9 +55,22 @@ public class SingleTest {
 			.doOnSuccess(e -> {
 				mark("4");
 			})
+			.doOnDispose(() -> {
+				System.out.println("dispose了");
+			})
 			.doOnSuccess(e -> {
 				mark("5");
-			}).blockingGet();
+			})
+			.doFinally(() -> {
+				mark("finally 9");//8比7早
+			}).doOnError(e->{
+				System.out.println("error了");
+			})
+			.subscribe();
+		System.out.println("完");
+		Thread.sleep(23);
+		ss.dispose();
+		System.out.println("zheli");
 	}
 
 	@Test

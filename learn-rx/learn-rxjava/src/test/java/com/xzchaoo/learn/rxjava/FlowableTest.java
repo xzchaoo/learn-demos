@@ -31,7 +31,7 @@ public class FlowableTest {
 
 	@Test
 	public void test_flatMapSingle() throws InterruptedException {
-		//flatMap的结果是否保持有序?
+		//flatMap的结果是否保持有序? 答案: 是无序的 flatMap的结果会交叉, 但保证线程安全
 		Flowable.just(1L, 2L)
 			.flatMapSingle(x -> {
 				if (x == 1) {
