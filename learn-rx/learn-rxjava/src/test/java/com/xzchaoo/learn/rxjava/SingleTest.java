@@ -13,6 +13,28 @@ import io.reactivex.subjects.SingleSubject;
 import static org.junit.Assert.assertTrue;
 
 /**
+ * 待学习
+ * cache
+ * compose
+ * concatMap
+ * debounce
+ * delay
+ * groupJoin
+ * lift
+ * parallel
+ * ParallelFlowable
+ * repeat
+ * replay
+ * ConnectableFlowable
+ * publish
+ * rebatchRequests
+ * throttleFirst
+ * share
+ * <p>
+ * join
+ * 左右两边发射出的元素各有一个生命时间, 在它生命时间结束之前
+ * 和能另外一边发射的还未过期的元素进行组合
+ * <p>
  * created by zcxu at 2017/10/31
  *
  * @author zcxu
