@@ -5,10 +5,12 @@ import org.junit.Test;
 import java.time.Duration;
 import java.util.function.Consumer;
 
+import reactor.core.Disposable;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.MonoSink;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * created by xzchaoo at 2017/12/4
@@ -16,6 +18,16 @@ import static org.junit.Assert.*;
  * @author xzchaoo
  */
 public class MonoTest {
+	@Test
+	public void test_empty() {
+		//注意这里会调用success
+		Mono.empty()
+			.doOnSuccess(e -> {
+				assertThat(e).isNull();
+				System.out.println("success " + e);
+			}).block();
+	}
+
 	@Test
 	public void test_just() {
 		//mono相当于rxjava种的maybe
@@ -45,5 +57,25 @@ public class MonoTest {
 		}).start()).map(String::toUpperCase)
 			.block();
 		assertEquals("A", s);
+	}
+
+	@Test
+	public void test_create2() throws InterruptedException {
+		Mono<String> m = Mono.create(ms -> {
+			Thread t = new Thread(() -> {
+				System.out.println("线程执行了");
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				ms.success("a");
+			});
+			t.start();
+			ms.onDispose(t::interrupt);
+		});
+		Disposable d = m.subscribe();
+		Thread.sleep(10);
+		d.dispose();
 	}
 }

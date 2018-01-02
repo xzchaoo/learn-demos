@@ -2,6 +2,7 @@ package com.xzchaoo.learn.rx.reactor;
 
 import org.junit.Test;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -12,7 +13,8 @@ import java.util.function.Consumer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.SynchronousSink;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * created by xzchaoo at 2017/12/4
@@ -20,6 +22,20 @@ import static org.junit.Assert.*;
  * @author xzchaoo
  */
 public class FluxTest {
+	@Test
+	public void test_next() {
+		//next就是返回第一个元素
+		assertThat(Flux.just(1, 2, 3).next().block()).isEqualTo(1);
+	}
+
+	@Test
+	public void test_then() {
+		//会忽略所有元素 直到complete
+		Flux.interval(Duration.ofSeconds(1)).take(3).then().doOnSuccess(v -> {
+			System.out.println("success");
+		}).block();
+	}
+
 	@Test
 	public void test_error_1() {
 		int r = Flux.<Integer>error(new RuntimeException())
