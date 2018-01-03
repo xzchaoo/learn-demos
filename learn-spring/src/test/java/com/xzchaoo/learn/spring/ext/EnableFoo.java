@@ -15,6 +15,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(FooSelector.class)
+@Import(FooImportBeanDefinitionRegistrar.class)
 public @interface EnableFoo {
+	String value() default "";
 }

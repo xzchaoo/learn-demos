@@ -67,6 +67,7 @@ public class CacheTest {
 		assertEquals(1, c.size());
 		assertEquals(1, c.getIfPresent(1).intValue());
 		Thread.sleep(200);
+		//需要手动清理 cache背后并没有线程自动清理
 		c.cleanUp();
 		assertEquals(0, c.size());
 	}
@@ -99,6 +100,7 @@ public class CacheTest {
 			}
 		}).start();
 		Thread.sleep(2000);
+		System.out.println(lc.getIfPresent(1));
 		System.out.println(lc.getUnchecked(1));
 		//将缓存转成并发Map
 		lc.asMap();

@@ -23,6 +23,7 @@
 		<module>learn-spring-data-jpa-batch</module>
 		<module>learn-spring-data-mongodb</module>
 		<module>learn-sqlite</module>
+		<module>learn-redis-lettuce</module>
 	</modules>
 
 

@@ -15,6 +15,7 @@ import reactor.core.publisher.SynchronousSink;
 import static org.junit.Assert.*;
 
 /**
+ * 比较麻烦的是reactor不允许抛出checked异常
  * created by xzchaoo at 2017/12/4
  *
  * @author xzchaoo

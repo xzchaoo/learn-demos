@@ -4,12 +4,15 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.WeakHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
+import io.reactivex.flowables.ConnectableFlowable;
+import io.reactivex.processors.PublishProcessor;
 import io.reactivex.schedulers.Schedulers;
 
 import static org.junit.Assert.*;
@@ -27,6 +30,44 @@ public class FlowableTest {
 
 	private static void mark(String tag) {
 		System.out.println(tag + " " + tname());
+	}
+
+	@Test
+	public void test_publish() throws InterruptedException {
+//		Flowable<Integer> f = Flowable.create(se -> {
+//			System.out.println("doCreate");
+//			se.onNext(1);
+//			se.onNext(2);
+//			se.onNext(3);
+//			se.onComplete();
+//		}, BackpressureStrategy.BUFFER);
+		PublishProcessor<Integer> pp = PublishProcessor.create();
+		pp.onNext(1);
+
+		Flowable<Integer> f = Flowable.interval(450, TimeUnit.MILLISECONDS)
+			.map(x -> x.intValue() + 1);
+		//f.map(x -> x * x).observeOn(Schedulers.io()).forEach(System.out::println);
+		ConnectableFlowable<Integer> c = f.publish();
+		c.observeOn(Schedulers.computation()).map(x -> 0).doOnComplete(() -> {
+			System.out.println("complete");
+		}).forEach(System.out::println);
+		Thread.sleep(1000);
+//		Flowable<Integer> ff = c.autoConnect();
+		Flowable<Integer> ff = c.refCount();
+		ff.limit(1).observeOn(Schedulers.io()).forEach(System.out::println);
+		ff.limit(1).observeOn(Schedulers.io()).forEach(System.out::println);
+		ff.limit(1).observeOn(Schedulers.io()).forEach(System.out::println);
+		//c.connect();
+		Thread.sleep(1000);
+		ff.limit(1).observeOn(Schedulers.io()).forEach(System.out::println);
+		ff.limit(1).observeOn(Schedulers.io()).forEach(System.out::println);
+		ff.limit(1).observeOn(Schedulers.io()).forEach(System.out::println);
+		System.out.println("asdf");
+//		ff.observeOn(Schedulers.io()).forEach(System.out::println);
+//		ff.observeOn(Schedulers.io()).forEach(System.out::println);
+//		ff.observeOn(Schedulers.io()).forEach(System.out::println);
+		//c.connect();
+		Thread.sleep(1000);
 	}
 
 	@Test
@@ -176,15 +217,15 @@ public class FlowableTest {
 	}
 
 	@Test
-	public void test_merged() {
+	public void test_merge() {
 		//将两个F合并起来发射, 这个过程是线程安全的
 		Flowable<Integer> f1 = Flowable.<Integer>create(se -> {
 			for (int i = 0; i < 1000; ++i) {
 				se.onNext(i);
-				Thread.sleep(1);
+				//Thread.sleep(1);
 			}
 			se.onComplete();
-		}, BackpressureStrategy.MISSING)
+		}, BackpressureStrategy.BUFFER)
 			.subscribeOn(Schedulers.io());
 		AtomicInteger ai = new AtomicInteger(0);
 		Flowable.merge(f1, f1)
