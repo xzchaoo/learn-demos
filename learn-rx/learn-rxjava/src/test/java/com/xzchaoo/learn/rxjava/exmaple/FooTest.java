@@ -8,44 +8,43 @@
 
 package com.xzchaoo.learn.rxjava.exmaple;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Flowable;
 import io.reactivex.Single;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.disposables.Disposable;
 
 public class FooTest {
-	@Ignore
+	private void sleepUntil(Disposable d) {
+		while (!d.isDisposed()) {
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				break;
+			}
+		}
+	}
+
 	@Test
 	public void test2() throws InterruptedException {
-		Flowable.range(0, 10)
-			.flatMap(e -> {
-				return Flowable.interval(1000, TimeUnit.MILLISECONDS).map(x -> e);
-				//最多允许4个 F 并发对外发射
-			}, true, 4)
-			.doOnNext(e -> {
-				System.out.println(e);
-			})
-			.subscribe();
-		Thread.sleep(100000);
-	}
-	@Ignore
-	@Test
-	public void test() throws InterruptedException {
-		Flowable.range(0, 10)
+		//一共有10个元素
+		long begin = System.currentTimeMillis();
+		Disposable d = Flowable.range(0, 10)
 			.flatMapSingle(e -> {
-
-				return Single.just(e).observeOn(Schedulers.io()).doOnSuccess(e2 -> {
-					System.out.println("开始处理");
-					Thread.sleep(5000);
-					System.out.println("结束处理");
-				});
-
+				//每个元素需要处理1秒
+				//return Single.just(e).delay(1000, TimeUnit.MILLISECONDS);
+				return Single.timer(1, TimeUnit.SECONDS).map(ignore -> e);
+				//最多允许4个 S 并发对外发射
 			}, true, 4)
-			.subscribe();
-		Thread.sleep(100000);
+			.doOnNext(System.out::println)
+			.toList()
+			.subscribe(list -> {
+				System.out.println("我是全部的结果 " + list);
+			});
+		sleepUntil(d);
+		System.out.println("耗时=" + (System.currentTimeMillis() - begin));
 	}
+
 }

@@ -20,7 +20,6 @@ public class ConfigTest {
 		Config conf = ConfigFactory.load();
 		assertEquals(1, conf.getInt("a"));
 		assertEquals(22, conf.getInt("b"));
-
 		//如果属性不存在会抛出异常 因此所有配合必须在配置文件里提供值
 		try {
 			conf.getInt("c");

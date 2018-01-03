@@ -1,4 +1,4 @@
-package config;
+package com.xzchaoo.learn.config;
 
 
 import com.netflix.archaius.ConfigProxyFactory;
@@ -81,7 +81,7 @@ public class ConfigApp {
 
 		CompositeConfig cfg = DefaultCompositeConfig.builder()
 			.withConfig("dyn", dyn)
-			.withConfig("config", config)
+			.withConfig("com/xzchaoo/learn/config", config)
 			.withConfig("lib", lib)
 			.withConfig("app", app)
 			.withConfig("props", MapConfig.from(props))
