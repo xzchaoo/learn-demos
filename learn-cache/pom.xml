@@ -15,6 +15,7 @@
 	<modules>
 		<module>learn-ehcache2</module>
 		<module>learn-ehcache3</module>
+		<module>learn-caffeine</module>
 	</modules>
 
 

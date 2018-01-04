@@ -1,5 +1,6 @@
 package com.xzchaoo.learn.spring.ext;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,5 +10,10 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan
+@EnableFoo("sadf")
 public class ExtConfiguration {
+	@Bean
+	public FooService fooService() {
+		return new FooServiceImpl();
+	}
 }

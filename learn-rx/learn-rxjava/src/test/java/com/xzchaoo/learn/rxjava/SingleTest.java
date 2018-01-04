@@ -1,16 +1,26 @@
 package com.xzchaoo.learn.rxjava;
 
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.SettableFuture;
+
 import org.junit.Test;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import javax.annotation.Nullable;
 
 import io.reactivex.Single;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.SingleSubject;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * 待学习
@@ -46,6 +56,87 @@ public class SingleTest {
 
 	private static void mark(String tag) {
 		System.out.println(tag + " " + tname());
+	}
+
+	private static ListenableFuture<String> fa() {
+		return createSF("1", 1000);
+	}
+
+	private static ListenableFuture<String> fb() {
+		return createSF("2", 1000);
+	}
+
+	private static ListenableFuture<String> fc() {
+		return createSF("3", 1000);
+	}
+
+	private static ListenableFuture<String> createSF(String value, int mills) {
+		SettableFuture<String> sf = SettableFuture.create();
+		new Thread(() -> {
+			try {
+				Thread.sleep(mills);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			sf.set(value);
+		}).start();
+		sf.cancel(true);
+		return sf;
+	}
+
+	private <T> Single<T> futureToSingle(Callable<ListenableFuture<T>> c) {
+		return Single.create(se -> {
+			ListenableFuture<T> f = c.call();
+			se.setCancellable(() -> f.cancel(true));
+			Futures.addCallback(f, new FutureCallback<T>() {
+				@Override
+				public void onSuccess(@Nullable T result) {
+					se.onSuccess(result);
+				}
+
+				@Override
+				public void onFailure(Throwable t) {
+					se.onError(t);
+				}
+			}, MoreExecutors.directExecutor());
+		});
+	}
+
+	//异步调用接口A 根据其结果可能会异步调用 接口B 或 接口C
+	@Test
+	public void test_dynamic() {
+		String value = futureToSingle(SingleTest::fa)
+			.flatMap(x -> {
+				if ("1".equals(x)) {
+					return futureToSingle(SingleTest::fb).map(y -> x + y);
+				} else {
+					return futureToSingle(SingleTest::fc).map(y -> x + y);
+				}
+			})
+			.blockingGet();
+		System.out.println(value);
+	}
+
+	@Test
+	public void test_then() {
+		//对应 reactor 的then操作
+
+		long begin = System.currentTimeMillis();
+		Single<Integer> s1 = Single.fromCallable(() -> {
+			System.out.println("想象我是第1个异步");
+			return 1;
+		}).toCompletable()//通过这个方法可以将single转成completable 从而获得 andThen 的能力
+			.delay(1, TimeUnit.SECONDS)
+			.andThen(Single.fromCallable(() -> {
+				System.out.println("想象我是第2个异步");
+				return 2;
+			}));
+
+		//强制延迟
+		Single<Integer> c2 = s1.zipWith(Single.timer(1500, TimeUnit.MILLISECONDS), (x, ignore) -> x);
+
+		c2.blockingGet();
+		System.out.println("耗时" + (System.currentTimeMillis() - begin));
 	}
 
 	@Test
@@ -85,7 +176,7 @@ public class SingleTest {
 			})
 			.doFinally(() -> {
 				mark("finally 9");//8比7早
-			}).doOnError(e->{
+			}).doOnError(e -> {
 				System.out.println("error了");
 			})
 			.subscribe();
