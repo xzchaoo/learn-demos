@@ -1,5 +1,7 @@
 package com.xzchaoo.learn.rx.reactor;
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
+
 import org.junit.Test;
 
 import java.time.Duration;
@@ -47,6 +49,7 @@ public class FluxTest {
 	@Test
 	public void test_error_2() {
 		AtomicInteger ai = new AtomicInteger();
+
 		int r = Flux.<Integer>create(fs -> {
 			if (ai.incrementAndGet() == 1) {
 				fs.error(new RuntimeException());
