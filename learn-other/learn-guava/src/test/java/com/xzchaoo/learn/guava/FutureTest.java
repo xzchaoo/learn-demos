@@ -55,9 +55,15 @@ public class FutureTest {
 	@Test
 	public void test_timeout() throws InterruptedException {
 		ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
+
 		try {
+			//sf是原始的F
 			SettableFuture<Integer> sf = SettableFuture.create();
-			Futures.addCallback(Futures.withTimeout(sf, 1, TimeUnit.SECONDS, ses), new FutureCallback<Integer>() {
+
+			//具备timeout能力的F
+			ListenableFuture<Integer> timeoutF = Futures.withTimeout(sf, 1, TimeUnit.SECONDS, ses);
+
+			Futures.addCallback(timeoutF, new FutureCallback<Integer>() {
 				@Override
 				public void onSuccess(@Nullable Integer result) {
 					System.out.println(result);
@@ -68,6 +74,8 @@ public class FutureTest {
 					t.printStackTrace();
 				}
 			}, MoreExecutors.directExecutor());
+
+			//强制睡觉1.5秒 上述onFailure会收到超时
 			Thread.sleep(1500);
 		} finally {
 			ses.shutdownNow();
