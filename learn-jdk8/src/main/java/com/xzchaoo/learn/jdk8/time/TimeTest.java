@@ -23,7 +23,12 @@ import static org.junit.Assert.*;
  */
 public class TimeTest {
 	@Test
-	public void test(){
+	public void test_mills() {
+		System.out.println(LocalDateTime.of(1, 1, 1, 1, 1, 1).plus(1, ChronoUnit.MILLIS));
+	}
+
+	@Test
+	public void test() {
 		ZoneId usChicago = ZoneId.of("America/Chicago");
 // 2013-03-10T02:30 did not exist in America/Chicago time zone
 		LocalDateTime ldt = LocalDateTime.of(2013, Month.MARCH, 10, 2, 30);
@@ -38,6 +43,7 @@ public class TimeTest {
 		System.out.println(zdt2.withEarlierOffsetAtOverlap());
 		System.out.println(zdt2.withLaterOffsetAtOverlap());
 	}
+
 	@Test
 	public void test_truncate() {
 		System.out.println(OffsetTime.now());
