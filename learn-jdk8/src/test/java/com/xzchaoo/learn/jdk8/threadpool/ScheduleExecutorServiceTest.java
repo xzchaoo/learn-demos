@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.java.threadpool;
+package com.xzchaoo.learn.jdk8.threadpool;
 
 import org.junit.Test;
 

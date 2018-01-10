@@ -75,7 +75,7 @@ public class TopKSelectTest {
 	}
 
 	@Benchmark
-	public void test_stream(Blackhole b) {
+	public void test_google_stream(Blackhole b) {
 		b.consume(list.stream().collect(Comparators.least(1, Integer::compare)));
 	}
 
@@ -94,7 +94,7 @@ public class TopKSelectTest {
 	}
 
 	@Benchmark
-	public void test_TopKHeap(Blackhole b) {
+	public void test_TopKHeapArray(Blackhole b) {
 		TopKHeapArray<Integer> heap = new TopKHeapArray<Integer>(k, Integer::compare);
 		for (Integer x : list) {
 			heap.add(x);
