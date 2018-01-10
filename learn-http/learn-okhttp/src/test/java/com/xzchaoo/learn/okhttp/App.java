@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -16,12 +15,12 @@ import okhttp3.FormBody;
 import okhttp3.Headers;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import okhttp3.WebSocket;
-import okhttp3.WebSocketListener;
 
 import static org.junit.Assert.*;
 
@@ -50,24 +49,32 @@ public class App {
 				return resp;
 			}
 		});
+//		b.addNetworkInterceptor(new Interceptor() {
+//			@Override
+//			public Response intercept(Chain chain) throws IOException {
+//				return null;
+//			}
+//		});
 		client = b.build();
-		WebSocket ws = client.newWebSocket(null, new WebSocketListener() {
-			/**
-			 * Invoked when a web socket has been accepted by the remote peer and may begin transmitting
-			 * messages.
-			 */
-			public void onOpen(WebSocket webSocket, Response response) {
-				System.out.println("ws打开了");
-			}
-
-			/** Invoked when a text (type {@code 0x1}) message has been received. */
-			public void onMessage(WebSocket webSocket, String text) {
-				System.out.println("收到消息了");
-			}
-		});
+//		WebSocket ws = client.newWebSocket(null, new WebSocketListener() {
+//			/**
+//			 * Invoked when a web socket has been accepted by the remote peer and may begin transmitting
+//			 * messages.
+//			 */
+//			public void onOpen(WebSocket webSocket, Response response) {
+//				System.out.println("ws打开了");
+//			}
+//
+//			/** Invoked when a text (type {@code 0x1}) message has been received. */
+//			public void onMessage(WebSocket webSocket, String text) {
+//				System.out.println("收到消息了");
+//			}
+//		});
 	}
 
-	@Ignore
+	public static final MediaType JSON111 = MediaType.parse("application/json; charset=utf-8");
+
+	//@Ignore
 	@Test
 	public void test_get() throws IOException {
 		//url只能自己build
@@ -76,9 +83,13 @@ public class App {
 			.url("http://api.bilibili.com/x/video?aid=1")
 			.build();
 
+		//RequestBody.create()
+		new FormBody.Builder().add("a", "a").build();
+
+		//new MultipartBody.Builder().build()
+
 		client.newCall(request).enqueue(new Callback() {
 			public void onFailure(Call call, IOException e) {
-
 			}
 
 			public void onResponse(Call call, Response response) throws IOException {
@@ -94,13 +105,14 @@ public class App {
 		System.out.println(response.header("Connection"));
 		String s = response.body().string();
 		JSONObject r = JSON.parseObject(s);
-		assertEquals("公告", r.getJSONObject("data").getString("typename"));
+		System.out.println(r);
+		//assertEquals("公告", r.getJSONObject("data").getString("typename"));
 	}
 
 	@Test
 	public void test_header() {
 		Request request = new Request.Builder()
-			.url("http://api.bilibili.com/x/video?aid=1")
+			.url("https://api.bilibili.com/x/video?aid=1")
 			.header("a", "1")
 			.header("b", "2")
 			.build();

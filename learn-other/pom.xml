@@ -41,6 +41,8 @@
 		<module>learn-vavr</module>
 		<module>learn-jwt</module>
 		<module>learn-assertj</module>
+		<module>learn-freemarker</module>
+		<module>learn-jcommander</module>
 	</modules>
 
 	<dependencies>

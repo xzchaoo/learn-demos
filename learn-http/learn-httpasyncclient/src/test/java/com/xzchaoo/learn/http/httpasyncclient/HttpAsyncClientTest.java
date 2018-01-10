@@ -44,7 +44,20 @@ public class HttpAsyncClientTest {
 
 	private static final Logger LOG = LoggerFactory.getLogger(HttpAsyncClientTest.class);
 
-	public CloseableHttpAsyncClient makeAHC() throws IOReactorException {
+	@Test
+	public void test_rx() throws IOReactorException, InterruptedException {
+		CloseableHttpAsyncClient hac = makeHAC();
+		hac.start();
+
+		RxHttpAsyncClient c = RxHttpAsyncClient.wrap(hac);
+		c.execute(RequestBuilder.get("http://www.bilibili.com").build())
+			.subscribe(resp -> {
+			System.out.println(resp);
+		});
+		Thread.sleep(1000);
+	}
+
+	public CloseableHttpAsyncClient makeHAC() throws IOReactorException {
 		RequestConfig requestConfig = RequestConfig.custom()
 			.setSocketTimeout(3000)
 			.setConnectTimeout(3000)
@@ -116,10 +129,10 @@ public class HttpAsyncClientTest {
 
 	@Test
 	public void ceshi() throws Exception {
-		CloseableHttpAsyncClient ahc = makeAHC();
+		CloseableHttpAsyncClient ahc = makeHAC();
 		ahc.start();
 
-		HttpUriRequest hur = RequestBuilder.get("http://api.bilibili.com").build();
+		HttpUriRequest hur = RequestBuilder.get("https://api.bilibili.com/ip").build();
 		List<Future> futures = new ArrayList<>(1);
 		for (int i = 0; i < 1; ++i) {
 			Future<HttpResponse> f = ahc.execute(hur, new FutureCallback<HttpResponse>() {
