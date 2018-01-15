@@ -1,11 +1,13 @@
 package com.xzchaoo.learn.cache.caffeine;
 
+import com.github.benmanes.caffeine.cache.AsyncLoadingCache;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
 
 import org.junit.Test;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -32,12 +34,31 @@ public class CaffeineTest {
 	}
 
 	@Test
-	public void test2() {
+	public void test_sync_load() throws InterruptedException {
 		//内存型
-		LoadingCache<String, String> graphs = Caffeine.newBuilder()
+		LoadingCache<String, String> c = Caffeine.newBuilder()
+			.maximumSize(10_000)
+			.expireAfterWrite(5, TimeUnit.SECONDS)
+			//.refreshAfterWrite(1, TimeUnit.SECONDS)
+			.build(key -> {
+				System.out.println("加载");
+				return key + "X";
+			});
+
+		System.out.println(c.get("a"));
+		Thread.sleep(2000);
+		System.out.println(c.get("a"));
+	}
+
+	@Test
+	public void test_async_load() {
+		//内存型
+		AsyncLoadingCache<String, String> c = Caffeine.newBuilder()
 			.maximumSize(10_000)
 			.expireAfterWrite(5, TimeUnit.MINUTES)
-			.refreshAfterWrite(1, TimeUnit.MINUTES)
-			.build(key -> key + "X");
+			.buildAsync((key, executor) -> {
+				return CompletableFuture.completedFuture("");
+			});
+
 	}
 }
