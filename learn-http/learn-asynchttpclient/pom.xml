@@ -12,7 +12,7 @@
 	<artifactId>learn-asynchttpclient</artifactId>
 
 	<properties>
-		<asynchttpclient.version>2.0.31</asynchttpclient.version>
+		<asynchttpclient.version>2.0.38</asynchttpclient.version>
 	</properties>
 
 	<dependencies>

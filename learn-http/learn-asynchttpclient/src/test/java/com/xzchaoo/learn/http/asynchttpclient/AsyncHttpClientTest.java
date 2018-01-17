@@ -5,6 +5,7 @@ import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.AsyncHttpClientConfig;
 import org.asynchttpclient.DefaultAsyncHttpClient;
 import org.asynchttpclient.DefaultAsyncHttpClientConfig;
+import org.asynchttpclient.ListenableFuture;
 import org.asynchttpclient.Response;
 import org.junit.Test;
 
@@ -21,8 +22,8 @@ public class AsyncHttpClientTest {
 			.setRequestTimeout(1000)
 			.setUserAgent("")
 			.build();
-		AsyncHttpClient ahc = new DefaultAsyncHttpClient();
-		Future<Integer> f = ahc.prepareGet("http://www.bilibili.com/")
+		DefaultAsyncHttpClient ahc = new DefaultAsyncHttpClient(ahcc);
+		ListenableFuture<Integer> f = ahc.prepareGet("http://www.bilibili.com/")
 			.execute(new AsyncCompletionHandler<Integer>() {
 				@Override
 				public Integer onCompleted(Response response) throws Exception {
