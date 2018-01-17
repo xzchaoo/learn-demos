@@ -30,7 +30,7 @@ import java.util.Random;
 @Measurement(iterations = 5)
 @State(Scope.Benchmark)
 public class TopKSelectTest {
-	private int size = 5000000;
+	private int size = 10000;
 	private int k = 10000;
 
 	List<Integer> list;
@@ -40,7 +40,7 @@ public class TopKSelectTest {
 		list = new ArrayList<>(size);
 		Random r = new Random(0);
 		for (int i = 0; i < size; ++i) {
-			list.add(r.nextInt(1000000));
+			list.add(r.nextInt(100000000));
 		}
 	}
 
@@ -76,7 +76,9 @@ public class TopKSelectTest {
 
 	@Benchmark
 	public void test_google_stream(Blackhole b) {
-		b.consume(list.stream().collect(Comparators.least(1, Integer::compare)));
+		List<Integer> result = list.stream().collect(Comparators.least(k, Integer::compare));
+		//System.out.println(result);
+		b.consume(result);
 	}
 
 	@Benchmark
@@ -87,7 +89,7 @@ public class TopKSelectTest {
 		PriorityQueue<Integer> pq = new PriorityQueue<>(k);
 		pq.addAll(list);
 		List<Integer> result = new ArrayList<>(k);
-		for (int i = 0; i < 1000; ++i) {
+		for (int i = 0; i < k; ++i) {
 			result.add(pq.poll());
 		}
 		b.consume(result);
