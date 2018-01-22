@@ -9,7 +9,6 @@ import com.google.common.util.concurrent.SettableFuture;
 import org.junit.Test;
 
 import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -20,7 +19,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.SingleSubject;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 /**
  * 待学习
@@ -144,9 +143,9 @@ public class SingleTest {
 		Disposable ss = Single.create(se -> {
 			//create的执行线程 默认是当前线程, 如果调用了 subscribeOn 那么就是指定的线程
 			mark("create 1");
-			se.onError(new RuntimeException());
-			//Thread.sleep(500);
-			//se.onSuccess("ok");
+			//se.onError(new RuntimeException());
+			Thread.sleep(500);
+			se.onSuccess("ok");
 		}).subscribeOn(Schedulers.io())
 			.doAfterTerminate(() -> {
 				//terminal只会在 onError 和 onSuccess 之后执行, onDispose 是不执行的!
@@ -158,14 +157,18 @@ public class SingleTest {
 			.doFinally(() -> {
 				mark("finally 7");//finally早于terminal finally会在 onError onSuccess onDispose 后执行
 			})
-			.doFinally(() -> {
+			.doFinally(() -> {//出现并发执行了!
+				mark("finally 8 sleep");
+				Thread.sleep(5000);
 				mark("finally 8");//8比7早
 			})
 			.doOnSuccess(e -> {
 				mark("3");
 			})
 			.observeOn(Schedulers.computation())//会影响之后的执行
-			.doOnSuccess(e -> {
+			.doOnSuccess(e -> {//出现并发执行了!
+				mark("4 sleep");
+				Thread.sleep(5000);
 				mark("4");
 			})
 			.doOnDispose(() -> {
@@ -179,10 +182,18 @@ public class SingleTest {
 			}).doOnError(e -> {
 				System.out.println("error了");
 			})
+			.toCompletable()
+			.doFinally(() -> {
+				mark("finally 10");
+			})
+			.doOnComplete(() -> {
+				mark("complete 1");
+			})
+			.subscribeOn(Schedulers.io())
 			.subscribe();
 		System.out.println("完");
-		Thread.sleep(23);
-		ss.dispose();
+		Thread.sleep(10000);
+		//ss.dispose();
 		System.out.println("zheli");
 	}
 

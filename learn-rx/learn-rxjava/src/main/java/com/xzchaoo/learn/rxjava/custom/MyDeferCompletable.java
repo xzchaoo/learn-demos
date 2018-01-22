@@ -9,6 +9,7 @@ import io.reactivex.CompletableSource;
 import io.reactivex.Scheduler;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.plugins.RxJavaPlugins;
 
 /**
  * TODO 完善注释
@@ -68,6 +69,8 @@ public class MyDeferCompletable extends Completable {
 				//立即错误
 				set.dispose();
 				s.onError(e);
+			} else {
+				RxJavaPlugins.onError(e);
 			}
 		}
 
