@@ -30,77 +30,77 @@ import java.util.Random;
 @Measurement(iterations = 5)
 @State(Scope.Benchmark)
 public class TopKSelectTest {
-	private int size = 10000;
-	private int k = 10000;
+  private int size = 500_0000;
+  private int k = 5000;
 
-	List<Integer> list;
+  List<Integer> list;
 
-	@Setup
-	public void setup() {
-		list = new ArrayList<>(size);
-		Random r = new Random(0);
-		for (int i = 0; i < size; ++i) {
-			list.add(r.nextInt(100000000));
-		}
-	}
+  @Setup
+  public void setup() {
+    list = new ArrayList<>(size);
+    Random r = new Random(0);
+    for (int i = 0; i < size; ++i) {
+      list.add(r.nextInt(100000000));
+    }
+  }
 
-	@Benchmark
-	public void qsort(Blackhole b) {
-		//排序取topK 效率肯定是最差的 O(nlogn)
-		List<Integer> list = new ArrayList<>(this.list);
-		list.sort(null);
-		list = list.subList(0, k);
-		b.consume(list);
-	}
+  @Benchmark
+  public void qsort(Blackhole b) {
+    //排序取topK 效率肯定是最差的 O(nlogn)
+    List<Integer> list = new ArrayList<>(this.list);
+    list.sort(null);
+    list = list.subList(0, k);
+    b.consume(list);
+  }
 
-	@Benchmark
-	public void google(Blackhole b) {
-		//内部实现不明
-		List<Integer> list = new ArrayList<>(this.list);
-		List<Integer> result = Ordering.natural().leastOf(list, k);
-		b.consume(result);
-	}
+  @Benchmark
+  public void google(Blackhole b) {
+    //内部实现不明
+    List<Integer> list = new ArrayList<>(this.list);
+    List<Integer> result = Ordering.natural().leastOf(list, k);
+    b.consume(result);
+  }
 
-	@Benchmark
-	public void priorityQueue(Blackhole b) {
-		//看介绍应该是基于堆的
-		//PriorityQueue没有重新实现addAll方法 它的效率是比较低的 可以在构造函数将所有值直接传进去
-		//这个方法效率是最高的
-		PriorityQueue<Integer> pq = new PriorityQueue<>(list);
-		List<Integer> result = new ArrayList<>(k);
-		for (int i = 0; i < k; ++i) {
-			result.add(pq.poll());
-		}
-		b.consume(result);
-	}
+  @Benchmark
+  public void priorityQueue(Blackhole b) {
+    //看介绍应该是基于堆的
+    //PriorityQueue没有重新实现addAll方法 它的效率是比较低的 可以在构造函数将所有值直接传进去
+    //这个方法效率是最高的
+    PriorityQueue<Integer> pq = new PriorityQueue<>(list);
+    List<Integer> result = new ArrayList<>(k);
+    for (int i = 0; i < k; ++i) {
+      result.add(pq.poll());
+    }
+    b.consume(result);
+  }
 
-	@Benchmark
-	public void test_google_stream(Blackhole b) {
-		List<Integer> result = list.stream().collect(Comparators.least(k, Integer::compare));
-		//System.out.println(result);
-		b.consume(result);
-	}
+  @Benchmark
+  public void test_google_stream(Blackhole b) {
+    List<Integer> result = list.stream().collect(Comparators.least(k, Integer::compare));
+    //System.out.println(result);
+    b.consume(result);
+  }
 
-	@Benchmark
-	public void priorityQueue2(Blackhole b) {
-		//看介绍应该是基于堆的
-		//PriorityQueue没有重新实现addAll方法 它的效率是比较低的 可以在构造函数将所有值直接传进去
-		//这个方法效率是最高的
-		PriorityQueue<Integer> pq = new PriorityQueue<>(k);
-		pq.addAll(list);
-		List<Integer> result = new ArrayList<>(k);
-		for (int i = 0; i < k; ++i) {
-			result.add(pq.poll());
-		}
-		b.consume(result);
-	}
+  @Benchmark
+  public void priorityQueue2(Blackhole b) {
+    //看介绍应该是基于堆的
+    //PriorityQueue没有重新实现addAll方法 它的效率是比较低的 可以在构造函数将所有值直接传进去
+    //这个方法效率是最高的
+    PriorityQueue<Integer> pq = new PriorityQueue<>(k);
+    pq.addAll(list);
+    List<Integer> result = new ArrayList<>(k);
+    for (int i = 0; i < k; ++i) {
+      result.add(pq.poll());
+    }
+    b.consume(result);
+  }
 
-	@Benchmark
-	public void test_TopKHeapArray(Blackhole b) {
-		TopKHeapArray<Integer> heap = new TopKHeapArray<Integer>(k, Integer::compare);
-		for (Integer x : list) {
-			heap.add(x);
-		}
-		b.consume(heap.getBuffer());
-	}
+  @Benchmark
+  public void test_TopKHeapArray(Blackhole b) {
+    TopKHeapArray<Integer> heap = new TopKHeapArray<Integer>(k, Integer::compare);
+    for (Integer x : list) {
+      heap.add(x);
+    }
+    b.consume(heap.getBuffer());
+  }
 }

@@ -96,6 +96,14 @@
 				<artifactId>jsr305</artifactId>
 				<version>${findbugs.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>3.8.0</version>
+				<scope>compile</scope>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -108,6 +116,11 @@
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
 			<artifactId>jsr305</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 

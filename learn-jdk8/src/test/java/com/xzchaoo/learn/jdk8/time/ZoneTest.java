@@ -12,10 +12,10 @@ import java.time.ZoneOffset;
  * @author zcxu
  */
 public class ZoneTest {
-    @Test
-    public void test() {
-        System.out.println(ZoneId.getAvailableZoneIds());
-        System.out.println(ZoneOffset.UTC);
-        System.out.println(LocalDate.now().atStartOfDay(ZoneOffset.UTC));
-    }
+  @Test
+  public void test() {
+    System.out.println(ZoneId.getAvailableZoneIds());
+    System.out.println(ZoneOffset.UTC);
+    System.out.println(LocalDate.now().atStartOfDay(ZoneOffset.UTC));
+  }
 }
