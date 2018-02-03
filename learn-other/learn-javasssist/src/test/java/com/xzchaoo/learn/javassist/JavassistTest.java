@@ -23,6 +23,7 @@ public class JavassistTest {
 	@Test
 	public void test() throws CannotCompileException, NotFoundException, IOException {
 		ClassPool pool = ClassPool.getDefault();
+
 		CtClass cc = pool.makeClass("org.xzchaoo.test.MyTest");
 		cc.setSuperclass(pool.get("java.lang.Object"));
 		cc.addInterface(pool.get("com.xzchaoo.learn.javassist.MyInterface"));
