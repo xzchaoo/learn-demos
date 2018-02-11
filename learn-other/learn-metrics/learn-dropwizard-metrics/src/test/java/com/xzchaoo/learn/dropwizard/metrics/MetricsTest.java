@@ -22,7 +22,7 @@ public class MetricsTest {
     public void test() throws InterruptedException {
         //测量值 会统计 每分钟 每五分钟 每十五分钟的频率
         Meter requests = metrics.meter("requests");
-        requests.mark();
+        requests.mark();git
 
         //是一个Gauge 可以理解为CPU使用率的这种值
         metrics.register(name(MetricsTest.class, "size"), new Gauge<Integer>() {
