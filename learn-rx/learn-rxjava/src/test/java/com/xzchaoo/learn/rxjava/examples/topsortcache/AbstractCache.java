@@ -56,7 +56,7 @@ public abstract class AbstractCache implements Cache {
   @Override
   public Completable initRefresh() {
     Completable ret = initRefreshCache;
-    if (initRefreshCache == null) {
+    if (ret == null) {
       synchronized (this) {
         if (initRefreshCache == null) {
           ret = initRefreshCache = createInitRefreshCache().cache();
