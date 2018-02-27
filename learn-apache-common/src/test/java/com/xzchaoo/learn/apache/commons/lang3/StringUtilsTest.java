@@ -3,16 +3,30 @@ package com.xzchaoo.learn.apache.commons.lang3;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import java.util.Arrays;
-
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class StringUtilsTest {
 
   @Test
+  public void test_remove() {
+    System.out.println(StringUtils.remove("baaac", "a"));
+  }
+
+  @Test
+  public void test_replace() {
+    String str = "a=b;c=d;a=b;";
+    //会替换全部
+    String result = StringUtils.replace(str, "a=b;", "");
+    assertThat(result).isEqualTo("c=d;");
+  }
+
+  @Test
   public void test_split() {
     String[] ss = StringUtils.split("|||a|b|c", "|");
-    System.out.println(Arrays.asList(ss));
+    assertThat(ss).containsExactly("a", "b", "c");
   }
 
   @Test
