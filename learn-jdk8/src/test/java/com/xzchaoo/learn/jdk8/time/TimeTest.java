@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.OffsetTime;
+import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -21,8 +22,25 @@ import static org.junit.Assert.assertEquals;
  * Created by Administrator on 2017/3/21.
  */
 public class TimeTest {
+
+  @Test
+  public void test_localdatetime_interval() {
+    //检查2个 LDT 的时间差
+    //用 天 分 秒 来表示
+  }
+
+  @Test
+  public void test_period() {
+    //Period返回一种日期间隔的陈述方式, 比如 即1个月又2天, 它具体表示多少天是不一定的 因为每个月的天数不一样
+    //比如2月2日与1月1日的period是 1个月又1天
+    Period p = Period.between(LocalDate.now(), LocalDate.now().minusYears(1).plusDays(2));
+    System.out.println(p.getDays());
+    System.out.println(p);
+  }
+
   @Test
   public void test_mills() {
+    //构造函数不支持毫秒 但可以通过其它方式做到
     System.out.println(LocalDateTime.of(1, 1, 1, 1, 1, 1).plus(1, ChronoUnit.MILLIS));
   }
 
@@ -155,3 +173,4 @@ public class TimeTest {
 
   }
 }
+

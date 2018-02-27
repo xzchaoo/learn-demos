@@ -31,7 +31,7 @@ public class StringUtilsTest {
 
   @Test
   public void test_empty() {
-    assertTrue(StringUtils.isEmpty(null));
+    assertThat(StringUtils.isEmpty(null)).isTrue();
     assertTrue(StringUtils.isEmpty(""));
     assertFalse(StringUtils.isEmpty(" "));
 
