@@ -53,7 +53,6 @@ public class UserServiceTest extends TestBase {
 	}
 
 	@Mock
-
 	private UserDao ud;
 
 	@InjectMocks
