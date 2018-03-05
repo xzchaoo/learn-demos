@@ -11,10 +11,11 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @SuppressWarnings("all")
+/** 我是描述啊哈哈哈 */
 @org.apache.avro.specific.AvroGenerated
 public class User extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -3166343605604783434L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"com.xzchaoo.learn.serialization.avro.generated\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},{\"name\":\"favorite_color\",\"type\":[\"string\",\"null\"]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"com.xzchaoo.learn.serialization.avro.generated\",\"doc\":\"我是描述啊哈哈哈\",\"fields\":[{\"name\":\"name\",\"type\":\"string\",\"doc\":\"我是描述 哈哈 field可以有default值\"},{\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},{\"name\":\"favorite_color\",\"type\":[\"string\",\"null\"]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -51,6 +52,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     return DECODER.decode(b);
   }
 
+  /** 我是描述 哈哈 field可以有default值 */
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.Integer favorite_number;
   @Deprecated public java.lang.CharSequence favorite_color;
@@ -64,7 +66,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
   /**
    * All-args constructor.
-   * @param name The new value for name
+   * @param name 我是描述 哈哈 field可以有default值
    * @param favorite_number The new value for favorite_number
    * @param favorite_color The new value for favorite_color
    */
@@ -98,7 +100,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
   /**
    * Gets the value of the 'name' field.
-   * @return The value of the 'name' field.
+   * @return 我是描述 哈哈 field可以有default值
    */
   public java.lang.CharSequence getName() {
     return name;
@@ -106,6 +108,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
   /**
    * Sets the value of the 'name' field.
+   * 我是描述 哈哈 field可以有default值
    * @param value the value to set.
    */
   public void setName(java.lang.CharSequence value) {
@@ -176,6 +179,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<User>
     implements org.apache.avro.data.RecordBuilder<User> {
 
+    /** 我是描述 哈哈 field可以有default值 */
     private java.lang.CharSequence name;
     private java.lang.Integer favorite_number;
     private java.lang.CharSequence favorite_color;
@@ -227,6 +231,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
     /**
       * Gets the value of the 'name' field.
+      * 我是描述 哈哈 field可以有default值
       * @return The value.
       */
     public java.lang.CharSequence getName() {
@@ -235,6 +240,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
     /**
       * Sets the value of the 'name' field.
+      * 我是描述 哈哈 field可以有default值
       * @param value The value of 'name'.
       * @return This builder.
       */
@@ -247,6 +253,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
     /**
       * Checks whether the 'name' field has been set.
+      * 我是描述 哈哈 field可以有default值
       * @return True if the 'name' field has been set, false otherwise.
       */
     public boolean hasName() {
@@ -256,6 +263,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
     /**
       * Clears the value of the 'name' field.
+      * 我是描述 哈哈 field可以有default值
       * @return This builder.
       */
     public com.xzchaoo.learn.serialization.avro.generated.User.Builder clearName() {
