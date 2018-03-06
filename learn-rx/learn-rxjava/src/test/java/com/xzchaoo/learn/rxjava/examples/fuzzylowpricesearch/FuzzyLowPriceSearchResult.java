@@ -21,4 +21,5 @@ import lombok.ToString;
 @NoArgsConstructor
 public class FuzzyLowPriceSearchResult {
   private List<FuzzyLowPriceResultItem> resultItems;
+  //other fields?
 }

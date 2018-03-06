@@ -20,4 +20,5 @@ import lombok.ToString;
 public class FuzzyLowPriceSearchResponse {
   private Object responseHeader;
   private FuzzyLowPriceSearchResult searchResult;
+  private Object errorResult;
 }

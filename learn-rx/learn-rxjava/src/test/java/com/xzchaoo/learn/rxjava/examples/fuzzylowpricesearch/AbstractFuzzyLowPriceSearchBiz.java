@@ -6,6 +6,7 @@ import com.google.common.collect.Sets;
 import org.apache.commons.collections4.MapUtils;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -26,6 +27,8 @@ import lombok.val;
  * @date 2018/3/1 0001
  */
 public abstract class AbstractFuzzyLowPriceSearchBiz {
+  private static final DateTimeFormatter yyyySMMSdd = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+
   private CacheProvider cacheProvider;
 
   public AbstractFuzzyLowPriceSearchBiz(CacheProvider cacheProvider) {
@@ -89,31 +92,49 @@ public abstract class AbstractFuzzyLowPriceSearchBiz {
   }
 
   @Nonnull
-  private static List<LowPriceCalendarData> convertAll(Map<String, String> rawData, LocalDate minOutboundDate) {
+  private static List<LowPriceCalendarData> convertAll(Map<String, String> rawData, LocalDate minOutboundDate, TripType tripType) {
     List<LowPriceCalendarData> list = new ArrayList<>(rawData.size());
     for (Map.Entry<String, String> e : rawData.entrySet()) {
       LowPriceCalendarData data = deserializeData(e.getValue());
       if (data != null) {
         data.setDatePairKey(e.getKey());
-        if (data.getOutboundDate().isBefore(minOutboundDate)) {
-          continue;
+        if (tripType == TripType.OW) {
+          data.setOutboundDate(LocalDate.now());
+          data.setInboundDate(LocalDate.now());
+        } else {
+          data.setOutboundDate(LocalDate.now());
+          data.setInboundDate(LocalDate.now());
         }
-        list.add(data);
+        if (!data.getOutboundDate().isBefore(minOutboundDate)) {
+          //TODO 此处是否可以触发一个hdel?
+          list.add(data);
+        }
       }
     }
     return list;
   }
 
   @Nonnull
-  private static List<LowPriceCalendarData> convertPartial(Map<String, String> rawData, Set<String> validDatePairSets) {
+  private static List<LowPriceCalendarData> convertPartial(Map<String, String> rawData, Set<String> validDatePairSets, TripType tripType) {
     List<LowPriceCalendarData> list = new ArrayList<>(validDatePairSets.size());
+    LocalDate today = LocalDate.now();
     for (String datePairKey : validDatePairSets) {
       String value = rawData.get(datePairKey);
       if (value != null) {
         LowPriceCalendarData data = deserializeData(value);
         if (data != null) {
           data.setDatePairKey(datePairKey);
-          list.add(data);
+          if (tripType == TripType.OW) {
+            //2017/01/01
+            data.setOutboundDate(yyyySMMSdd.parse(datePairKey, LocalDate::from));
+          } else {
+            //2017/01/01-2017/01/02
+            data.setOutboundDate(yyyySMMSdd.parse(datePairKey.substring(0, 10), LocalDate::from));
+            data.setInboundDate(yyyySMMSdd.parse(datePairKey.substring(11), LocalDate::from));
+          }
+          if (!data.getOutboundDate().isBefore(today)) {
+            list.add(data);
+          }
         }
       }
     }
@@ -128,8 +149,6 @@ public abstract class AbstractFuzzyLowPriceSearchBiz {
    */
   private static LowPriceCalendarData deserializeData(String rawData) {
     LowPriceCalendarData data = new LowPriceCalendarData();
-    data.setOutboundDate(LocalDate.now());
-    data.setInboundDate(LocalDate.now());
     data.setSalesPrice(0);
     data.setTotalPrice(0);
     data.setNonStopSalesPrice(0);
@@ -164,9 +183,9 @@ public abstract class AbstractFuzzyLowPriceSearchBiz {
     }
     List<LowPriceCalendarData> list;
     if (validDatePairSets == null || !readPartial) {
-      list = convertAll(rawData, LocalDate.now());
+      list = convertAll(rawData, LocalDate.now(), tripType);
     } else {
-      list = convertPartial(rawData, validDatePairSets);
+      list = convertPartial(rawData, validDatePairSets, tripType);
     }
     for (LowPriceCalendarData d : list) {
       //填充城市信息

@@ -1,8 +1,8 @@
 package com.xzchaoo.learn.rxjava.examples.fuzzylowpricesearch;
 
-import com.xzchaoo.learn.rxjava.examples.fuzzylowpricesearch.LowPriceCalendarData;
-
 /**
+ * 构建分组key
+ *
  * @author zcxu
  * @date 2018/3/1 0001
  */

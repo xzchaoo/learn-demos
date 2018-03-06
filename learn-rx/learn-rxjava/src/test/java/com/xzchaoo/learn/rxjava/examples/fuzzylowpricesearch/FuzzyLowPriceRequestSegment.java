@@ -23,4 +23,9 @@ public class FuzzyLowPriceRequestSegment {
   private Set<String> departureCityCodes;
   private Set<String> arrivalCityCodes;
   private DateRange dateRange;
+
+  /**
+   * 仅对于RT和MT的第2段有效
+   */
+  private IntRange dayIntervalRange;
 }

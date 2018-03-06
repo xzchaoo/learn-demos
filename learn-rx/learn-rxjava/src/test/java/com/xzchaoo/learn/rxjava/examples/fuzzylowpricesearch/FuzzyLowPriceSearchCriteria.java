@@ -20,6 +20,7 @@ import lombok.ToString;
 @ToString
 @Builder
 public class FuzzyLowPriceSearchCriteria {
+  /**** original request ****/
   private List<FuzzyLowPriceRequestSegment> segments;
   private PriceType priceType;
   private GroupMode groupMode;

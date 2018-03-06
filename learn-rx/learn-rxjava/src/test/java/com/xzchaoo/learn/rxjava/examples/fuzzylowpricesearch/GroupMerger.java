@@ -1,7 +1,5 @@
 package com.xzchaoo.learn.rxjava.examples.fuzzylowpricesearch;
 
-import com.xzchaoo.learn.rxjava.examples.fuzzylowpricesearch.LowPriceCalendarData;
-
 import java.util.Map;
 
 /**

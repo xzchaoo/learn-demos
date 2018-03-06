@@ -8,8 +8,9 @@ import java.time.LocalDate;
  * @author zcxu
  * @date 2018/3/1 0001
  */
-@FunctionalInterface
 public interface DatePairFilter {
+  boolean filter(String datePairStr);
+
   /**
    * 返回true则保留
    *
