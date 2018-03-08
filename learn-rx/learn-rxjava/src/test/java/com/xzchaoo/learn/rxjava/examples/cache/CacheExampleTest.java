@@ -2,12 +2,8 @@ package com.xzchaoo.learn.rxjava.examples.cache;
 
 import org.junit.Test;
 
-import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 import io.reactivex.Single;
-import io.reactivex.internal.operators.flowable.FlowablePublish;
-import io.reactivex.processors.FlowableProcessor;
-import io.reactivex.subjects.SingleSubject;
 
 /**
  * @author xzchaoo

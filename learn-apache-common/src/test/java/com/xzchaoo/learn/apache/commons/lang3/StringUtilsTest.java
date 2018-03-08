@@ -3,7 +3,7 @@ package com.xzchaoo.learn.apache.commons.lang3;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -21,6 +21,12 @@ public class StringUtilsTest {
     //会替换全部
     String result = StringUtils.replace(str, "a=b;", "");
     assertThat(result).isEqualTo("c=d;");
+  }
+
+  @Test
+  public void test_substringBefore() {
+    String s = StringUtils.substringBefore("abab", "b");
+    assertThat(s).isEqualTo("a");
   }
 
   @Test
