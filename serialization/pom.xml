@@ -16,8 +16,8 @@
 		<module>jackson</module>
 		<module>protobuf</module>
 		<module>gson</module>
-		<module>learn-avro</module>
-		<module>learn-protostuff</module>
+		<module>avro</module>
+		<module>protostuff</module>
 	</modules>
 
 </project>
