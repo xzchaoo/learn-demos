@@ -12,18 +12,14 @@
 	<artifactId>lettuce</artifactId>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/io.lettuce/lettuce-core -->
 		<dependency>
 			<groupId>io.lettuce</groupId>
 			<artifactId>lettuce-core</artifactId>
-			<version>5.0.1.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-core</artifactId>
-			<version>3.1.2.RELEASE</version>
 		</dependency>
-
 	</dependencies>
 
 </project>
