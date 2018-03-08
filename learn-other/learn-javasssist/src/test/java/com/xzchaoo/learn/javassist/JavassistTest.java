@@ -20,37 +20,44 @@ import javassist.expr.MethodCall;
  * @author xzchaoo
  */
 public class JavassistTest {
-	@Test
-	public void test() throws CannotCompileException, NotFoundException, IOException {
-		ClassPool pool = ClassPool.getDefault();
+  @Test
+  public void test() throws CannotCompileException, NotFoundException, IOException {
+    ClassPool pool = ClassPool.getDefault();
 
-		CtClass cc = pool.makeClass("org.xzchaoo.test.MyTest");
-		cc.setSuperclass(pool.get("java.lang.Object"));
-		cc.addInterface(pool.get("com.xzchaoo.learn.javassist.MyInterface"));
+    CtClass cc = pool.makeClass("org.xzchaoo.test.MyTest");
+    cc.setSuperclass(pool.get("java.lang.Object"));
+    cc.addInterface(pool.get("com.xzchaoo.learn.javassist.MyInterface"));
 
-		CtField a = new CtField(CtClass.intType, "a", cc);
-		a.setModifiers(AccessFlag.PUBLIC | AccessFlag.STATIC | AccessFlag.FINAL);
-		cc.addField(a, CtField.Initializer.constant(3));
+    CtField foo = new CtField(pool.get("java.lang.String"), "foo", cc);
+    foo.setModifiers(AccessFlag.PRIVATE);
+    cc.addField(foo, CtField.Initializer.constant("haha"));
 
-		CtMethod say = new CtMethod(pool.get("java.lang.String"), "say", null, cc);
-		say.setBody("{int a=1;return \"safd\";}");
-		say.insertBefore("Integer i = ($w)5;");
-		say.insertBefore("int j = 5;");
-		//say.insertBefore("Object o = $sig;");
-		//say.insertBefore("Object o = $type;");
-		//say.insertBefore("Object o2 = $class;");
+    CtField a = new CtField(CtClass.intType, "a", cc);
+    a.setModifiers(AccessFlag.PUBLIC | AccessFlag.STATIC | AccessFlag.FINAL);
+    cc.addField(a, CtField.Initializer.constant(3));
 
-		cc.addMethod(say);
+    CtMethod say = new CtMethod(pool.get("java.lang.String"), "say", null, cc);
+    say.setBody("{int a=1;return \"safd\";}");
+    say.insertBefore("Integer i = ($w)5;");
+    say.insertBefore("int j = 5;");
+    //say.insertBefore("Object o = $sig;");
+    //say.insertBefore("Object o = $type;");
+    //say.insertBefore("Object o2 = $class;");
 
-		CtMethod test1 = new CtMethod(CtClass.voidType, "test1", null, cc);
-		test1.instrument(new ExprEditor(){
-			@Override
-			public void edit(MethodCall m) throws CannotCompileException {
-				m.replace("toString()");
-			}
-		});
-		test1.setBody("{}");
-		cc.addMethod(test1);
-		cc.writeFile();
-	}
+    cc.addMethod(say);
+
+    CtMethod test1 = new CtMethod(CtClass.voidType, "test1", null, cc);
+    test1.instrument(new ExprEditor() {
+      @Override
+      public void edit(MethodCall m) throws CannotCompileException {
+        m.replace("toString()");
+      }
+    });
+    test1.setBody("{}");
+    cc.addMethod(test1);
+    cc.writeFile();
+    //Class的一些操作执行了之后, 该CtClass对象就被 "冻结" 了不再允许修改
+    //如果还想修改, 那么必须先解冻 defrost
+
+  }
 }

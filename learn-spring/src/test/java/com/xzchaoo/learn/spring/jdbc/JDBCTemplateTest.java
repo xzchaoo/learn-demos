@@ -16,10 +16,9 @@ import java.util.List;
 public class JDBCTemplateTest {
   @Test
   public void test1() {
+    //H2 收集日志
     Profiler profiler = new Profiler();
     profiler.startCollecting();
-
-    System.console().writer();
 
     EmbeddedDatabase ed = new EmbeddedDatabaseBuilder()
       .setType(EmbeddedDatabaseType.H2)
@@ -30,13 +29,15 @@ public class JDBCTemplateTest {
     System.out.println(ed);
     JdbcTemplate jt = new JdbcTemplate(ed);
     jt.execute("create table users(id integer primary key, username varchar(50) not null)");
-    jt.execute("insert into users(id, username) values(?,?)", (PreparedStatementCallback<Void>) ps -> {
+    jt.execute("insert into users(id, username) values(?,?),(?,?)", (PreparedStatementCallback<Void>) ps -> {
       ps.setInt(1, 1);
       ps.setString(2, "xzc");
+      ps.setInt(3, 2);
+      ps.setString(4, "xzc2");
       ps.execute();
       return null;
     });
-    List<String> list = jt.query("select id,username from users", new RowMapper<String>() {
+    List<String> list = jt.query("select id,username from users limit 100", new RowMapper<String>() {
       @Override
       public String mapRow(ResultSet rs, int rowNum) throws SQLException {
         return rs.getInt(1) + " " + rs.getString(2);
@@ -45,6 +46,6 @@ public class JDBCTemplateTest {
     System.out.println(list);
     ed.shutdown();
     profiler.stopCollecting();
-    System.out.println(profiler.getTop(3));
+    //System.out.println(profiler.getTop(3));
   }
 }
