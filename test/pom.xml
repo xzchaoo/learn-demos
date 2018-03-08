@@ -9,11 +9,11 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-test</artifactId>
+	<artifactId>test</artifactId>
 	<packaging>pom</packaging>
 	<description>学习测试相关的技术</description>
 	<modules>
-		<module>learn-ut</module>
+		<module>ut</module>
 	</modules>
 
 </project>

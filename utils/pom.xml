@@ -9,11 +9,12 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<description>学习各种utils库</description>
-	<artifactId>learn-utils</artifactId>
+	<artifactId>utils</artifactId>
 	<packaging>pom</packaging>
 	<modules>
 		<module>learn-okio</module>
 		<module>learn-guava</module>
+		<module>apache-commons</module>
 	</modules>
 
 </project>

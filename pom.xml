@@ -11,10 +11,9 @@
 
 	<modules>
 		<module>config</module>
-		<module>learn-test</module>
+		<module>test</module>
 		<module>javafeatures</module>
 		<module>cache</module>
-		<module>apache-commons</module>
 		<module>other</module>
 		<module>db</module>
 		<module>serialization</module>

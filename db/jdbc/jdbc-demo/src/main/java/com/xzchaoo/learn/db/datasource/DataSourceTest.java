@@ -59,7 +59,7 @@ public class DataSourceTest {
 		dataSource.setIdleTimeout(15000);
 		dataSource.setConnectionTestQuery("select 1");
 		dataSource.setValidationTimeout(2000);
-		dataSource.setScheduledExecutor(Executors.newScheduledThreadPool(4));
+		//dataSource.setScheduledExecutor(Executors.newScheduledThreadPool(4));
 		dataSource.setMaxLifetime(180000);
 		//minimumIdle 推荐设置成和最大值一样的
 		//最大连接数 包含了空闲的 和正在使用的
