@@ -54,6 +54,7 @@
 		<archaius2.version>2.2.14</archaius2.version>
 		<alibaba.druid.version>1.1.8</alibaba.druid.version>
 		<lettuce.version>5.0.2.RELEASE</lettuce.version>
+		<eclipse-collections.version>9.0.0</eclipse-collections.version>
 	</properties>
 
 	<dependencyManagement>
@@ -171,14 +172,25 @@
 				<artifactId>lettuce-core</artifactId>
 				<version>${lettuce.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.eclipse.collections</groupId>
+				<artifactId>eclipse-collections-api</artifactId>
+				<version>${eclipse-collections.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.collections</groupId>
+				<artifactId>eclipse-collections</artifactId>
+				<version>${eclipse-collections.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<dependencies>
+		<!--先设置为compile作用于 下次有空修复回test-->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
@@ -187,7 +199,7 @@
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
