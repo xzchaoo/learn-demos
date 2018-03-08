@@ -9,11 +9,13 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-test</artifactId>
+	<artifactId>config</artifactId>
 	<packaging>pom</packaging>
-	<description>学习测试相关的技术</description>
+	<description>学习开源配置技术</description>
+
 	<modules>
-		<module>learn-ut</module>
+		<module>learn-config-2</module>
+		<module>archaius2</module>
 	</modules>
 
 </project>

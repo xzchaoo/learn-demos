@@ -9,11 +9,14 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-test</artifactId>
+	<artifactId>cache</artifactId>
 	<packaging>pom</packaging>
-	<description>学习测试相关的技术</description>
+	<description>学习开源缓存技术</description>
 	<modules>
-		<module>learn-ut</module>
+		<module>ehcache2</module>
+		<module>ehcache3</module>
+		<module>caffeine</module>
 	</modules>
+
 
 </project>

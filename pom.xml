@@ -10,23 +10,21 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<modules>
-		<module>learn-config</module>
+		<module>config</module>
 		<module>learn-test</module>
-		<module>learn-jdk8</module>
-		<module>learn-cache</module>
-		<module>learn-apache-common</module>
-		<module>learn-http</module>
-		<module>learn-other</module>
-		<module>learn-db</module>
-		<module>learn-serialization</module>
-		<module>learn-spring</module>
-		<module>learn-akka</module>
-		<module>learn-springboot</module>
-		<module>learn-utils</module>
-		<module>learn-alg</module>
-		<module>learn-leetcode</module>
-		<module>learn-rx</module>
-		<module>learn-netty</module>
+		<module>javafeatures</module>
+		<module>cache</module>
+		<module>apache-commons</module>
+		<module>other</module>
+		<module>db</module>
+		<module>serialization</module>
+		<module>spring</module>
+		<module>springboot</module>
+		<module>utils</module>
+		<module>alg</module>
+		<module>leetcode</module>
+		<module>rx</module>
+		<module>net</module>
 	</modules>
 
 	<parent>
@@ -43,6 +41,7 @@
 		<gson.version>2.8.2</gson.version>
 		<findbugs.version>3.0.2</findbugs.version>
 		<assertj.version>3.9.1</assertj.version>
+		<fluent.validator.version>1.0.9</fluent.validator.version>
 	</properties>
 
 	<dependencyManagement>
@@ -104,7 +103,17 @@
 				<version>${assertj.version}</version>
 				<scope>compile</scope>
 			</dependency>
-
+			<dependency>
+				<groupId>com.baidu.unbiz</groupId>
+				<artifactId>fluent-validator</artifactId>
+				<version>${fluent.validator.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.objenesis</groupId>
+				<artifactId>objenesis</artifactId>
+				<version>2.5</version>
+				<scope>test</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

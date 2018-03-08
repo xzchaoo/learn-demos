@@ -9,11 +9,15 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-test</artifactId>
+	<artifactId>serialization</artifactId>
 	<packaging>pom</packaging>
-	<description>学习测试相关的技术</description>
+
 	<modules>
-		<module>learn-ut</module>
+		<module>learn-jackson</module>
+		<module>learn-protobuf</module>
+		<module>learn-gson</module>
+		<module>learn-avro</module>
+		<module>learn-protostuff</module>
 	</modules>
 
 </project>

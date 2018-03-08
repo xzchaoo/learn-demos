@@ -9,11 +9,14 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-test</artifactId>
-	<packaging>pom</packaging>
-	<description>学习测试相关的技术</description>
-	<modules>
-		<module>learn-ut</module>
-	</modules>
+	<artifactId>alg</artifactId>
+	<description>学习一些算法</description>
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.collections</groupId>
+			<artifactId>eclipse-collections</artifactId>
+			<version>9.0.0</version>
+		</dependency>
+	</dependencies>
 
 </project>
