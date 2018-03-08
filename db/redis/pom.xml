@@ -9,21 +9,12 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-mybatis</artifactId>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-		</dependency>
-	</dependencies>
+	<artifactId>redis</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>jedis</module>
+		<module>lettuce</module>
+		<module>spring-data-redis</module>
+	</modules>
 
 </project>

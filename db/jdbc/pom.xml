@@ -9,18 +9,14 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-sqlite</artifactId>
-	<description>临时要存些数据的话还是够用的</description>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.xerial</groupId>
-			<artifactId>sqlite-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-		</dependency>
-	</dependencies>
+	<artifactId>jdbc</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>h2</module>
+		<module>jdbc-demo</module>
+		<module>hibernate</module>
+		<module>mybatis</module>
+		<module>sqlite</module>
+	</modules>
 
 </project>
