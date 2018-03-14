@@ -17,7 +17,7 @@
 		<module>learn-jmx</module>
 		<module>learn-metrics</module>
 		<module>learn-log</module>
-		<module>learn-activemq</module>
+		<module>activemq</module>
 		<module>learn-kafka</module>
 		<module>learn-siguar</module>
 		<module>learn-curator</module>
@@ -42,6 +42,7 @@
 		<module>learn-jcommander</module>
 		<module>learn-consul-api</module>
 		<module>learn-validation</module>
+		<module>thymeleaf</module>
 	</modules>
 
 	<dependencies>
