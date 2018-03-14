@@ -1,0 +1,17 @@
+<div xmlns:th="http://www.thymeleaf.org">
+	<div th:object="${page}">
+		<h1 th:text="*{title}"></h1>
+	</div>
+	<!--我是注释-->
+	<input name="username" value="def" th:value="${username}" th:attr="haha=${username},gaga=${'gaga2'}"/>
+
+	<ul th:classappend="${username}">
+		<li th:each="user,stat :${userList}" th:text="${user.username}" th:if="${user.id%2==0}">
+			asdf
+		</li>
+	</ul>
+
+	<select>
+		<option th:checked="true"></option>
+	</select>
+</div>
