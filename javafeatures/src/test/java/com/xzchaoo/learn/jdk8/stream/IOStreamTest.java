@@ -9,6 +9,4 @@ import java.io.IOException;
  * @date 2018/3/12 0012
  */
 public class IOStreamTest {
-  @Test
-  }
 }
