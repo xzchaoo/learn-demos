@@ -15,6 +15,7 @@
 	<modules>
 		<module>ut</module>
 		<module>assertj</module>
+		<module>jmockit</module>
 	</modules>
 
 </project>

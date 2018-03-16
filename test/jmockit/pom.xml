@@ -11,5 +11,13 @@
 
 	<artifactId>jmockit</artifactId>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.jmockit</groupId>
+			<artifactId>jmockit</artifactId>
+			<version>1.38</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 </project>
