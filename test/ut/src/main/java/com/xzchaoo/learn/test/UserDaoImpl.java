@@ -9,15 +9,19 @@
 package com.xzchaoo.learn.test;
 
 public class UserDaoImpl implements UserDao {
-	public User findUserByUserId(int userId) {
-		User user = new User();
-		user.setId(userId);
-		user.setName("xzc " + userId);
-		return user;
-	}
+  public User findUserByUserId(int userId) {
+    User user = new User();
+    user.setId(userId);
+    user.setName("xzc " + userId);
+    return user;
+  }
 
-	@Override
-	public void f1(int a) {
+  @Override
+  public final void f1(int a) {
 
-	}
+  }
+
+  public final String f2() {
+    return "f2";
+  }
 }

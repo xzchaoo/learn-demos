@@ -26,7 +26,8 @@ public class LearnMockitoTest1 {
     list.add("two");
     list.clear();
     assertThat(list.size()).isEqualTo(22);
-    verify(list, times(1)).add("one");
+
+    verify(list, times(1)).add(argThat(x -> x.startsWith("one")));
     verify(list, times(2)).add("two");
     //verify(list).add(anyString());
     verify(list).clear();

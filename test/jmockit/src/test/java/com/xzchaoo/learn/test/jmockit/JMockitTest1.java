@@ -25,6 +25,7 @@ public class JMockitTest1 {
 
   @Injectable
   UserDao userDao;
+
   @Mocked
   BookDao bookDao;
 
@@ -35,11 +36,23 @@ public class JMockitTest1 {
   public void test() {
     //需要在类被使用之前进行mockup 废话
     //会影响作用域的
-    UserDao.static1();
+    //UserDao.static1();
+
     //如何mock静态方法
     new MockUp<BarDao>() {
       //用 $clinit 指代静态初始化块
       //用 $init 指代构造方法
+
+      @Mock
+      void $init(Invocation invocation) {
+        System.out.println("BarDao init2");
+      }
+
+      @Mock
+      void $clinit(Invocation invocation) {
+        System.out.println("BarDao Class init2");
+      }
+
       @Mock
       public void badSave() {
         System.out.println("bye bye2");
@@ -48,9 +61,20 @@ public class JMockitTest1 {
 
     new MockUp<UserDao>() {
       //可以用于mock静态方法 但内部类不能有静态方法哦 这里需要写成实例方法
+      //用 $clinit 指代静态初始化块
+      //用 $init 指代构造方法
+      @Mock
+      void $init(Invocation invocation) {
+        System.out.println("UserDao init2");
+      }
 
       @Mock
-      public void static1(Invocation invocation) {
+      void $clinit(Invocation invocation) {
+        System.out.println("UserDao Class init2");
+      }
+
+      @Mock
+      void static1(Invocation invocation) {
         //通过 invocation 可以拿到本次调用的上下文信息
         System.out.println("bad static111");
         //Deencapsulation.setField("", "loginSucceeded", true);
