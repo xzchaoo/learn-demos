@@ -4,4 +4,12 @@ public class UserDao {
   public String find() {
     return "bar";
   }
+
+  public void log() {
+
+  }
+
+  public static void static1() {
+    System.out.println("bad static1");
+  }
 }
