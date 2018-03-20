@@ -7,9 +7,8 @@ import java.util.List;
 
 import lombok.val;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.spy;
+import static org.assertj.core.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 /**
  * spy可以对一个现有对象进行mock 它可以mock某些方法 而对于另外一些方法则允许调用打穿到原始方法
@@ -18,6 +17,7 @@ import static org.mockito.Mockito.spy;
  * @date 2018/2/28 0028
  */
 public class SpyTest {
+  
   @Test
   public void test() {
     //使用val的话 推断出来的list类型其实是 ArrayList<String>

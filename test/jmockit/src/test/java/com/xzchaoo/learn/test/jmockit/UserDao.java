@@ -1,5 +1,8 @@
 package com.xzchaoo.learn.test.jmockit;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class UserDao {
   static {
     System.out.println("UserDao 静态构造器");
@@ -28,5 +31,15 @@ public class UserDao {
    */
   public String throwAnException() {
     return "throwAnException";
+  }
+
+  @PostConstruct
+  public void init() {
+    System.out.println("init");
+  }
+
+  @PreDestroy
+  public void destroy() {
+    System.out.println("destroy");
   }
 }
