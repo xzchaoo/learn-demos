@@ -33,7 +33,7 @@
 		<module>learn-jmh</module>
 		<module>learn-jctools</module>
 		<module>learn-cglib</module>
-		<module>learn-javasssist</module>
+		<module>javasssist</module>
 		<module>learn-beanshell</module>
 		<module>learn-rabbitmq</module>
 		<module>learn-vavr</module>
