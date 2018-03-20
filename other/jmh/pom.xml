@@ -9,7 +9,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-jmh</artifactId>
+	<artifactId>jmh</artifactId>
 	<properties>
 		<org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
 	</properties>
