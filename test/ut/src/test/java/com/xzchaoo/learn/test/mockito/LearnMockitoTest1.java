@@ -96,6 +96,8 @@ public class LearnMockitoTest1 {
       }
     });
     assertThat(list.get(7)).isEqualTo("7");
+    //验证 list.get(anyInt()); 方法被调用了1次
+    verify(list, times(1)).get(anyInt());
   }
 
   /**

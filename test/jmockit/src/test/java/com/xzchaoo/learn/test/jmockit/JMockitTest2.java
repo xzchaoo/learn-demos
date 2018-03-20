@@ -1,8 +1,12 @@
 package com.xzchaoo.learn.test.jmockit;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Timer;
+
 import mockit.Expectations;
+import mockit.FullVerifications;
 import mockit.Injectable;
 import mockit.Invocation;
 import mockit.Mock;
@@ -21,12 +25,18 @@ import static org.assertj.core.api.Assertions.*;
  */
 public class JMockitTest2 {
   //标记要被测试的对象, 需要注意的是 JMockit 会调用 @PostConstruct/@PreDestroy 可能会有意想不到的NPE
-  @Tested
+  //availableDuringSetup = true 则该对象在before里是可用的 否则为null
+  @Tested(availableDuringSetup = true)
   FooServiceImpl service;
 
   //标记为 @Injectable 的属性会被注入到 @Tested 里(如果可以的话)
   @Injectable
   UserDao userDao;
+
+  @Before
+  public void before() {
+    System.out.println(service);
+  }
 
   @Test
   public void test_callUserDao() {
@@ -48,7 +58,6 @@ public class JMockitTest2 {
       userDao.find();
       times = 4;
     }};
-
   }
 
   @Test
@@ -66,6 +75,10 @@ public class JMockitTest2 {
     }};
     Throwable throwable = catchThrowable(() -> service.callException());
     assertThat(throwable).hasMessage("foo exception message");
+    new FullVerifications() {{
+    }};
+    new Verifications() {{
+    }};
   }
 
   @Test
@@ -153,6 +166,8 @@ public class JMockitTest2 {
       try {
         callHttpTask.execute();
         result = 1;
+        this.withPrefix("asdf");
+
         //这里mock了一个静态方法
         callHttpTask.returnAbc();
         result = "aabbcc";

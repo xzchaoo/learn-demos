@@ -53,11 +53,11 @@ public class FooServiceImpl implements FooService {
 
   @PostConstruct
   public void init() {
-    System.out.println("init");
+    //System.out.println("init");
   }
 
   @PreDestroy
   public void destroy() {
-    System.out.println("destroy");
+    //System.out.println("destroy");
   }
 }
