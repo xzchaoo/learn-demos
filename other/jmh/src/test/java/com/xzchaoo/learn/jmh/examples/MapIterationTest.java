@@ -4,14 +4,18 @@ import com.google.common.collect.Maps;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
 import org.openjdk.jmh.annotations.Measurement;
+import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
 import org.openjdk.jmh.infra.Blackhole;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,9 +26,11 @@ import java.util.Map;
 @Measurement(iterations = 5)
 @Fork(0)
 @State(Scope.Benchmark)
+@BenchmarkMode(Mode.AverageTime)
 public class MapIterationTest {
-  int n = 10000;
-  Map<String, String> map;
+  private static final int n = 10000;
+  private Map<String, String> map;
+  private static final int iteration = 10000;
 
   @Setup
   public void setup() {
@@ -43,58 +49,72 @@ public class MapIterationTest {
    */
   @Benchmark
   public void test_inner_forEach(Blackhole b) {
-    int[] sum = {0};
-    map.forEach((k, v) -> {
-      sum[0] += k.length();
-      sum[0] += v.length();
-    });
-    b.consume(b);
+    for (int i = 0; i < iteration; ++i) {
+      int[] sum = {0};
+      map.forEach((k, v) -> {
+        sum[0] += k.length();
+        sum[0] += v.length();
+      });
+      b.consume(b);
+    }
   }
+
   @Benchmark
-  public void test_inner_forEach2(Blackhole b) {
-    int[] sum = {0};
-    map.forEach((k, v) -> {
-      sum[0] += k.length();
-      //sum[0] += v.length();
-    });
-    b.consume(b);
+  public void test_inner_forEach_noValue(Blackhole b) {
+    for (int i = 0; i < iteration; ++i) {
+      int[] sum = {0};
+      map.forEach((k, v) -> {
+        sum[0] += k.length();
+      });
+      b.consume(b);
+    }
   }
 
   @Benchmark
   public void test_entrySet(Blackhole b) {
-    int sum = 0;
-    for (Map.Entry<String, String> e : map.entrySet()) {
-      sum += e.getKey().length();
-      sum += e.getValue().length();
+    for (int i = 0; i < iteration; ++i) {
+      int sum = 0;
+      for (Map.Entry<String, String> e : map.entrySet()) {
+        sum += e.getKey().length();
+        sum += e.getValue().length();
+      }
+      b.consume(sum);
     }
-    b.consume(sum);
+  }
+
+  @Benchmark
+  public void test_entrySet_iter(Blackhole b) {
+    for (int i = 0; i < iteration; ++i) {
+      int sum = 0;
+      for (Map.Entry<String, String> e : map.entrySet()) {
+        sum += e.getKey().length();
+        sum += e.getValue().length();
+      }
+      b.consume(sum);
+    }
   }
 
   @Benchmark
   public void test_keySet(Blackhole b) {
-    int sum = 0;
-    for (String key : map.keySet()) {
-      sum += key.length();
-      sum += map.get(key).length();
+    for (int i = 0; i < iteration; ++i) {
+      int sum = 0;
+      for (String key : map.keySet()) {
+        sum += key.length();
+        sum += map.get(key).length();
+      }
+      b.consume(sum);
     }
-    b.consume(sum);
   }
 
   @Benchmark
   public void test_keySet_only(Blackhole b) {
-    int sum = 0;
-    for (String key : map.keySet()) {
-      sum += key.length();
+    for (int i = 0; i < iteration; ++i) {
+      int sum = 0;
+      for (String key : map.keySet()) {
+        sum += key.length();
+      }
+      b.consume(sum);
     }
-    b.consume(sum);
   }
 
-  @Benchmark
-  public void test_values_only(Blackhole b) {
-    int sum = 0;
-    for (String value : map.values()) {
-      sum += value.length();
-    }
-    b.consume(sum);
-  }
 }
