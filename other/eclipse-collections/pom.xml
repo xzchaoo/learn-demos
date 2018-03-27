@@ -9,7 +9,7 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-eclipse-collections</artifactId>
+	<artifactId>eclipse-collections</artifactId>
 
 	<dependencies>
 		<dependency>

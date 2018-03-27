@@ -13,7 +13,7 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>learn-mapdb</module>
-		<module>learn-eclipse-collections</module>
+		<module>eclipse-collections</module>
 		<module>learn-jmx</module>
 		<module>learn-metrics</module>
 		<module>learn-log</module>
