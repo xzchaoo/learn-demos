@@ -25,61 +25,68 @@ import java.time.LocalDate;
  * @author xzchaoo
  */
 public class CObjectTest {
-	@Test
-	public void test() throws IOException {
-		ObjectMapper om = new ObjectMapper();
-		om.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+  @Test
+  public void test() throws IOException {
+    ObjectMapper om = new ObjectMapper();
+    om.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
-		//om.disable(DeserializationFeature);
-		om.registerModule(new JavaTimeModule());
-		SimpleModule sm = new SimpleModule();
-		sm.setDeserializerModifier(new BeanDeserializerModifier() {
-			@Override
-			public JsonDeserializer<?> modifyEnumDeserializer(DeserializationConfig config, JavaType type, BeanDescription beanDesc, JsonDeserializer<?> deserializer) {
-				Class<? extends Enum> rawClass = (Class<Enum<?>>) type.getRawClass();
-				if (rawClass == CGender.class) {
-					return new JsonDeserializer<CGender>() {
-						@Override
-						public CGender deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-							switch (p.getCurrentTokenId()) {
-								case JsonTokenId.ID_STRING:
-									String value = p.getText();
-									for (CGender cg : CGender.values()) {
-										if (cg.name().toLowerCase().equals(value.toLowerCase())) {
-											return cg;
-										}
-									}
-									break;
-								case JsonTokenId.ID_NUMBER_INT:
-									int aInt = p.getIntValue();
-									return CGender.values()[aInt];
-								default:
-									throw new IllegalStateException();
-							}
-							throw new IllegalStateException();
-						}
-					};
-				}
-				return deserializer;
-			}
-		});
+    //om.disable(DeserializationFeature);
+    om.registerModule(new JavaTimeModule());
+    SimpleModule sm = new SimpleModule();
+    sm.setDeserializerModifier(new BeanDeserializerModifier() {
+      @Override
+      public JsonDeserializer<?> modifyEnumDeserializer(DeserializationConfig config, JavaType type, BeanDescription beanDesc, JsonDeserializer<?> deserializer) {
+        Class<? extends Enum> rawClass = (Class<Enum<?>>) type.getRawClass();
+        if (rawClass == CGender.class) {
+          System.out.println("modifyEnumDeserializer");
+          return new JsonDeserializer<CGender>() {
+            @Override
+            public CGender deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+              switch (p.getCurrentTokenId()) {
+                case JsonTokenId.ID_STRING:
+                  String value = p.getText();
+                  for (CGender cg : CGender.values()) {
+                    if (cg.name().toLowerCase().equals(value.toLowerCase())) {
+                      return cg;
+                    }
+                  }
+                  break;
+                case JsonTokenId.ID_NUMBER_INT:
+                  int aInt = p.getIntValue();
+                  return CGender.values()[aInt];
+                default:
+                  throw new IllegalStateException();
+              }
+              throw new IllegalStateException();
+            }
+          };
+        }
+        return deserializer;
+      }
+    });
 
-		om.registerModule(sm);
+    om.registerModule(sm);
 
-		CObject1 co1 = new CObject1();
-		co1.setId(1);
-		co1.setcGender(CGender.MALE);
-		CObject2 co2 = new CObject2();
-		co2.setId(2);
-		co2.setBirthday(LocalDate.now());
-		co1.setCo2(co2);
+    CObject1 co1 = new CObject1();
+    co1.setId(1);
+    co1.setcGender(CGender.MALE);
+    CObject2 co2 = new CObject2();
+    co2.setId(2);
+    co2.setBirthday(LocalDate.now());
+    co1.setCo2(co2);
 
-		String s = om.writeValueAsString(co1);
-		System.out.println(s);
+    String s = om.writeValueAsString(co1);
+    System.out.println(s);
 
-		String s1 = "{\"ID\":1,\"cGender\":1,\"co2\":{\"id\":2,\"birthday\":\"2017-10-28\"}}";
-		co1 = om.readValue(s1, CObject1.class);
-		System.out.println(co1);
-	}
+    om.writeValueAsString(co1.getCo2());
+
+    String s1 = "{\"ID\":1,\"cGender\":1,\"co2\":{\"id\":2,\"birthday\":\"2017-10-28\"}}";
+    co1 = om.readValue(s1, CObject1.class);
+    System.out.println(co1);
+
+    s1 = "{\"ID\":1,\"cGender\":1,\"co2\":{\"id\":2,\"birthday\":\"2017-10-28\"}}";
+    co1 = om.readValue(s1, CObject1.class);
+    System.out.println(co1);
+  }
 }
 
