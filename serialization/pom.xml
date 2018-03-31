@@ -18,6 +18,7 @@
 		<module>gson</module>
 		<module>avro</module>
 		<module>protostuff</module>
+		<module>jprotobuf</module>
 	</modules>
 
 </project>

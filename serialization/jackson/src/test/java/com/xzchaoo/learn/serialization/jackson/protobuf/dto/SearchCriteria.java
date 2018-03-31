@@ -1,7 +1,9 @@
 package com.xzchaoo.learn.serialization.jackson.protobuf.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.xzchaoo.learn.serialization.jackson.protobuf.XzcLocalDate;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -34,4 +36,33 @@ public class SearchCriteria {
   private int[] intArray;
   @JsonProperty(index = 9)
   private long[] longArray;
+
+  @JsonProperty(index = 10)
+//  @JsonSerialize(converter = XzcLocalDateToIntConverter.class)
+//  @JsonDeserialize(converter = IntToXzcLocalDateConverter.class)
+  private XzcLocalDate xzcLocalDate;
+
+  @JsonProperty(index = 11)
+  private LocalDate localDate;
+  @JsonProperty(index = 12)
+  private boolean aboolean;
+  @JsonProperty(index = 13)
+  private byte abyte;
+  @JsonProperty(index = 14)
+  private short ashort;
+
+  @JsonProperty(index = 15)
+  private boolean[] booleans;
+  @JsonProperty(index = 16)
+  private byte[] bytes;
+  @JsonProperty(index = 17)
+  private short[] shorts;
+  @JsonProperty(index = 18)
+  private int[] ints;
+  @JsonProperty(index = 19)
+  private long[] longs;
+  @JsonProperty(index = 20)
+  private float[] floats;
+  @JsonProperty(index = 21)
+  private double[] doubles;
 }
