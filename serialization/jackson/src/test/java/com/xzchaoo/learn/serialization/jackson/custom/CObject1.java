@@ -1,5 +1,7 @@
 package com.xzchaoo.learn.serialization.jackson.custom;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * created by xzchaoo at 2017/10/28
  *
@@ -10,6 +12,7 @@ public class CObject1 {
 	private CGender cGender;
 	private CObject2 co2;
 
+	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	public int getId() {
 		return id;
 	}
