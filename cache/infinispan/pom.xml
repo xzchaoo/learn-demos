@@ -3,20 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<artifactId>learn-demos</artifactId>
+		<artifactId>cache</artifactId>
 		<groupId>com.xzchaoo.learn</groupId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>cache</artifactId>
-	<packaging>pom</packaging>
-	<description>学习开源缓存技术</description>
-	<modules>
-		<module>ehcache2</module>
-		<module>ehcache3</module>
-		<module>caffeine</module>
-		<module>infinispan</module>
-	</modules>
+	<artifactId>infinispan</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.infinispan</groupId>
+			<artifactId>infinispan-core</artifactId>
+			<version>9.2.0.Final</version>
+		</dependency>
+	</dependencies>
 
 </project>
