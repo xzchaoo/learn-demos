@@ -43,6 +43,7 @@
 		<module>learn-validation</module>
 		<module>thymeleaf</module>
 		<module>rabbitmq2</module>
+		<module>dozer</module>
 	</modules>
 
 	<dependencies>
