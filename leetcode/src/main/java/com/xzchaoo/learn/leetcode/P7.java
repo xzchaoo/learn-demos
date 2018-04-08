@@ -6,28 +6,28 @@ package com.xzchaoo.learn.leetcode;
  * @author xzchaoo
  */
 public class P7 {
-	public int reverse(int x) {
-		if (x == Integer.MIN_VALUE) {
-			return 0;
-		}
-		int ret = 0;
-		int sign = x > 0 ? 1 : x < 0 ? -1 : 0;
-		x = x < 0 ? -x : x;
-		while (x != 0) {
-			int v = x % 10;
-			x /= 10;
-			int o = ret * 10 + v;
-			if (o / 10 != ret) {
-				return 0;
-			}
-			ret = o;
-		}
-		return ret * sign;
-	}
+  public int reverse(int x) {
+    if (x == Integer.MIN_VALUE || x == 0) {
+      return 0;
+    }
+    int ret = 0;
+    int sign = x > 0 ? 1 : x < 0 ? -1 : 0;
+    x = x < 0 ? -x : x;
+    while (x != 0) {
+      int v = x % 10;
+      x /= 10;
+      int o = ret * 10 + v;
+      if (o / 10 != ret) {
+        return 0;
+      }
+      ret = o;
+    }
+    return sign > 0 ? ret : -ret;
+  }
 
-	public static void main(String[] args) {
-		//1534236469
-		//1056389759
-		System.out.println(new P7().reverse(1534236469));
-	}
+  public static void main(String[] args) {
+    //1534236469
+    //1056389759
+    System.out.println(new P7().reverse(1534236469));
+  }
 }
