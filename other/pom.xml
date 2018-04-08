@@ -35,7 +35,6 @@
 		<module>learn-cglib</module>
 		<module>javasssist</module>
 		<module>learn-beanshell</module>
-		<module>learn-rabbitmq</module>
 		<module>learn-vavr</module>
 		<module>learn-jwt</module>
 		<module>learn-freemarker</module>
@@ -43,6 +42,7 @@
 		<module>learn-consul-api</module>
 		<module>learn-validation</module>
 		<module>thymeleaf</module>
+		<module>rabbitmq2</module>
 	</modules>
 
 	<dependencies>
