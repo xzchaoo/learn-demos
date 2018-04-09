@@ -3,6 +3,7 @@ package com.xzchaoo.learn.rxjava.examples.agg;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
 
 import org.junit.Test;
@@ -42,6 +43,7 @@ public class AggTest {
       SearchContext ctx = new SearchContext();
       long begin = System.currentTimeMillis();
       Single<SearchContext> single = doSearch(ctx);
+      System.out.println("subscribe " + Thread.currentThread());
       Disposable d = single
         .subscribe(success -> {
           System.out.println("总耗时 = " + (System.currentTimeMillis() - begin));
@@ -62,12 +64,16 @@ public class AggTest {
 
   private Single<SearchContext> doSearch(SearchContext rootSearchContext) {
     return Completable.defer(() -> {
+      System.out.println("defer " + Thread.currentThread());
       List<SearchContext> subContexts = splitToSubContexts(rootSearchContext);
-      return Flowable.fromIterable(subContexts)
+
+      Completable c = Flowable.fromIterable(subContexts)
         //这里不用IO线程 因此 订阅 这个动作发生在当前线程上(哪个线程触发了subscribe, 就在那个线程上)
         //.observeOn(Schedulers.io())
         //.flatMapSingle(this::doCoreSearch, true, 8)
-        .flatMapCompletable(subContext -> this.doCoreSearch(subContext).toCompletable(), true, 8)
+        .flatMapCompletable(subContext -> this.doCoreSearch(subContext).toCompletable(), true, 8);
+
+      return c
         //.concatMapEagerDelayError(this::doCoreSearch, 8, 8, true)
         //.toList()
         .observeOn(Schedulers.computation())
@@ -116,7 +122,7 @@ public class AggTest {
         public void onFailure(Throwable throwable) {
           se.onError(throwable);
         }
-      });
+      }, MoreExecutors.directExecutor());
       se.setCancellable(() -> lf.cancel(true));
     });
   }

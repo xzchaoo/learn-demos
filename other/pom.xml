@@ -43,6 +43,7 @@
 		<module>learn-consul-api</module>
 		<module>learn-validation</module>
 		<module>thymeleaf</module>
+		<module>lombok</module>
 	</modules>
 
 	<dependencies>
