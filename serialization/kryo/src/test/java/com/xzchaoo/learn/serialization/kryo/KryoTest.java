@@ -28,6 +28,7 @@ public class KryoTest {
 
   @Before
   public void before() {
+    // 注意该pool只会扩容 不会缩容(如果你总是记得release的话)
     pool = new KryoPool.Builder(() -> {
       //每次都要在这里进行初始化 因为这是一个新的实例
       Kryo kryo = new Kryo();
