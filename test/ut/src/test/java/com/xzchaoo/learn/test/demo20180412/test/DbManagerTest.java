@@ -20,10 +20,10 @@ public class DbManagerTest {
   public void test_hello() {
     assertThat(DbManager.hello()).isEqualTo("world");
 
-    // final 常量的复制发生在类准备阶段
+    // final 常量的赋值发生在类准备阶段
     assertThat(DbManager.REAL_CONSTANT_VALUE).isEqualTo("REAL_CONSTANT_VALUE");
 
-    // 该字段的赋值发生在 类初始化, 但初始化被镇压了 因此为null
+    // 该字段的赋值发生在 类初始化阶段, 但初始化被镇压了 因此为null
     assertThat(DbManager.CLINIT_VALUE).isNull();
     assertThat(DbManager.CLINIT_METHOD_CALL).isNull();
   }

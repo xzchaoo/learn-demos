@@ -5,7 +5,7 @@ import javax.annotation.PreDestroy;
 
 public class UserDao {
   static {
-    System.out.println("UserDao 静态构造器");
+     System.exit(1);
   }
 
   public UserDao() {

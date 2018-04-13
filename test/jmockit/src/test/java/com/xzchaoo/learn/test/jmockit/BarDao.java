@@ -5,15 +5,15 @@ package com.xzchaoo.learn.test.jmockit;
  * @date 2018/3/16 0016
  */
 public class BarDao {
-  static{
-    System.out.println("BarDao Class init");
+  static {
+     System.exit(1);
   }
+
   public BarDao() {
-    System.out.println("BarDao init");
+     System.exit(1);
   }
 
   public void badSave() {
-    System.out.println("bye bye");
-    System.exit(0);
+     System.exit(1);
   }
 }

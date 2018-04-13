@@ -1,7 +1,7 @@
-package com.xzchaoo.learn.test.demo20180412.test;
+package com.xzchaoo.learn.test.demo20180413.powermock;
 
-import com.xzchaoo.learn.test.demo20180412.service.DangerousService;
-import com.xzchaoo.learn.test.demo20180412.service.DangerousTask;
+import com.xzchaoo.learn.test.demo20180413.service.DangerousService;
+import com.xzchaoo.learn.test.demo20180413.service.DangerousTask;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

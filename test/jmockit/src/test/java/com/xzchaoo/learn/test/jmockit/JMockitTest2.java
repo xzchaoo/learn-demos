@@ -3,8 +3,6 @@ package com.xzchaoo.learn.test.jmockit;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Timer;
-
 import mockit.Expectations;
 import mockit.FullVerifications;
 import mockit.Injectable;
@@ -15,7 +13,8 @@ import mockit.Mocked;
 import mockit.Tested;
 import mockit.Verifications;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 /**
  * 辅助类 Deencapsulation 可以用于打破封装
@@ -166,7 +165,7 @@ public class JMockitTest2 {
       try {
         callHttpTask.execute();
         result = 1;
-        this.withPrefix("asdf");
+        //this.withPrefix("asdf");
 
         //这里mock了一个静态方法
         callHttpTask.returnAbc();

@@ -3,12 +3,7 @@ package com.xzchaoo.learn.test.jmockit;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-import lombok.Getter;
-import lombok.Setter;
 
-
-@Getter
-@Setter
 public class UserService {
   private UserDao userDao;
   private BookDao bookDao;

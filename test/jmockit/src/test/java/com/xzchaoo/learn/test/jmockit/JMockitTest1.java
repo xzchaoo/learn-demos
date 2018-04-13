@@ -1,5 +1,6 @@
 package com.xzchaoo.learn.test.jmockit;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import lombok.val;
@@ -13,7 +14,7 @@ import mockit.Mocked;
 import mockit.Tested;
 import mockit.Verifications;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 //jmockit自动支持junit4 不需要再 RunWith
 public class JMockitTest1 {
@@ -31,6 +32,31 @@ public class JMockitTest1 {
 
   @Mocked
   FooEmailImpl fooEmail;
+
+  @BeforeClass
+  public static void beforeClass(){
+    new MockUp<UserDao>() {
+      //可以用于mock静态方法 但内部类不能有静态方法哦 这里需要写成实例方法
+      //用 $clinit 指代静态初始化块
+      //用 $init 指代构造方法
+      @Mock
+      void $init(Invocation invocation) {
+        System.out.println("UserDao init2");
+      }
+
+      @Mock
+      void $clinit(Invocation invocation) {
+        System.out.println("UserDao Class init2");
+      }
+
+      @Mock
+      void static1(Invocation invocation) {
+        //通过 invocation 可以拿到本次调用的上下文信息
+        System.out.println("bad static111");
+        //Deencapsulation.setField("", "loginSucceeded", true);
+      }
+    };
+  }
 
   @Test
   public void test() {
@@ -59,27 +85,6 @@ public class JMockitTest1 {
       }
     };
 
-    new MockUp<UserDao>() {
-      //可以用于mock静态方法 但内部类不能有静态方法哦 这里需要写成实例方法
-      //用 $clinit 指代静态初始化块
-      //用 $init 指代构造方法
-      @Mock
-      void $init(Invocation invocation) {
-        System.out.println("UserDao init2");
-      }
-
-      @Mock
-      void $clinit(Invocation invocation) {
-        System.out.println("UserDao Class init2");
-      }
-
-      @Mock
-      void static1(Invocation invocation) {
-        //通过 invocation 可以拿到本次调用的上下文信息
-        System.out.println("bad static111");
-        //Deencapsulation.setField("", "loginSucceeded", true);
-      }
-    };
 
     new Expectations() {{
       //这里进行mock
@@ -100,6 +105,7 @@ public class JMockitTest1 {
     System.out.println(bookDao.showBook(123));
     val result = userService.foo();
     assertThat(result).isEqualTo("abc");
+    System.out.println("here");
 
     //这里进行验证
     new Verifications() {{
