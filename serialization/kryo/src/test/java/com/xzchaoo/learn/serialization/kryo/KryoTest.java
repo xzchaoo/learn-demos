@@ -13,6 +13,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.Base64;
 
 /**
+ * TODO kryo其实还是很有复杂度的 建议没完全掌握之前别其轻易使用
  * kryo实例不是线程安全的, 需要自己用pool或ThreadLocal的方式管理起来
  * 注意 DefaultSerializer 的选择
  * 默认的是 FieldSerializer 它序列化的时候不会带Schema信息的, 也不会有字段index, 完全是按照每个字段的顺序进行序列化的, 因此所有字段不能被跳过(null会用特殊值来标记) 也不能添加 删除 字段, 修改字段定义也不行, 会造成不兼容

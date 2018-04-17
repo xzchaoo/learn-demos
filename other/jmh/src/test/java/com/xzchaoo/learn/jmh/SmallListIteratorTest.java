@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * 测试当list数量比较小的时候的迭代效率 效率高一点点...
+ * 测试当list数量比较小的时候的迭代效率
  * created by zcxu at 2017/12/7
  *
  * @author zcxu
@@ -24,32 +24,39 @@ import java.util.List;
 @Measurement(iterations = 5)
 @State(Scope.Benchmark)
 public class SmallListIteratorTest {
-	List<Integer> list;
+  List<Integer> list;
 
-	@Setup
-	public void setup() {
-		list = new ArrayList<>(2);
-		list.add(1);
-		list.add(2);
-	}
+  @Setup
+  public void setup() {
+    list = new ArrayList<>(2);
+    list.add(1);
+    list.add(2);
+  }
 
-	@Benchmark
-	public void get0(Blackhole b) {
-		b.consume(list.get(0));
-		b.consume(list.get(1));
-	}
+  @Benchmark
+  public void get0(Blackhole b) {
+    if (list.size() == 2) {
+      b.consume(list.get(0));
+      b.consume(list.get(1));
+    }
+  }
 
-	@Benchmark
-	public void iter1(Blackhole b) {
-		Iterator<Integer> iter = list.iterator();
-		b.consume(iter.next());
-		b.consume(iter.next());
-	}
+  @Benchmark
+  public void iter1(Blackhole b) {
+    Iterator<Integer> iter = list.iterator();
+    b.consume(iter.next());
+    b.consume(iter.next());
+  }
 
-	@Benchmark
-	public void iter2(Blackhole b) {
-		for (Integer i : list) {
-			b.consume(i);
-		}
-	}
+  @Benchmark
+  public void iter2(Blackhole b) {
+    for (Integer i : list) {
+      b.consume(i);
+    }
+  }
+
+  @Benchmark
+  public void foreach(Blackhole b) {
+    list.forEach(b::consume);
+  }
 }
