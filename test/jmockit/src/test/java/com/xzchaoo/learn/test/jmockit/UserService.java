@@ -2,10 +2,13 @@ package com.xzchaoo.learn.test.jmockit;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 
 
 public class UserService {
+  @Resource
   private UserDao userDao;
+  @Resource
   private BookDao bookDao;
 
   //jmockit 可以支持 PostConstruct 注解
