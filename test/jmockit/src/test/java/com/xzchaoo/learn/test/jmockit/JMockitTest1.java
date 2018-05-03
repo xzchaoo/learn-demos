@@ -14,7 +14,7 @@ import mockit.Mocked;
 import mockit.Tested;
 import mockit.Verifications;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 //jmockit自动支持junit4 不需要再 RunWith
 public class JMockitTest1 {
@@ -34,7 +34,7 @@ public class JMockitTest1 {
   FooEmailImpl fooEmail;
 
   @BeforeClass
-  public static void beforeClass(){
+  public static void beforeClass() {
     new MockUp<UserDao>() {
       //可以用于mock静态方法 但内部类不能有静态方法哦 这里需要写成实例方法
       //用 $clinit 指代静态初始化块
