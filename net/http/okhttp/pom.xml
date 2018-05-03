@@ -9,25 +9,17 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-nanohttpd</artifactId>
+	<artifactId>okhttp</artifactId>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.nanohttpd</groupId>
-			<artifactId>nanohttpd</artifactId>
-			<version>2.3.1</version>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>3.9.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.fusesource</groupId>
-			<artifactId>sigar</artifactId>
 		</dependency>
 	</dependencies>
 

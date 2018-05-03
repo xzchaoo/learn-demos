@@ -9,14 +9,17 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-fluent-hc</artifactId>
+	<artifactId>asynchttpclient</artifactId>
+
+	<properties>
+		<asynchttpclient.version>2.4.6</asynchttpclient.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>fluent-hc</artifactId>
-			<version>4.5.3</version>
+			<groupId>org.asynchttpclient</groupId>
+			<artifactId>async-http-client</artifactId>
+			<version>${asynchttpclient.version}</version>
 		</dependency>
 	</dependencies>
-
 </project>

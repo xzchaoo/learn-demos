@@ -9,17 +9,21 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-asynchttpclient</artifactId>
-
-	<properties>
-		<asynchttpclient.version>2.4.6</asynchttpclient.version>
-	</properties>
+	<artifactId>httpasyncclient</artifactId>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.asynchttpclient</groupId>
-			<artifactId>async-http-client</artifactId>
-			<version>${asynchttpclient.version}</version>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpasyncclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.reactivex.rxjava2</groupId>
+			<artifactId>rxjava</artifactId>
 		</dependency>
 	</dependencies>
+
 </project>

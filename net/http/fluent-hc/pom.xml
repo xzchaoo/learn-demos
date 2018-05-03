@@ -9,7 +9,15 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>learn-ribbon</artifactId>
+	<artifactId>fluent-hc</artifactId>
+	<description>仅仅只是用起来方便, 但我自己感觉还不如原来的好用, 或者不如使用okhttp, 建议废弃</description>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>fluent-hc</artifactId>
+			<version>4.5.3</version>
+		</dependency>
+	</dependencies>
 
 </project>

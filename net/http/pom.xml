@@ -13,16 +13,16 @@
 	<packaging>pom</packaging>
 	<description>学习HTTP相关的技术</description>
 	<modules>
-		<module>learn-httpclient</module>
-		<module>learn-asynchttpclient</module>
-		<module>learn-okhttp</module>
-		<module>learn-httpasyncclient</module>
-		<module>learn-nanohttpd</module>
-		<module>learn-fluent-hc</module>
-		<module>learn-feign</module>
-		<module>learn-retrofit</module>
-		<module>learn-ribbon</module>
-		<module>learn-jetty</module>
+		<module>httpclient</module>
+		<module>asynchttpclient</module>
+		<module>okhttp</module>
+		<module>httpasyncclient</module>
+		<module>nanohttpd</module>
+		<module>fluent-hc</module>
+		<module>feign</module>
+		<module>retrofit</module>
+		<module>ribbon</module>
+		<module>jetty</module>
 	</modules>
 
 
