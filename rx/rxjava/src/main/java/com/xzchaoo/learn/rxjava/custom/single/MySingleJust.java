@@ -8,7 +8,6 @@ import io.reactivex.SingleObserver;
  * @date 2018/5/9
  */
 public class MySingleJust<T> extends Single<T> {
-  private final T t;
   @Override
   protected void subscribeActual(SingleObserver<? super T> observer) {
 
