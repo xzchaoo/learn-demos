@@ -28,7 +28,7 @@ public class MySingleMap<T, R> extends Single<R> {
   }
 
   /**
-   * map的功能仅仅只是转换 因此它只需要拦截onSuccess操作 其它操作都是 "穿透" 到底层
+   * map的功能仅仅只是转换 因此它只需要 拦截onSuccess操作 其它操作都是 "穿透" 到底层的observer
    *
    * @param <T>
    * @param <R>

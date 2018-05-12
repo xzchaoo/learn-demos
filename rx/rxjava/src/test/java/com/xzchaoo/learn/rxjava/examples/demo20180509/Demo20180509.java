@@ -26,6 +26,9 @@ public class Demo20180509 {
     int times = 10;
     int delaySeconds = 3;
 
+    // 先调第一个服务 它会返回一个token
+    // 然后你需要不停地用这个token为参数去调用另外一个接口 直到有返回数据 最多重试10次 每次间隔3秒
+    // 注意, 如果是token这里失败了, 那么是不会重试的, 如果需要重试, 你需要自己实现
     Single<String> tokenSingle = firstCallSoa();
     final Object result = tokenSingle.flatMap(token -> {
       return Flowable.range(0, times)
@@ -58,6 +61,11 @@ public class Demo20180509 {
 
   private AtomicInteger ai = new AtomicInteger(0);
 
+  /**
+   * 调用这个服务, 返回一个token
+   *
+   * @return
+   */
   private Single<String> firstCallSoa() {
     return Single.just("token=123");
   }
