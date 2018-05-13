@@ -7,7 +7,6 @@ import io.reactivex.Maybe;
 import io.reactivex.MaybeObserver;
 import io.reactivex.MaybeSource;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.disposables.Disposables;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 import io.reactivex.plugins.RxJavaPlugins;
@@ -16,8 +15,6 @@ import io.reactivex.plugins.RxJavaPlugins;
  * @author xzcha
  * @date 2018/5/12
  */
-1实现有问题 这里故意制造一个错误 引起注意
-
 public final class MyMaybeTimeoutMaybe<T, U> extends Maybe<T> implements HasUpstreamMaybeSource<T> {
   private final MaybeSource<T> source;
   private final MaybeSource<U> timeout;
@@ -36,51 +33,48 @@ public final class MyMaybeTimeoutMaybe<T, U> extends Maybe<T> implements HasUpst
 
   @Override
   protected void subscribeActual(MaybeObserver<? super T> observer) {
+    // 1. 安全性
+    //   1. onSubscribe 立即dispose是否有影响
+    // 2. 正确性
+
     SourceObserver<T, U> so = new SourceObserver<>(observer, fallback);
     observer.onSubscribe(so);
-
     source.subscribe(so);
     timeout.subscribe(so.to);
   }
 
-  static final class SourceObserver<T, U> implements MaybeObserver<T>, Disposable {
+  static final class SourceObserver<T, U> extends AtomicReference<Disposable> implements MaybeObserver<T>, Disposable {
     final MaybeObserver<? super T> observer;
     final MaybeSource<T> fallback;
     final TimeoutObserver<U> to;
-    final FallbackObserver<T> fo;
-
-    AtomicReference<Disposable> d = new AtomicReference<>();
-    Disposable dd;
-    AtomicReference<Disposable> tod = new AtomicReference<>();
-    //AtomicReference<Disposable> fod;
+    FallbackObserver<T> fo;
+    Disposable d;
 
     SourceObserver(MaybeObserver<? super T> observer, MaybeSource<T> fallback) {
       this.observer = observer;
       this.fallback = fallback;
       this.to = new TimeoutObserver<>(this);
-      this.fo = fallback == null ? null : new FallbackObserver<>(this);
-      // this.fod = fallback == null ? null : new AtomicReference<>();
     }
 
     @Override
     public void onSubscribe(Disposable d) {
-      if (DisposableHelper.setOnce(this.d, d)) {
-        this.dd = d;
+      if (DisposableHelper.replace(this, d)) {
+        this.d = d;
       }
     }
 
     @Override
     public void onSuccess(T t) {
-      DisposableHelper.dispose(tod);
-      if (d.compareAndSet(dd, DisposableHelper.DISPOSED)) {
+      DisposableHelper.dispose(to);
+      if (compareAndSet(d, DisposableHelper.DISPOSED)) {
         observer.onSuccess(t);
       }
     }
 
     @Override
     public void onError(Throwable e) {
-      DisposableHelper.dispose(tod);
-      if (d.compareAndSet(dd, DisposableHelper.DISPOSED)) {
+      DisposableHelper.dispose(to);
+      if (compareAndSet(d, DisposableHelper.DISPOSED)) {
         observer.onError(e);
       } else {
         RxJavaPlugins.onError(e);
@@ -89,40 +83,42 @@ public final class MyMaybeTimeoutMaybe<T, U> extends Maybe<T> implements HasUpst
 
     @Override
     public void onComplete() {
-      DisposableHelper.dispose(tod);
-      if (d.compareAndSet(dd, DisposableHelper.DISPOSED)) {
+      DisposableHelper.dispose(to);
+      if (compareAndSet(d, DisposableHelper.DISPOSED)) {
         observer.onComplete();
       }
     }
 
     @Override
     public void dispose() {
-      DisposableHelper.dispose(d);
-      DisposableHelper.dispose(tod);
+      DisposableHelper.dispose(this);
+      DisposableHelper.dispose(to);
     }
 
     @Override
     public boolean isDisposed() {
-      return DisposableHelper.isDisposed(d.get());
+      return DisposableHelper.isDisposed(get());
     }
 
     void onTimeout() {
-      Disposable empty = Disposables.empty();
-      if (this.d.compareAndSet(dd, empty)) {
-        this.dd.dispose();
-        if (fo == null) {
-          this.d.lazySet(DisposableHelper.DISPOSED);
+      Disposable dd = this.d;
+      if (fallback == null) {
+        if (compareAndSet(dd, DisposableHelper.DISPOSED)) {
+          dd.dispose();
           observer.onError(new TimeoutException());
-        } else {
+        }
+      } else {
+        fo = new FallbackObserver<>(this);
+        if (compareAndSet(dd, fo)) {
+          dd.dispose();
           fallback.subscribe(fo);
         }
       }
     }
 
     void onTimeoutError(Throwable e) {
-      final Disposable dd = d.getAndSet(DisposableHelper.DISPOSED);
-      if (dd != DisposableHelper.DISPOSED) {
-        dd.dispose();
+      if (compareAndSet(d, DisposableHelper.DISPOSED)) {
+        d.dispose();
         observer.onError(e);
       } else {
         RxJavaPlugins.onError(e);
@@ -130,7 +126,7 @@ public final class MyMaybeTimeoutMaybe<T, U> extends Maybe<T> implements HasUpst
     }
   }
 
-  static final class FallbackObserver<T> implements MaybeObserver<T> {
+  static final class FallbackObserver<T> extends AtomicReference<Disposable> implements MaybeObserver<T>, Disposable {
 
     final SourceObserver<T, ?> parent;
 
@@ -140,29 +136,36 @@ public final class MyMaybeTimeoutMaybe<T, U> extends Maybe<T> implements HasUpst
 
     @Override
     public void onSubscribe(Disposable d) {
-      DisposableHelper.replace(parent.d, d);
+      DisposableHelper.replace(this, d);
     }
 
     @Override
     public void onSuccess(T t) {
-      DisposableHelper.dispose(parent.d);
       parent.observer.onSuccess(t);
     }
 
     @Override
     public void onError(Throwable e) {
-      DisposableHelper.dispose(parent.d);
       parent.observer.onError(e);
     }
 
     @Override
     public void onComplete() {
-      DisposableHelper.dispose(parent.d);
       parent.observer.onComplete();
+    }
+
+    @Override
+    public void dispose() {
+      DisposableHelper.dispose(this);
+    }
+
+    @Override
+    public boolean isDisposed() {
+      return DisposableHelper.isDisposed(get());
     }
   }
 
-  static final class TimeoutObserver<U> implements MaybeObserver<U> {
+  static final class TimeoutObserver<U> extends AtomicReference<Disposable> implements MaybeObserver<U>, Disposable {
     private final SourceObserver<?, U> parent;
 
     TimeoutObserver(SourceObserver<?, U> parent) {
@@ -171,7 +174,7 @@ public final class MyMaybeTimeoutMaybe<T, U> extends Maybe<T> implements HasUpst
 
     @Override
     public void onSubscribe(Disposable d) {
-      DisposableHelper.replace(parent.tod, d);
+      DisposableHelper.replace(this, d);
     }
 
     @Override
@@ -187,6 +190,16 @@ public final class MyMaybeTimeoutMaybe<T, U> extends Maybe<T> implements HasUpst
     @Override
     public void onComplete() {
       parent.onTimeout();
+    }
+
+    @Override
+    public void dispose() {
+      DisposableHelper.dispose(this);
+    }
+
+    @Override
+    public boolean isDisposed() {
+      return DisposableHelper.isDisposed(get());
     }
   }
 }
