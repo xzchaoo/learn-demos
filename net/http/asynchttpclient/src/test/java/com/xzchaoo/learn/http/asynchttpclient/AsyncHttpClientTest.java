@@ -7,6 +7,9 @@ import org.asynchttpclient.ListenableFuture;
 import org.asynchttpclient.Response;
 import org.junit.Test;
 
+import java.util.concurrent.CountDownLatch;
+
+import io.netty.util.concurrent.ImmediateExecutor;
 import lombok.val;
 
 import static org.asynchttpclient.Dsl.asyncHttpClient;
@@ -31,20 +34,30 @@ public class AsyncHttpClientTest {
       // .setMaxConnections(100)
       .setUserAgent("haha")
       .build();
+
+    //用CDL异步转同步
+    val cdl = new CountDownLatch(1);
     AsyncHttpClient ahc = asyncHttpClient(ahcc);
-    try {
-      ListenableFuture<String> f = ahc.prepareGet("https://www.bilibili.com/")
-        .addQueryParam("a", "b")
-        .execute(new AsyncCompletionHandler<String>() {
-          @Override
-          public String onCompleted(Response response) throws Exception {
-            return response.getResponseBody();
-          }
-        });
-      // 可以利用一些adapter 将 ListenableFuture 转成 Rx系列的Publisher
-      System.out.println(f.get());
-    } finally {
-      ahc.close();
-    }
+
+    ListenableFuture<String> f = ahc.prepareGet("https://www.bilibili.com/")
+      .addQueryParam("a", "b")
+      .execute(new AsyncCompletionHandler<String>() {
+        @Override
+        public String onCompleted(Response response) throws Exception {
+          return response.getResponseBody();
+        }
+      });
+
+    f.addListener(() -> {
+      try {
+        System.out.println("结果是 " + f.get());
+      } catch (Exception e) {
+        e.printStackTrace();
+      } finally {
+        cdl.countDown();
+      }
+    }, ImmediateExecutor.INSTANCE);
+
+    cdl.await();
   }
 }
