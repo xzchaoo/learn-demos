@@ -15,12 +15,31 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import io.reactivex.Flowable;
+import io.reactivex.Single;
+import io.reactivex.SingleObserver;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class BackPressureTest {
 	@Ignore
 	@Test
 	public void test() throws InterruptedException {
+		Single.just(1).subscribe(new SingleObserver<Integer>() {
+			@Override
+			public void onSubscribe(Disposable d) {
+
+			}
+
+			@Override
+			public void onSuccess(Integer integer) {
+
+			}
+
+			@Override
+			public void onError(Throwable e) {
+
+			}
+		});
 		AtomicInteger count1 = new AtomicInteger(0);
 		AtomicInteger count = new AtomicInteger(0);
 		Flowable.range(1, 100)
