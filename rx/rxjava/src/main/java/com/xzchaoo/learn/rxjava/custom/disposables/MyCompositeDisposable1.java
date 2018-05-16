@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import io.reactivex.disposables.Disposable;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/11
  */
 public class MyCompositeDisposable1 implements Disposable {

@@ -6,7 +6,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.fuseable.ScalarCallable;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public final class MyMaybeEmpty extends Maybe<Object> implements ScalarCallable<Object> {

@@ -12,7 +12,7 @@ import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public final class MyMaybeTimeoutMaybe<T, U> extends Maybe<T> implements HasUpstreamMaybeSource<T> {

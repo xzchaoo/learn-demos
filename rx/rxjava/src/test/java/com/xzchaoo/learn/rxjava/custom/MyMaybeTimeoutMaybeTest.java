@@ -9,7 +9,7 @@ import io.reactivex.MaybeObserver;
 import io.reactivex.disposables.Disposable;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
 public class MyMaybeTimeoutMaybeTest {

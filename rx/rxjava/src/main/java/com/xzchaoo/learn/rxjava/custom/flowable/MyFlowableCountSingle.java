@@ -6,13 +6,16 @@ import io.reactivex.Flowable;
 import io.reactivex.FlowableSubscriber;
 import io.reactivex.Single;
 import io.reactivex.SingleObserver;
+import io.reactivex.annotations.BackpressureKind;
+import io.reactivex.annotations.BackpressureSupport;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
+@BackpressureSupport(BackpressureKind.UNBOUNDED_IN)
 public class MyFlowableCountSingle<T> extends Single<Long> {
   private final Flowable<T> source;
 

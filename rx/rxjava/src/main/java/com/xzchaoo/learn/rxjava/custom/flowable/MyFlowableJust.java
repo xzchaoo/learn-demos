@@ -3,13 +3,16 @@ package com.xzchaoo.learn.rxjava.custom.flowable;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.Flowable;
+import io.reactivex.annotations.BackpressureKind;
+import io.reactivex.annotations.BackpressureSupport;
 import io.reactivex.internal.fuseable.ScalarCallable;
 import io.reactivex.internal.subscriptions.ScalarSubscription;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
+@BackpressureSupport(BackpressureKind.FULL)
 public final class MyFlowableJust<T> extends Flowable<T> implements ScalarCallable<T> {
   private final T value;
 

@@ -16,7 +16,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
 public final class MyMaybeTakeUntilPublisher<T, U> extends Maybe<T> implements HasUpstreamMaybeSource<T> {

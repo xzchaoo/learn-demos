@@ -3,57 +3,52 @@ package com.xzchaoo.learn.rxjava.custom.flowable;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 
 import io.reactivex.Flowable;
 import io.reactivex.FlowableSubscriber;
-import io.reactivex.annotations.BackpressureKind;
-import io.reactivex.annotations.BackpressureSupport;
 import io.reactivex.internal.subscriptions.EmptySubscription;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**
- * TODO 实现有问题
- *
  * @author xzchaoo
- * @date 2018/5/13
+ * @date 2018/5/14
  */
-@Deprecated
-@BackpressureSupport(BackpressureKind.PASS_THROUGH)
-public class MyFlowableTake<T> extends Flowable<T> {
+public final class MyFlowableLimit<T> extends Flowable<T> {
   private final Flowable<T> source;
   private final long limit;
 
-  public MyFlowableTake(Flowable<T> source, long limit) {
+  public MyFlowableLimit(Flowable<T> source, long limit) {
     this.source = source;
     this.limit = limit;
   }
 
   @Override
-  protected void subscribeActual(Subscriber<? super T> subscriber) {
+  protected void subscribeActual(Subscriber<? super T> actual) {
     if (limit == 0) {
-      EmptySubscription.complete(subscriber);
-    } else {
-      source.subscribe(new TakeSubscriber<>(subscriber, limit));
+      EmptySubscription.complete(actual);
+      return;
     }
+    source.subscribe(new LimitSubscriber<>(actual, limit));
   }
 
-  static final class TakeSubscriber<T> implements FlowableSubscriber<T>, Subscription {
-    final Subscriber<? super T> subscriber;
-    long remaining;
+  static final class LimitSubscriber<T> extends AtomicLong implements FlowableSubscriber<T>, Subscription {
+    final Subscriber<? super T> actual;
     Subscription s;
+    long remaining;
 
-    TakeSubscriber(Subscriber<? super T> subscriber, long limit) {
-      this.subscriber = subscriber;
+    LimitSubscriber(Subscriber<? super T> actual, long limit) {
+      this.actual = actual;
       this.remaining = limit;
+      lazySet(limit);
     }
 
     @Override
     public void onSubscribe(Subscription s) {
       if (SubscriptionHelper.validate(this.s, s)) {
         this.s = s;
-        subscriber.onSubscribe(this);
+        actual.onSubscribe(this);
       }
     }
 
@@ -62,10 +57,10 @@ public class MyFlowableTake<T> extends Flowable<T> {
       long r = remaining;
       if (r > 0) {
         remaining = --r;
-        subscriber.onNext(t);
+        actual.onNext(t);
         if (r == 0) {
           s.cancel();
-          subscriber.onComplete();
+          actual.onComplete();
         }
       }
     }
@@ -73,8 +68,7 @@ public class MyFlowableTake<T> extends Flowable<T> {
     @Override
     public void onError(Throwable t) {
       if (remaining > 0) {
-        remaining = 0;
-        subscriber.onError(t);
+        actual.onError(t);
       } else {
         RxJavaPlugins.onError(t);
       }
@@ -83,21 +77,36 @@ public class MyFlowableTake<T> extends Flowable<T> {
     @Override
     public void onComplete() {
       if (remaining > 0) {
-        subscriber.onComplete();
+        actual.onComplete();
       }
     }
 
     @Override
     public void request(long n) {
       if (SubscriptionHelper.validate(n)) {
-        this.s.request(n);
+        for (; ; ) {
+          long e = get();
+          if (e == 0) {
+            break;
+          }
+          long r;
+          if (e <= n) {
+            r = e;
+          } else {
+            r = n;
+          }
+          long u = e - r;
+          if (compareAndSet(e, u)) {
+            s.request(r);
+            break;
+          }
+        }
       }
     }
 
     @Override
     public void cancel() {
       s.cancel();
-      s = SubscriptionHelper.CANCELLED;
     }
   }
 }

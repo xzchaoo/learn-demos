@@ -10,7 +10,7 @@ import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public final class MyMaybeContains<T> extends Single<Boolean> implements HasUpstreamMaybeSource {

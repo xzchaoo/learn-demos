@@ -12,7 +12,7 @@ import io.reactivex.disposables.Disposables;
 import io.reactivex.exceptions.Exceptions;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public final class MyMaybeFromFuture<T> extends Maybe<T> {

@@ -10,7 +10,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/10
  */
 public class MySingleObserveOn<T> extends Single<T> {

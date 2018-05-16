@@ -16,7 +16,7 @@ import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public final class MyMaybeDelayOtherPublisher<T, U> extends Maybe<T> implements HasUpstreamMaybeSource<T> {

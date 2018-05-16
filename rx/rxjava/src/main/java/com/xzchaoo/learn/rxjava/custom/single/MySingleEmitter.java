@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Cancellable;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/10
  */
 public interface MySingleEmitter<T> {

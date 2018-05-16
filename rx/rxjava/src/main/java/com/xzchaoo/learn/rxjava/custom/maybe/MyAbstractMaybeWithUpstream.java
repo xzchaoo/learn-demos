@@ -5,7 +5,7 @@ import io.reactivex.MaybeSource;
 import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public abstract class MyAbstractMaybeWithUpstream<T, R> extends Maybe<R> implements HasUpstreamMaybeSource<T> {

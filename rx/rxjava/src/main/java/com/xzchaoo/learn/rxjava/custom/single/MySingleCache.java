@@ -11,7 +11,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.EmptyDisposable;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/10
  */
 public class MySingleCache<T> extends Single<T> {

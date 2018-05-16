@@ -8,7 +8,7 @@ import io.reactivex.Maybe;
 import io.reactivex.MaybeSource;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
 public class MyMaybeMergeArrayTest {

@@ -6,7 +6,7 @@ import java.util.List;
 import io.reactivex.disposables.Disposable;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/11
  */
 public class MyCompositeDisposable2 implements Disposable {

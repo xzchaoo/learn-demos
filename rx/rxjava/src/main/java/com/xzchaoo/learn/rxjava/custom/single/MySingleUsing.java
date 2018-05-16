@@ -20,7 +20,7 @@ import io.reactivex.plugins.RxJavaPlugins;
 /**
  * TODO 有点混乱, 上游是否可以保证 一旦它调用了 onError onSuccess 方法, 那么它就可以被重复d?
  *
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/10
  */
 public final class MySingleUsing<T, R> extends Single<T> {

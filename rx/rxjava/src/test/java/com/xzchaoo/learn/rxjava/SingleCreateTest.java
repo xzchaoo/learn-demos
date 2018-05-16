@@ -8,7 +8,7 @@ import io.reactivex.Single;
 import lombok.val;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/10
  */
 public class SingleCreateTest {
