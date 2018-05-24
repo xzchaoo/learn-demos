@@ -9,7 +9,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.util.ExceptionHelper;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/11
  */
 public class MyCompositeDisposable3 implements Disposable {

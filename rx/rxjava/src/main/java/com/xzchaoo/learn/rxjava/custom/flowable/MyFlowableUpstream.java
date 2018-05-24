@@ -6,7 +6,7 @@ import io.reactivex.Flowable;
 import io.reactivex.internal.fuseable.HasUpstreamPublisher;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
 public abstract class MyFlowableUpstream<T, U> extends Flowable<T> implements HasUpstreamPublisher<U> {

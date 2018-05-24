@@ -10,7 +10,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public final class MyMaybeFromCallable<T> extends Maybe<T> implements Callable<T> {

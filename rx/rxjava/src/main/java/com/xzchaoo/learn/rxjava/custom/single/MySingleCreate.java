@@ -12,7 +12,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/10
  */
 public class MySingleCreate<T> extends Single<T> {

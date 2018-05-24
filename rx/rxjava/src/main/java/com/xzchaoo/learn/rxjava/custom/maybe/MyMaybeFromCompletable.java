@@ -9,7 +9,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.HasUpstreamCompletableSource;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public final class MyMaybeFromCompletable<T> extends Maybe<T> implements HasUpstreamCompletableSource {

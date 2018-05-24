@@ -9,7 +9,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public final class MyMaybeDefer<T> extends Maybe<T> {

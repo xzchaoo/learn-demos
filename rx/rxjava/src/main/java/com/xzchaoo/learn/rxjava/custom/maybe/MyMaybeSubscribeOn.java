@@ -10,7 +10,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
 public final class MyMaybeSubscribeOn<T> extends Maybe<T> {

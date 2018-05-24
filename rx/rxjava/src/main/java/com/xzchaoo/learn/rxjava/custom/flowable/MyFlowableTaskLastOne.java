@@ -5,35 +5,30 @@ import org.reactivestreams.Subscription;
 
 import io.reactivex.Flowable;
 import io.reactivex.FlowableSubscriber;
-import io.reactivex.annotations.BackpressureKind;
-import io.reactivex.annotations.BackpressureSupport;
 import io.reactivex.internal.subscriptions.DeferredScalarSubscription;
 import io.reactivex.internal.subscriptions.SubscriptionHelper;
 
 /**
  * @author xzchaoo
- * @date 2018/5/13
+ * @date 2018/5/14
  */
-@BackpressureSupport(BackpressureKind.UNBOUNDED_IN)
-public class MyFlowableCount<T> extends Flowable<Long> {
+public class MyFlowableTaskLastOne<T> extends Flowable<T> {
   private final Flowable<T> source;
 
-  public MyFlowableCount(Flowable<T> source) {
+  public MyFlowableTaskLastOne(Flowable<T> source) {
     this.source = source;
   }
 
   @Override
-  protected void subscribeActual(Subscriber<? super Long> subscriber) {
-    source.subscribe(new CountSubscriber<>(subscriber));
+  protected void subscribeActual(Subscriber<? super T> s) {
+    source.subscribe(new TakeLastOne<>(s));
   }
 
-  static final class CountSubscriber<T> extends DeferredScalarSubscription<Long>
-    implements FlowableSubscriber<T> {
+  static final class TakeLastOne<T> extends DeferredScalarSubscription<T> implements FlowableSubscriber<T> {
     Subscription s;
-    long count;
 
-    CountSubscriber(Subscriber<? super Long> subscriber) {
-      super(subscriber);
+    TakeLastOne(Subscriber<? super T> actual) {
+      super(actual);
     }
 
     @Override
@@ -47,24 +42,29 @@ public class MyFlowableCount<T> extends Flowable<Long> {
 
     @Override
     public void onNext(T t) {
-      ++count;
+      value = t;
     }
 
     @Override
     public void onError(Throwable t) {
+      value = null;
       actual.onError(t);
     }
 
     @Override
     public void onComplete() {
-      super.complete(count);
+      T v = this.value;
+      if (v != null) {
+        complete(v);
+      } else {
+        actual.onComplete();
+      }
     }
 
     @Override
     public void cancel() {
       super.cancel();
       s.cancel();
-      s = SubscriptionHelper.CANCELLED;
     }
   }
 }

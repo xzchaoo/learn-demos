@@ -12,7 +12,7 @@ import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 import io.reactivex.internal.subscriptions.DeferredScalarSubscription;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
 public final class MyMaybeToFlowable<T> extends Flowable<T> implements HasUpstreamMaybeSource<T> {

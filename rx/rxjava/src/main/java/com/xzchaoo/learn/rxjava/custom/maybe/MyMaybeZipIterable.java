@@ -10,7 +10,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.internal.disposables.EmptyDisposable;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public class MyMaybeZipIterable<T, U> extends Maybe<U> {

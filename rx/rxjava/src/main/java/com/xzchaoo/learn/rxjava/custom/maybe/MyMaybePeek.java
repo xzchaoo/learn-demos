@@ -15,7 +15,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
 public final class MyMaybePeek<T> extends Maybe<T> {

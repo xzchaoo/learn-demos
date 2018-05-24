@@ -9,7 +9,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.internal.disposables.EmptyDisposable;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public final class MyMaybeErrorCallable<T> extends Maybe<T> {

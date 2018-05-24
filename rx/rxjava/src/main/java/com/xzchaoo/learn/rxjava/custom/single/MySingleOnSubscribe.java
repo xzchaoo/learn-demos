@@ -3,7 +3,7 @@ package com.xzchaoo.learn.rxjava.custom.single;
 import io.reactivex.annotations.NonNull;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/10
  */
 @FunctionalInterface

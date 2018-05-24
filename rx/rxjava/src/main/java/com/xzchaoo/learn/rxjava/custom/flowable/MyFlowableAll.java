@@ -5,6 +5,8 @@ import org.reactivestreams.Subscription;
 
 import io.reactivex.Flowable;
 import io.reactivex.FlowableSubscriber;
+import io.reactivex.annotations.BackpressureKind;
+import io.reactivex.annotations.BackpressureSupport;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Predicate;
 import io.reactivex.internal.subscriptions.DeferredScalarSubscription;
@@ -12,9 +14,10 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
+@BackpressureSupport(BackpressureKind.UNBOUNDED_IN)
 public class MyFlowableAll<U> extends MyFlowableUpstream<Boolean, U> {
   private final Predicate<? super U> predicate;
 

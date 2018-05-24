@@ -12,7 +12,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.fuseable.HasUpstreamMaybeSource;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/13
  */
 public final class MyMaybeSwitchIfEmptySingle<T> extends Maybe<T> implements HasUpstreamMaybeSource<T> {

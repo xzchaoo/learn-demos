@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposables;
 import io.reactivex.internal.fuseable.ScalarCallable;
 
 /**
- * @author xzcha
+ * @author xzchaoo
  * @date 2018/5/12
  */
 public class MyMaybeJust<T> extends Maybe<T> implements ScalarCallable<T> {
