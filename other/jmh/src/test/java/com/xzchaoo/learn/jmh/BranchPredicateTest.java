@@ -12,6 +12,7 @@ import org.openjdk.jmh.annotations.Warmup;
 import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -33,28 +34,43 @@ public class BranchPredicateTest {
 
   @Setup
   public void setup() {
-    Random random = new Random(1);
+    Random random = new Random();
     list1 = new ArrayList<>(n);
+    list2 = new ArrayList<>(n);
+    list3 = new ArrayList<>(n);
     for (int i = 0; i < n; ++i) {
-      int x = random.nextInt();
+      int x = random.nextInt() & 0X7FFFFFFF;
       list1.add(x);
     }
-    list2 = new ArrayList<>(list1);
-    list2.sort(Integer::compare);
-    mid = list2.get(n / 100);
+    list2.addAll(list1);
+    list3.addAll(list1);
+    Collections.shuffle(list1);
 
-    list3 = new ArrayList<>(list1);
+    //list2 = new ArrayList<>(list1);
+    list2.sort(Integer::compare);
+    mid = list2.get(n - 1);
+
+    //list3 = new ArrayList<>(list1);
     list3.sort((a, b) -> Integer.compare(b, a));
+//
+//    int sum = 0;
+//    for (int i = 0; i < n; ++i) {
+//      sum += list1.get(i);
+//      sum += list2.get(i);
+//      sum += list3.get(i);
+//    }
+//    System.out.println(sum);
   }
 
   @Benchmark
   public void test_1(Blackhole b) {
     int mid = this.mid;
-    int count = 0;
+    List<Integer> list = this.list1;
+    double count = 0;
     for (int i = 0; i < n; ++i) {
-      Integer x = list1.get(i);
+      Integer x = list.get(i);
       if (x < mid) {
-        ++count;
+        count += Math.log(x);
       }
     }
     b.consume(count);
@@ -63,11 +79,12 @@ public class BranchPredicateTest {
   @Benchmark
   public void test_2(Blackhole b) {
     int mid = this.mid;
-    int count = 0;
+    List<Integer> list = this.list2;
+    double count = 0;
     for (int i = 0; i < n; ++i) {
-      Integer x = list2.get(i);
+      Integer x = list.get(i);
       if (x < mid) {
-        ++count;
+        count += Math.log(x);
       }
     }
     b.consume(count);
@@ -76,11 +93,12 @@ public class BranchPredicateTest {
   @Benchmark
   public void test_3(Blackhole b) {
     int mid = this.mid;
-    int count = 0;
+    List<Integer> list = this.list3;
+    double count = 0;
     for (int i = 0; i < n; ++i) {
-      Integer x = list3.get(i);
+      Integer x = list.get(i);
       if (x < mid) {
-        ++count;
+        count += Math.log(x);
       }
     }
     b.consume(count);
