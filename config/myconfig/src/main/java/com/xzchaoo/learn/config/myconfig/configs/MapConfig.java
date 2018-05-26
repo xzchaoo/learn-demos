@@ -33,6 +33,11 @@ public class MapConfig extends AbstractConfig {
     return map;
   }
 
+  @Override
+  public boolean contains(String key) {
+    return map.containsKey(key);
+  }
+
   public void replace(Map<String, String> map) {
     if (map == null) {
       throw new NullPointerException();

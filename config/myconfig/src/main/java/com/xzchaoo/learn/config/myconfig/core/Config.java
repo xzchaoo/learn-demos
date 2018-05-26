@@ -21,4 +21,6 @@ public interface Config {
   Map<String, String> getAsMap();
 
   Subscription subscribe(ConfigObserver configObserver);
+
+  boolean contains(String key);
 }

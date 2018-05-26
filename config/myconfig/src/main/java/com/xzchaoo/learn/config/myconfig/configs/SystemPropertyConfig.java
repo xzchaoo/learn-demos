@@ -12,6 +12,8 @@ import java.util.Properties;
  * @date 2018/5/25
  */
 public class SystemPropertyConfig extends MapConfig {
+  public static final SystemPropertyConfig INSTANCE = new SystemPropertyConfig();
+
   public SystemPropertyConfig() {
     super(convertToMap(System.getProperties()));
   }

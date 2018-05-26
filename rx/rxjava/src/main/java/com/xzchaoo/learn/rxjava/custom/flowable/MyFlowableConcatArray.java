@@ -16,6 +16,7 @@ import io.reactivex.internal.subscriptions.SubscriptionHelper;
  * @author xzchaoo
  * @date 2018/5/15
  */
+@Deprecated
 public final class MyFlowableConcatArray<T> extends Flowable<T> {
   final Publisher<? extends T>[] sources;
   final boolean delayErrors;
@@ -69,7 +70,7 @@ public final class MyFlowableConcatArray<T> extends Flowable<T> {
       if (index == n) {
         // finished
         if (emitted < currentRequested.get()) {
-          currentRequested.get()-emitted;
+          // currentRequested.get()-emitted;
         }
         emitted = 0;
         actual.onComplete();

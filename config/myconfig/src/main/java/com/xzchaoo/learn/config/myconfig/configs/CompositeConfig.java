@@ -67,6 +67,11 @@ public class CompositeConfig extends AbstractConfig {
     return this.state.map;
   }
 
+  @Override
+  public boolean contains(String key) {
+    return this.state.map.containsKey(key);
+  }
+
   private CompositeState buildNewState(CompositeState oldState) {
     Map<String, String> map = new HashMap<>(oldState.map.size());
     for (Config config : oldState.configs) {
