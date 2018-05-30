@@ -1,0 +1,7454 @@
+{
+  "ResponseStatus": {
+	"Timestamp": "/Date(1527577150687+0800)/",
+	"Ack": "Success",
+	"Errors": [],
+	"Build": null,
+	"Version": null,
+	"Extension": []
+  },
+  "data": {
+	"hotCityPair": [
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "HKG",
+		"rank": 1
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "TYO",
+		"rank": 2
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "HKG",
+		"rank": 3
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SEL",
+		"rank": 4
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "OSA",
+		"rank": 5
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BKK",
+		"rank": 6
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "TYO",
+		"rank": 7
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "TPE",
+		"rank": 8
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MFM",
+		"rank": 9
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "SEL",
+		"rank": 10
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BKK",
+		"rank": 11
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "HKT",
+		"rank": 12
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SIN",
+		"rank": 13
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "BKK",
+		"rank": 14
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "HKT",
+		"rank": 15
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CJU",
+		"rank": 16
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "OSA",
+		"rank": 17
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "SIN",
+		"rank": 18
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "BKK",
+		"rank": 19
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "TPE",
+		"rank": 20
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "BKK",
+		"rank": 21
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "HKG",
+		"rank": 22
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MFM",
+		"rank": 23
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SPK",
+		"rank": 24
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "DPS",
+		"rank": 25
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "TYO",
+		"rank": 26
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "NGO",
+		"rank": 27
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "HKG",
+		"rank": 28
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "TPE",
+		"rank": 29
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "SIN",
+		"rank": 30
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "HKG",
+		"rank": 31
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "SEL",
+		"rank": 32
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "HKG",
+		"rank": 33
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "BKK",
+		"rank": 34
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "DPS",
+		"rank": 35
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "OKA",
+		"rank": 36
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "BKK",
+		"rank": 37
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "SEL",
+		"rank": 38
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CNX",
+		"rank": 39
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SIN",
+		"rank": 40
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SEL",
+		"rank": 41
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "OSA",
+		"rank": 42
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "LON",
+		"rank": 43
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "KUL",
+		"rank": 44
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "HKT",
+		"rank": 45
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "OSA",
+		"rank": 46
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "LAX",
+		"rank": 47
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "DXB",
+		"rank": 48
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SYD",
+		"rank": 49
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "DXB",
+		"rank": 50
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "SPK",
+		"rank": 51
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "SIN",
+		"rank": 52
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "KUL",
+		"rank": 53
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "TPE",
+		"rank": 54
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "TYO",
+		"rank": 55
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CNX",
+		"rank": 56
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "NYC",
+		"rank": 57
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "KUL",
+		"rank": 58
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "KBV",
+		"rank": 59
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "HKT",
+		"rank": 60
+	  },
+	  {
+		"departureCityCode": "WEH",
+		"arrivalCityCode": "SEL",
+		"rank": 61
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "LAX",
+		"rank": 62
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "SEL",
+		"rank": 63
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "BKK",
+		"rank": 64
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "SEL",
+		"rank": 65
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "TPE",
+		"rank": 66
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SHA",
+		"rank": 67
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "NYC",
+		"rank": 68
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "TYO",
+		"rank": 69
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "BKK",
+		"rank": 70
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "DPS",
+		"rank": 71
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "HKT",
+		"rank": 72
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "BKK",
+		"rank": 73
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "HKT",
+		"rank": 75
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "BKK",
+		"rank": 76
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "SIN",
+		"rank": 77
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "FUK",
+		"rank": 78
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "DPS",
+		"rank": 79
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "HKT",
+		"rank": 80
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "SEL",
+		"rank": 81
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SGN",
+		"rank": 82
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "BKK",
+		"rank": 83
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "PAR",
+		"rank": 84
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "HKG",
+		"rank": 85
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "SHA",
+		"rank": 86
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "HKG",
+		"rank": 87
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "LON",
+		"rank": 88
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "TYO",
+		"rank": 89
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "CNX",
+		"rank": 90
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "SEL",
+		"rank": 91
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "HKT",
+		"rank": 92
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "NGO",
+		"rank": 93
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "BKK",
+		"rank": 94
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CJU",
+		"rank": 95
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MNL",
+		"rank": 96
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "PAR",
+		"rank": 97
+	  },
+	  {
+		"departureCityCode": "WUX",
+		"arrivalCityCode": "HKG",
+		"rank": 98
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "TPE",
+		"rank": 99
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "TPE",
+		"rank": 100
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "MFM",
+		"rank": 101
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "USM",
+		"rank": 102
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "SYD",
+		"rank": 103
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "HNL",
+		"rank": 104
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "TPE",
+		"rank": 105
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MEL",
+		"rank": 106
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "SHA",
+		"rank": 107
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "NHA",
+		"rank": 108
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "HKG",
+		"rank": 109
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "SGN",
+		"rank": 110
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "HKT",
+		"rank": 111
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "SEL",
+		"rank": 112
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "BKI",
+		"rank": 114
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "BJS",
+		"rank": 115
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SPN",
+		"rank": 116
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "SPN",
+		"rank": 117
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SPK",
+		"rank": 118
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "DXB",
+		"rank": 119
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "TAO",
+		"rank": 120
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "SIN",
+		"rank": 121
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "FRA",
+		"rank": 122
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "HNL",
+		"rank": 123
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "SGN",
+		"rank": 124
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BKI",
+		"rank": 125
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MNL",
+		"rank": 126
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "SEL",
+		"rank": 127
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "SIN",
+		"rank": 128
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "BKK",
+		"rank": 129
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "HKT",
+		"rank": 130
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "SEL",
+		"rank": 131
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "KUL",
+		"rank": 132
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "TYO",
+		"rank": 133
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "OSA",
+		"rank": 134
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CNX",
+		"rank": 135
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "SIN",
+		"rank": 136
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "MNL",
+		"rank": 137
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "OKA",
+		"rank": 138
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "BKK",
+		"rank": 139
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "FUK",
+		"rank": 140
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "SEL",
+		"rank": 141
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "KHH",
+		"rank": 142
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "NHA",
+		"rank": 143
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "HKG",
+		"rank": 144
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "USM",
+		"rank": 145
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "TPE",
+		"rank": 146
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "YVR",
+		"rank": 147
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "TPE",
+		"rank": 148
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "OSA",
+		"rank": 149
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "TPE",
+		"rank": 150
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "BKK",
+		"rank": 151
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "BKK",
+		"rank": 152
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "REP",
+		"rank": 153
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MIL",
+		"rank": 154
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "BKK",
+		"rank": 155
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "HKT",
+		"rank": 156
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "TYO",
+		"rank": 157
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MNL",
+		"rank": 158
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MOW",
+		"rank": 159
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "WEH",
+		"rank": 160
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "DPS",
+		"rank": 161
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "TYO",
+		"rank": 162
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "KUL",
+		"rank": 163
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "KLO",
+		"rank": 164
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "USM",
+		"rank": 165
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "NHA",
+		"rank": 166
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "CNX",
+		"rank": 167
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "DXB",
+		"rank": 168
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "KBV",
+		"rank": 169
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "USM",
+		"rank": 170
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "OSA",
+		"rank": 171
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "BKK",
+		"rank": 172
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "USM",
+		"rank": 173
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "AKL",
+		"rank": 174
+	  },
+	  {
+		"departureCityCode": "YNT",
+		"arrivalCityCode": "SEL",
+		"rank": 175
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "PNH",
+		"rank": 176
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "SFO",
+		"rank": 177
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "PAR",
+		"rank": 178
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "OSA",
+		"rank": 179
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BKI",
+		"rank": 180
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "CNX",
+		"rank": 181
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BCN",
+		"rank": 182
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "OSA",
+		"rank": 183
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "HKT",
+		"rank": 184
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "USM",
+		"rank": 185
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "CNX",
+		"rank": 186
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CMB",
+		"rank": 187
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "HKG",
+		"rank": 188
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MEL",
+		"rank": 189
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "TYO",
+		"rank": 190
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "HKG",
+		"rank": 191
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SPN",
+		"rank": 192
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "PNH",
+		"rank": 193
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "TPE",
+		"rank": 194
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "CJU",
+		"rank": 195
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "SEL",
+		"rank": 196
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "CJU",
+		"rank": 197
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "NHA",
+		"rank": 199
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "REP",
+		"rank": 200
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "SIN",
+		"rank": 201
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "BKK",
+		"rank": 202
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SFO",
+		"rank": 203
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "SIN",
+		"rank": 204
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "SEL",
+		"rank": 205
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "LAX",
+		"rank": 206
+	  },
+	  {
+		"departureCityCode": "SWA",
+		"arrivalCityCode": "BKK",
+		"rank": 207
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "LON",
+		"rank": 208
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "HAN",
+		"rank": 209
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "SIN",
+		"rank": 210
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "HKT",
+		"rank": 211
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "AKL",
+		"rank": 212
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "HKT",
+		"rank": 213
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "SIN",
+		"rank": 214
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SGN",
+		"rank": 215
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "OSA",
+		"rank": 216
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "YTO",
+		"rank": 217
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "PAR",
+		"rank": 218
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "HKG",
+		"rank": 219
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "REP",
+		"rank": 220
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "KUL",
+		"rank": 221
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "DPS",
+		"rank": 222
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "KBV",
+		"rank": 223
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "OSA",
+		"rank": 224
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "SIN",
+		"rank": 225
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "HAN",
+		"rank": 226
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "MFM",
+		"rank": 227
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "YVR",
+		"rank": 228
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "FRA",
+		"rank": 229
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "TYO",
+		"rank": 230
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BCN",
+		"rank": 231
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "TPE",
+		"rank": 233
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "SHA",
+		"rank": 234
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "DAD",
+		"rank": 235
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "BKK",
+		"rank": 236
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "LAX",
+		"rank": 237
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MIL",
+		"rank": 238
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "MFM",
+		"rank": 239
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "JKT",
+		"rank": 240
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "HAN",
+		"rank": 241
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "DPS",
+		"rank": 242
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "ROM",
+		"rank": 243
+	  },
+	  {
+		"departureCityCode": "JJN",
+		"arrivalCityCode": "HKG",
+		"rank": 244
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "BKI",
+		"rank": 245
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "HKT",
+		"rank": 246
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MOW",
+		"rank": 247
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "TYO",
+		"rank": 248
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "SEL",
+		"rank": 249
+	  },
+	  {
+		"departureCityCode": "HRB",
+		"arrivalCityCode": "BKK",
+		"rank": 250
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "LGK",
+		"rank": 251
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "BKK",
+		"rank": 252
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CMB",
+		"rank": 253
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "HKG",
+		"rank": 254
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "ROM",
+		"rank": 255
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "ATH",
+		"rank": 256
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "KUL",
+		"rank": 257
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "SYD",
+		"rank": 258
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "BKI",
+		"rank": 259
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "MNL",
+		"rank": 260
+	  },
+	  {
+		"departureCityCode": "WUX",
+		"arrivalCityCode": "MFM",
+		"rank": 261
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "HOU",
+		"rank": 262
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "DAD",
+		"rank": 263
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "SEL",
+		"rank": 264
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MRU",
+		"rank": 265
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "SPK",
+		"rank": 266
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "SPK",
+		"rank": 267
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "SHA",
+		"rank": 268
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "BJS",
+		"rank": 269
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MOW",
+		"rank": 270
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "HKG",
+		"rank": 271
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MUC",
+		"rank": 272
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "PUS",
+		"rank": 273
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SYD",
+		"rank": 274
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "SIN",
+		"rank": 275
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "LAX",
+		"rank": 276
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "CNX",
+		"rank": 277
+	  },
+	  {
+		"departureCityCode": "WUX",
+		"arrivalCityCode": "TPE",
+		"rank": 278
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "PUS",
+		"rank": 279
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "DXB",
+		"rank": 280
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "DAD",
+		"rank": 281
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "ROM",
+		"rank": 282
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "SPK",
+		"rank": 283
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "BJS",
+		"rank": 284
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "LON",
+		"rank": 285
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "JKT",
+		"rank": 286
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MDC",
+		"rank": 287
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MAD",
+		"rank": 288
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "SYD",
+		"rank": 289
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "MFM",
+		"rank": 290
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CJU",
+		"rank": 291
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "SIN",
+		"rank": 292
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "TYO",
+		"rank": 293
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "TPE",
+		"rank": 294
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "OSA",
+		"rank": 295
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "DAD",
+		"rank": 296
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "BKK",
+		"rank": 297
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "SEL",
+		"rank": 298
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "NHA",
+		"rank": 299
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "IST",
+		"rank": 300
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "IST",
+		"rank": 301
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "HKG",
+		"rank": 302
+	  },
+	  {
+		"departureCityCode": "CGQ",
+		"arrivalCityCode": "SEL",
+		"rank": 303
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "PNH",
+		"rank": 304
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "BKK",
+		"rank": 305
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "SIN",
+		"rank": 306
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "SPK",
+		"rank": 307
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "KBV",
+		"rank": 308
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "YTO",
+		"rank": 309
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "BKI",
+		"rank": 310
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "SEL",
+		"rank": 311
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "NYC",
+		"rank": 312
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "KTM",
+		"rank": 312
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "KHH",
+		"rank": 314
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "CMB",
+		"rank": 315
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "YNT",
+		"rank": 316
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MUC",
+		"rank": 317
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "CJU",
+		"rank": 318
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "TPE",
+		"rank": 319
+	  },
+	  {
+		"departureCityCode": "NNG",
+		"arrivalCityCode": "BKK",
+		"rank": 320
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "MFM",
+		"rank": 321
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "HKG",
+		"rank": 322
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "PQC",
+		"rank": 323
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "TYO",
+		"rank": 324
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "OKA",
+		"rank": 325
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "CNX",
+		"rank": 326
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MPH",
+		"rank": 327
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "PAR",
+		"rank": 328
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "LON",
+		"rank": 329
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "SEL",
+		"rank": 330
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "TYO",
+		"rank": 331
+	  },
+	  {
+		"departureCityCode": "KHN",
+		"arrivalCityCode": "BKK",
+		"rank": 332
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SYX",
+		"rank": 333
+	  },
+	  {
+		"departureCityCode": "HRB",
+		"arrivalCityCode": "SEL",
+		"rank": 334
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "VIE",
+		"rank": 335
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "KTM",
+		"rank": 336
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "NYC",
+		"rank": 337
+	  },
+	  {
+		"departureCityCode": "OSA",
+		"arrivalCityCode": "SHA",
+		"rank": 338
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "KLO",
+		"rank": 339
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "TPE",
+		"rank": 340
+	  },
+	  {
+		"departureCityCode": "CGQ",
+		"arrivalCityCode": "BKK",
+		"rank": 341
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "TYO",
+		"rank": 342
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "SEL",
+		"rank": 343
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BNE",
+		"rank": 344
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "CNX",
+		"rank": 345
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "HKG",
+		"rank": 346
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "VIE",
+		"rank": 347
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BUD",
+		"rank": 348
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "LAX",
+		"rank": 349
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "WAS",
+		"rank": 350
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "KUL",
+		"rank": 351
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "STO",
+		"rank": 352
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "HAN",
+		"rank": 353
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "MFM",
+		"rank": 354
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "DPS",
+		"rank": 355
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "IKT",
+		"rank": 356
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "REP",
+		"rank": 357
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "BKI",
+		"rank": 358
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "PAR",
+		"rank": 358
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "OSA",
+		"rank": 360
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "ZRH",
+		"rank": 361
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "DEL",
+		"rank": 362
+	  },
+	  {
+		"departureCityCode": "HFE",
+		"arrivalCityCode": "BKK",
+		"rank": 363
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "CNX",
+		"rank": 364
+	  },
+	  {
+		"departureCityCode": "WUX",
+		"arrivalCityCode": "OSA",
+		"rank": 365
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "CJU",
+		"rank": 366
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CTU",
+		"rank": 367
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "HKT",
+		"rank": 368
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "SGN",
+		"rank": 369
+	  },
+	  {
+		"departureCityCode": "YNJ",
+		"arrivalCityCode": "SEL",
+		"rank": 370
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MRU",
+		"rank": 371
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "OKA",
+		"rank": 372
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "CMB",
+		"rank": 373
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "CNX",
+		"rank": 374
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "DEL",
+		"rank": 375
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "USM",
+		"rank": 376
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "NHA",
+		"rank": 377
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "PNH",
+		"rank": 378
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "JKT",
+		"rank": 379
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "SFO",
+		"rank": 380
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "DXB",
+		"rank": 381
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "NYC",
+		"rank": 382
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "DPS",
+		"rank": 383
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MAD",
+		"rank": 384
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "CNX",
+		"rank": 385
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CEB",
+		"rank": 386
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "ZRH",
+		"rank": 387
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "NYC",
+		"rank": 388
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "NHA",
+		"rank": 389
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "SPN",
+		"rank": 390
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "YVR",
+		"rank": 391
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "DAD",
+		"rank": 392
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CMB",
+		"rank": 393
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "FRA",
+		"rank": 394
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CHI",
+		"rank": 395
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "USM",
+		"rank": 396
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "TPE",
+		"rank": 397
+	  },
+	  {
+		"departureCityCode": "HAK",
+		"arrivalCityCode": "HKG",
+		"rank": 398
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "SGN",
+		"rank": 399
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "KUL",
+		"rank": 400
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "DUS",
+		"rank": 401
+	  },
+	  {
+		"departureCityCode": "HFE",
+		"arrivalCityCode": "SEL",
+		"rank": 402
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "HKG",
+		"rank": 403
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "WAW",
+		"rank": 404
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "SIN",
+		"rank": 405
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "SIN",
+		"rank": 406
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "TPE",
+		"rank": 407
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "KUL",
+		"rank": 408
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "KBV",
+		"rank": 409
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "LED",
+		"rank": 410
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MEL",
+		"rank": 411
+	  },
+	  {
+		"departureCityCode": "NTG",
+		"arrivalCityCode": "OSA",
+		"rank": 412
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "USM",
+		"rank": 413
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "GUM",
+		"rank": 414
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "HKT",
+		"rank": 415
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CEB",
+		"rank": 415
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "OSA",
+		"rank": 417
+	  },
+	  {
+		"departureCityCode": "HRB",
+		"arrivalCityCode": "SIN",
+		"rank": 418
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "HKT",
+		"rank": 419
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "SPK",
+		"rank": 420
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "GVA",
+		"rank": 421
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "HKT",
+		"rank": 422
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "DXB",
+		"rank": 423
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "HGH",
+		"rank": 425
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "STO",
+		"rank": 426
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "OKA",
+		"rank": 427
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "CJU",
+		"rank": 428
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "DLC",
+		"rank": 429
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BEG",
+		"rank": 430
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "HKG",
+		"rank": 431
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "MNL",
+		"rank": 432
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "YMQ",
+		"rank": 433
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "HAN",
+		"rank": 434
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "RGN",
+		"rank": 435
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "KUL",
+		"rank": 436
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "PRG",
+		"rank": 437
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "DXB",
+		"rank": 438
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "CNX",
+		"rank": 439
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "MFM",
+		"rank": 440
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "BJS",
+		"rank": 441
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "PEN",
+		"rank": 442
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "WAW",
+		"rank": 443
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "SGN",
+		"rank": 444
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "TYO",
+		"rank": 445
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "JKT",
+		"rank": 446
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BEG",
+		"rank": 447
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "TYO",
+		"rank": 448
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "DLC",
+		"rank": 449
+	  },
+	  {
+		"departureCityCode": "CGQ",
+		"arrivalCityCode": "SIN",
+		"rank": 450
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "OKA",
+		"rank": 451
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "DPS",
+		"rank": 452
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "LAX",
+		"rank": 453
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "ROM",
+		"rank": 454
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "FSZ",
+		"rank": 455
+	  },
+	  {
+		"departureCityCode": "JJN",
+		"arrivalCityCode": "MNL",
+		"rank": 456
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "HAK",
+		"rank": 457
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "AKL",
+		"rank": 458
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "RGN",
+		"rank": 459
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "GVA",
+		"rank": 460
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "NGO",
+		"rank": 461
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "HKG",
+		"rank": 462
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "YVR",
+		"rank": 463
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "DAD",
+		"rank": 464
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "KUL",
+		"rank": 465
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "TYO",
+		"rank": 466
+	  },
+	  {
+		"departureCityCode": "SYX",
+		"arrivalCityCode": "HKG",
+		"rank": 467
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SFO",
+		"rank": 468
+	  },
+	  {
+		"departureCityCode": "CGQ",
+		"arrivalCityCode": "HKG",
+		"rank": 469
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "DPS",
+		"rank": 470
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "XMN",
+		"rank": 471
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "DPS",
+		"rank": 472
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "HAN",
+		"rank": 473
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CHI",
+		"rank": 474
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "IST",
+		"rank": 475
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "LED",
+		"rank": 476
+	  },
+	  {
+		"departureCityCode": "WUX",
+		"arrivalCityCode": "BKK",
+		"rank": 477
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SEA",
+		"rank": 478
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "AUH",
+		"rank": 479
+	  },
+	  {
+		"departureCityCode": "SYD",
+		"arrivalCityCode": "MEL",
+		"rank": 480
+	  },
+	  {
+		"departureCityCode": "HFE",
+		"arrivalCityCode": "TPE",
+		"rank": 481
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "SYD",
+		"rank": 482
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "USM",
+		"rank": 483
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "RMQ",
+		"rank": 484
+	  },
+	  {
+		"departureCityCode": "OSA",
+		"arrivalCityCode": "SPK",
+		"rank": 485
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "KUL",
+		"rank": 486
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "TPE",
+		"rank": 487
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "FUK",
+		"rank": 488
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "CAN",
+		"rank": 489
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "MOW",
+		"rank": 490
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "LAS",
+		"rank": 491
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "BKK",
+		"rank": 492
+	  },
+	  {
+		"departureCityCode": "LON",
+		"arrivalCityCode": "SHA",
+		"rank": 493
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "SJC",
+		"rank": 494
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "FRA",
+		"rank": 495
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "NYC",
+		"rank": 496
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "NGO",
+		"rank": 497
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "TPE",
+		"rank": 498
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "CAI",
+		"rank": 498
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "SPK",
+		"rank": 500
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "KTM",
+		"rank": 501
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "OSA",
+		"rank": 502
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "MFM",
+		"rank": 502
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "ATH",
+		"rank": 504
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "PRG",
+		"rank": 505
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "KHH",
+		"rank": 506
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "SHA",
+		"rank": 507
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "HAN",
+		"rank": 508
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "YVR",
+		"rank": 509
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "HKT",
+		"rank": 510
+	  },
+	  {
+		"departureCityCode": "SJW",
+		"arrivalCityCode": "BKK",
+		"rank": 511
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "TPE",
+		"rank": 512
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "CJU",
+		"rank": 513
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "HNL",
+		"rank": 514
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "MOW",
+		"rank": 515
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "DPS",
+		"rank": 516
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MDC",
+		"rank": 517
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "TPE",
+		"rank": 518
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "USM",
+		"rank": 519
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "JJN",
+		"rank": 520
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "MNL",
+		"rank": 521
+	  },
+	  {
+		"departureCityCode": "KWE",
+		"arrivalCityCode": "HKG",
+		"rank": 522
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "AKL",
+		"rank": 523
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "LED",
+		"rank": 524
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "SPK",
+		"rank": 525
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "HAN",
+		"rank": 526
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "TPE",
+		"rank": 527
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BOM",
+		"rank": 528
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "SPN",
+		"rank": 529
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "KUL",
+		"rank": 530
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "MPH",
+		"rank": 531
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "SEL",
+		"rank": 532
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "SIN",
+		"rank": 532
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "STO",
+		"rank": 534
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "SIN",
+		"rank": 535
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "IST",
+		"rank": 536
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "SEA",
+		"rank": 537
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "NAN",
+		"rank": 538
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CAI",
+		"rank": 539
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "CJU",
+		"rank": 540
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "OSA",
+		"rank": 541
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CKG",
+		"rank": 542
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "LGK",
+		"rank": 543
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MPH",
+		"rank": 544
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "OSA",
+		"rank": 545
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "JJN",
+		"rank": 546
+	  },
+	  {
+		"departureCityCode": "NGO",
+		"arrivalCityCode": "SHA",
+		"rank": 547
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "NGO",
+		"rank": 548
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "JNB",
+		"rank": 549
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "REP",
+		"rank": 550
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "OSA",
+		"rank": 551
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "LAX",
+		"rank": 551
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "AUH",
+		"rank": 553
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "OSA",
+		"rank": 554
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "SYD",
+		"rank": 555
+	  },
+	  {
+		"departureCityCode": "LON",
+		"arrivalCityCode": "PAR",
+		"rank": 556
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "AMS",
+		"rank": 557
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "HKG",
+		"rank": 558
+	  },
+	  {
+		"departureCityCode": "LON",
+		"arrivalCityCode": "BJS",
+		"rank": 559
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "OSA",
+		"rank": 560
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "XMN",
+		"rank": 561
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "RGN",
+		"rank": 562
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "KUL",
+		"rank": 563
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "NKG",
+		"rank": 564
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CAI",
+		"rank": 565
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "BJS",
+		"rank": 566
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "MOW",
+		"rank": 567
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "HEL",
+		"rank": 567
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "MNL",
+		"rank": 569
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "HEL",
+		"rank": 570
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "CJU",
+		"rank": 571
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BOS",
+		"rank": 572
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "SHE",
+		"rank": 573
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "CJU",
+		"rank": 574
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "LAS",
+		"rank": 575
+	  },
+	  {
+		"departureCityCode": "HRB",
+		"arrivalCityCode": "TYO",
+		"rank": 575
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "HKT",
+		"rank": 577
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "PEN",
+		"rank": 578
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "HKG",
+		"rank": 579
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "MFM",
+		"rank": 580
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "LGK",
+		"rank": 581
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "SHE",
+		"rank": 582
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "KHH",
+		"rank": 583
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "ULN",
+		"rank": 584
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "SYD",
+		"rank": 585
+	  },
+	  {
+		"departureCityCode": "CZX",
+		"arrivalCityCode": "MFM",
+		"rank": 586
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BOS",
+		"rank": 587
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "DEL",
+		"rank": 587
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "SIN",
+		"rank": 589
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "LAX",
+		"rank": 590
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "SYD",
+		"rank": 591
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "USM",
+		"rank": 592
+	  },
+	  {
+		"departureCityCode": "CGQ",
+		"arrivalCityCode": "HKT",
+		"rank": 593
+	  },
+	  {
+		"departureCityCode": "HRB",
+		"arrivalCityCode": "HKT",
+		"rank": 594
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "MEL",
+		"rank": 595
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "ROR",
+		"rank": 596
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "CNX",
+		"rank": 597
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BNE",
+		"rank": 598
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "MRU",
+		"rank": 599
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "MNL",
+		"rank": 600
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CEB",
+		"rank": 601
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "SIN",
+		"rank": 602
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "BKI",
+		"rank": 602
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "ADD",
+		"rank": 604
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "SFO",
+		"rank": 605
+	  },
+	  {
+		"departureCityCode": "KUL",
+		"arrivalCityCode": "LGK",
+		"rank": 606
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "PUS",
+		"rank": 607
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "MUC",
+		"rank": 608
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "KBV",
+		"rank": 609
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "JNB",
+		"rank": 610
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "MIL",
+		"rank": 611
+	  },
+	  {
+		"departureCityCode": "WUX",
+		"arrivalCityCode": "SIN",
+		"rank": 612
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "DEL",
+		"rank": 613
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "KTM",
+		"rank": 614
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "MIL",
+		"rank": 615
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MAD",
+		"rank": 616
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "TYO",
+		"rank": 617
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "PQC",
+		"rank": 618
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "DXB",
+		"rank": 619
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "LAX",
+		"rank": 620
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BER",
+		"rank": 621
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "FOC",
+		"rank": 622
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "NHA",
+		"rank": 623
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "SZX",
+		"rank": 624
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "LGK",
+		"rank": 625
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "LGK",
+		"rank": 626
+	  },
+	  {
+		"departureCityCode": "HAK",
+		"arrivalCityCode": "BKK",
+		"rank": 627
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "LAX",
+		"rank": 627
+	  },
+	  {
+		"departureCityCode": "MEL",
+		"arrivalCityCode": "SYD",
+		"rank": 629
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "BCN",
+		"rank": 630
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "RGN",
+		"rank": 630
+	  },
+	  {
+		"departureCityCode": "KUL",
+		"arrivalCityCode": "BKI",
+		"rank": 632
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MSQ",
+		"rank": 633
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "HKG",
+		"rank": 634
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "JHB",
+		"rank": 635
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "LON",
+		"rank": 635
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "USM",
+		"rank": 637
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CAS",
+		"rank": 638
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "HNL",
+		"rank": 639
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "MNL",
+		"rank": 640
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "DPS",
+		"rank": 641
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "AKL",
+		"rank": 642
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "PAR",
+		"rank": 643
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "ROM",
+		"rank": 644
+	  },
+	  {
+		"departureCityCode": "CGQ",
+		"arrivalCityCode": "TYO",
+		"rank": 645
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "MFM",
+		"rank": 646
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "YVR",
+		"rank": 647
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "CEB",
+		"rank": 648
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "LAX",
+		"rank": 649
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "RGN",
+		"rank": 650
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "KLO",
+		"rank": 650
+	  },
+	  {
+		"departureCityCode": "URC",
+		"arrivalCityCode": "MOW",
+		"rank": 652
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "BJS",
+		"rank": 653
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "FRA",
+		"rank": 654
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "AKL",
+		"rank": 654
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "LON",
+		"rank": 656
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "SFO",
+		"rank": 657
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MSP",
+		"rank": 658
+	  },
+	  {
+		"departureCityCode": "YTO",
+		"arrivalCityCode": "BJS",
+		"rank": 659
+	  },
+	  {
+		"departureCityCode": "JJN",
+		"arrivalCityCode": "TPE",
+		"rank": 660
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "PRG",
+		"rank": 661
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "LAX",
+		"rank": 662
+	  },
+	  {
+		"departureCityCode": "BKI",
+		"arrivalCityCode": "TWU",
+		"rank": 663
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "WUH",
+		"rank": 664
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "DPS",
+		"rank": 665
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "PAR",
+		"rank": 666
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "SYD",
+		"rank": 667
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "YVR",
+		"rank": 668
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "HAN",
+		"rank": 669
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "PAR",
+		"rank": 670
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "MEL",
+		"rank": 671
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "LON",
+		"rank": 672
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "AKL",
+		"rank": 673
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "HAN",
+		"rank": 674
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "SFO",
+		"rank": 675
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "FRA",
+		"rank": 676
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "NHA",
+		"rank": 677
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "SGN",
+		"rank": 678
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "MOW",
+		"rank": 679
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "MNL",
+		"rank": 680
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "DPS",
+		"rank": 681
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "GOA",
+		"rank": 682
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "DXB",
+		"rank": 683
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "REP",
+		"rank": 684
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "ISB",
+		"rank": 685
+	  },
+	  {
+		"departureCityCode": "KWE",
+		"arrivalCityCode": "BKK",
+		"rank": 686
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MIL",
+		"rank": 687
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "MAD",
+		"rank": 688
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "LON",
+		"rank": 689
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "SPK",
+		"rank": 690
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "KLO",
+		"rank": 691
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "NGO",
+		"rank": 692
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "KUL",
+		"rank": 693
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "KHH",
+		"rank": 693
+	  },
+	  {
+		"departureCityCode": "LHW",
+		"arrivalCityCode": "KUL",
+		"rank": 695
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "CEB",
+		"rank": 696
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "VTE",
+		"rank": 697
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SEZ",
+		"rank": 698
+	  },
+	  {
+		"departureCityCode": "ULN",
+		"arrivalCityCode": "BJS",
+		"rank": 699
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "FOC",
+		"rank": 700
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "REP",
+		"rank": 700
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "CAN",
+		"rank": 702
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "YVR",
+		"rank": 703
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "CJU",
+		"rank": 704
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "SFO",
+		"rank": 705
+	  },
+	  {
+		"departureCityCode": "SYD",
+		"arrivalCityCode": "SHA",
+		"rank": 706
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "JNB",
+		"rank": 707
+	  },
+	  {
+		"departureCityCode": "ROM",
+		"arrivalCityCode": "LON",
+		"rank": 708
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "BKK",
+		"rank": 709
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "AMS",
+		"rank": 710
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "FRA",
+		"rank": 711
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "ROM",
+		"rank": 712
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "JNB",
+		"rank": 713
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "SGN",
+		"rank": 714
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BOM",
+		"rank": 715
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CPH",
+		"rank": 716
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "BCN",
+		"rank": 717
+	  },
+	  {
+		"departureCityCode": "JKT",
+		"arrivalCityCode": "DPS",
+		"rank": 718
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "SEZ",
+		"rank": 719
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "HNL",
+		"rank": 720
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "REK",
+		"rank": 721
+	  },
+	  {
+		"departureCityCode": "KWE",
+		"arrivalCityCode": "HKT",
+		"rank": 722
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "KBV",
+		"rank": 722
+	  },
+	  {
+		"departureCityCode": "MOW",
+		"arrivalCityCode": "DPS",
+		"rank": 724
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "NHA",
+		"rank": 725
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "MPH",
+		"rank": 726
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "HKG",
+		"rank": 727
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "REP",
+		"rank": 728
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "CJU",
+		"rank": 729
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "KHH",
+		"rank": 730
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "LIS",
+		"rank": 731
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "PAR",
+		"rank": 732
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "LON",
+		"rank": 733
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "LAX",
+		"rank": 734
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "OSA",
+		"rank": 735
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "HKT",
+		"rank": 736
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "BCN",
+		"rank": 737
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "PNH",
+		"rank": 738
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "CMB",
+		"rank": 739
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "RGN",
+		"rank": 740
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "KLO",
+		"rank": 741
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "SGN",
+		"rank": 742
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "MNL",
+		"rank": 743
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MRU",
+		"rank": 744
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "SHA",
+		"rank": 744
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "SPK",
+		"rank": 746
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "KBV",
+		"rank": 747
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "NAN",
+		"rank": 748
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "MAD",
+		"rank": 749
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SDJ",
+		"rank": 750
+	  },
+	  {
+		"departureCityCode": "YTO",
+		"arrivalCityCode": "SHA",
+		"rank": 751
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "CMB",
+		"rank": 752
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "MFM",
+		"rank": 753
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "HNL",
+		"rank": 754
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "JNB",
+		"rank": 754
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "PEN",
+		"rank": 756
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "KHH",
+		"rank": 757
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "DXB",
+		"rank": 758
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "IEV",
+		"rank": 759
+	  },
+	  {
+		"departureCityCode": "HRB",
+		"arrivalCityCode": "DXB",
+		"rank": 760
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "HKT",
+		"rank": 761
+	  },
+	  {
+		"departureCityCode": "HFE",
+		"arrivalCityCode": "HKG",
+		"rank": 762
+	  },
+	  {
+		"departureCityCode": "KUL",
+		"arrivalCityCode": "TWU",
+		"rank": 763
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "TSN",
+		"rank": 764
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "KOJ",
+		"rank": 765
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "ROM",
+		"rank": 766
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "KLO",
+		"rank": 767
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "YMQ",
+		"rank": 768
+	  },
+	  {
+		"departureCityCode": "HKT",
+		"arrivalCityCode": "BJS",
+		"rank": 769
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "OSA",
+		"rank": 770
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "XMN",
+		"rank": 771
+	  },
+	  {
+		"departureCityCode": "HOU",
+		"arrivalCityCode": "BJS",
+		"rank": 772
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "YVR",
+		"rank": 773
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "GUM",
+		"rank": 774
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "SYD",
+		"rank": 775
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "TYO",
+		"rank": 776
+	  },
+	  {
+		"departureCityCode": "MEL",
+		"arrivalCityCode": "SHA",
+		"rank": 777
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "MRU",
+		"rank": 778
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "KHI",
+		"rank": 779
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BER",
+		"rank": 780
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "TPE",
+		"rank": 781
+	  },
+	  {
+		"departureCityCode": "HAK",
+		"arrivalCityCode": "SIN",
+		"rank": 782
+	  },
+	  {
+		"departureCityCode": "DDG",
+		"arrivalCityCode": "SIN",
+		"rank": 783
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "SHE",
+		"rank": 785
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "TLV",
+		"rank": 786
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "REK",
+		"rank": 787
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "FOC",
+		"rank": 788
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "VTE",
+		"rank": 789
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "MEL",
+		"rank": 790
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "KMG",
+		"rank": 791
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "HKG",
+		"rank": 792
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "DEL",
+		"rank": 793
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "LAX",
+		"rank": 794
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "KLO",
+		"rank": 795
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "NYC",
+		"rank": 796
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "PQC",
+		"rank": 797
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "KUL",
+		"rank": 798
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "ROR",
+		"rank": 799
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "SGN",
+		"rank": 800
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "HNL",
+		"rank": 801
+	  },
+	  {
+		"departureCityCode": "SGN",
+		"arrivalCityCode": "BJS",
+		"rank": 802
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "LAX",
+		"rank": 803
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "BKK",
+		"rank": 804
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "BEG",
+		"rank": 805
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "GUM",
+		"rank": 806
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "AKL",
+		"rank": 807
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "AUH",
+		"rank": 808
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "SEL",
+		"rank": 809
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CPH",
+		"rank": 810
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "YNJ",
+		"rank": 810
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "ROM",
+		"rank": 812
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "KBV",
+		"rank": 813
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "LED",
+		"rank": 814
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "SYD",
+		"rank": 815
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "BOM",
+		"rank": 816
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "NYC",
+		"rank": 817
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "SEL",
+		"rank": 818
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CNS",
+		"rank": 819
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "MAD",
+		"rank": 820
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "CTU",
+		"rank": 821
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "KUL",
+		"rank": 822
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "TSN",
+		"rank": 823
+	  },
+	  {
+		"departureCityCode": "HNL",
+		"arrivalCityCode": "BJS",
+		"rank": 824
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "FUK",
+		"rank": 825
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "XMN",
+		"rank": 826
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "BKI",
+		"rank": 827
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "CGQ",
+		"rank": 828
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "KUL",
+		"rank": 829
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "MEL",
+		"rank": 830
+	  },
+	  {
+		"departureCityCode": "SGN",
+		"arrivalCityCode": "NHA",
+		"rank": 831
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "SZX",
+		"rank": 832
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "PEN",
+		"rank": 833
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "ORL",
+		"rank": 834
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MEX",
+		"rank": 834
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "NHA",
+		"rank": 836
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BWN",
+		"rank": 837
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "KHH",
+		"rank": 838
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "KTM",
+		"rank": 838
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MAN",
+		"rank": 840
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "CHC",
+		"rank": 841
+	  },
+	  {
+		"departureCityCode": "NNG",
+		"arrivalCityCode": "KUL",
+		"rank": 842
+	  },
+	  {
+		"departureCityCode": "KHN",
+		"arrivalCityCode": "HKG",
+		"rank": 843
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SIA",
+		"rank": 844
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "OSA",
+		"rank": 845
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "BCN",
+		"rank": 846
+	  },
+	  {
+		"departureCityCode": "YVR",
+		"arrivalCityCode": "BJS",
+		"rank": 847
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "KLO",
+		"rank": 848
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "DPS",
+		"rank": 848
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CHC",
+		"rank": 850
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "TYO",
+		"rank": 850
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "SPN",
+		"rank": 852
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "REP",
+		"rank": 853
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "PAR",
+		"rank": 854
+	  },
+	  {
+		"departureCityCode": "CGQ",
+		"arrivalCityCode": "TPE",
+		"rank": 855
+	  },
+	  {
+		"departureCityCode": "NNG",
+		"arrivalCityCode": "TPE",
+		"rank": 856
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CHC",
+		"rank": 857
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "HKT",
+		"rank": 859
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "LGK",
+		"rank": 860
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "PAR",
+		"rank": 861
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "BCN",
+		"rank": 862
+	  },
+	  {
+		"departureCityCode": "CNX",
+		"arrivalCityCode": "BJS",
+		"rank": 863
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "CAN",
+		"rank": 864
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "MEL",
+		"rank": 864
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "FOC",
+		"rank": 866
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "LON",
+		"rank": 867
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "PER",
+		"rank": 868
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "FUK",
+		"rank": 869
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "DPS",
+		"rank": 870
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "YVR",
+		"rank": 871
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "IST",
+		"rank": 872
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "REP",
+		"rank": 873
+	  },
+	  {
+		"departureCityCode": "HFE",
+		"arrivalCityCode": "HKT",
+		"rank": 874
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "ROM",
+		"rank": 875
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "IST",
+		"rank": 876
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "MIL",
+		"rank": 877
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "KBV",
+		"rank": 878
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "ROM",
+		"rank": 879
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "AKL",
+		"rank": 880
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "ROR",
+		"rank": 881
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "HEL",
+		"rank": 882
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "VCE",
+		"rank": 883
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "NAN",
+		"rank": 884
+	  },
+	  {
+		"departureCityCode": "LAX",
+		"arrivalCityCode": "SHA",
+		"rank": 885
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CAS",
+		"rank": 886
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "MFM",
+		"rank": 887
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "DPS",
+		"rank": 888
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "DAD",
+		"rank": 889
+	  },
+	  {
+		"departureCityCode": "OSA",
+		"arrivalCityCode": "BJS",
+		"rank": 890
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "EDI",
+		"rank": 891
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "LON",
+		"rank": 892
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "BJS",
+		"rank": 893
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "VTE",
+		"rank": 894
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "BEG",
+		"rank": 894
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "SEL",
+		"rank": 896
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "BJS",
+		"rank": 897
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "SGN",
+		"rank": 898
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "TLV",
+		"rank": 899
+	  },
+	  {
+		"departureCityCode": "SGN",
+		"arrivalCityCode": "LAX",
+		"rank": 900
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "CAN",
+		"rank": 901
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "KCH",
+		"rank": 902
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "TYO",
+		"rank": 903
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "AMS",
+		"rank": 904
+	  },
+	  {
+		"departureCityCode": "SGN",
+		"arrivalCityCode": "YVR",
+		"rank": 905
+	  },
+	  {
+		"departureCityCode": "YNZ",
+		"arrivalCityCode": "SEL",
+		"rank": 906
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "CTU",
+		"rank": 907
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "SEZ",
+		"rank": 907
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "HKG",
+		"rank": 909
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "AUH",
+		"rank": 910
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MAN",
+		"rank": 911
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "CMB",
+		"rank": 911
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "BCN",
+		"rank": 913
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "SFO",
+		"rank": 914
+	  },
+	  {
+		"departureCityCode": "KHH",
+		"arrivalCityCode": "SHA",
+		"rank": 915
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "CMB",
+		"rank": 915
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "ORL",
+		"rank": 917
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "YTO",
+		"rank": 918
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "HKG",
+		"rank": 919
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "NYC",
+		"rank": 920
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "AKL",
+		"rank": 921
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "AKL",
+		"rank": 922
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "NYC",
+		"rank": 923
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "FUK",
+		"rank": 924
+	  },
+	  {
+		"departureCityCode": "HRB",
+		"arrivalCityCode": "HKG",
+		"rank": 925
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BUD",
+		"rank": 926
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "MAD",
+		"rank": 927
+	  },
+	  {
+		"departureCityCode": "YTO",
+		"arrivalCityCode": "YVR",
+		"rank": 928
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "FUK",
+		"rank": 929
+	  },
+	  {
+		"departureCityCode": "KHI",
+		"arrivalCityCode": "BJS",
+		"rank": 930
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "LPQ",
+		"rank": 931
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "KUL",
+		"rank": 932
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "LIS",
+		"rank": 933
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "BOM",
+		"rank": 934
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "LON",
+		"rank": 935
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "NYU",
+		"rank": 936
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "MOW",
+		"rank": 937
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "SYD",
+		"rank": 938
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "NYU",
+		"rank": 939
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "DAC",
+		"rank": 940
+	  },
+	  {
+		"departureCityCode": "HRB",
+		"arrivalCityCode": "TPE",
+		"rank": 941
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CAI",
+		"rank": 942
+	  },
+	  {
+		"departureCityCode": "ISB",
+		"arrivalCityCode": "BJS",
+		"rank": 943
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "MIL",
+		"rank": 944
+	  },
+	  {
+		"departureCityCode": "SJW",
+		"arrivalCityCode": "HKG",
+		"rank": 945
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "NYU",
+		"rank": 946
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "VTE",
+		"rank": 947
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "NGO",
+		"rank": 948
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "OSA",
+		"rank": 949
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "DXB",
+		"rank": 950
+	  },
+	  {
+		"departureCityCode": "LAX",
+		"arrivalCityCode": "NYC",
+		"rank": 951
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "DEL",
+		"rank": 952
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "SFO",
+		"rank": 953
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "IST",
+		"rank": 954
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "DAC",
+		"rank": 955
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "TAK",
+		"rank": 955
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "YTO",
+		"rank": 957
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "NYU",
+		"rank": 958
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "KHH",
+		"rank": 959
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "KBV",
+		"rank": 960
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "SEL",
+		"rank": 961
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "BWN",
+		"rank": 961
+	  },
+	  {
+		"departureCityCode": "JJN",
+		"arrivalCityCode": "SIN",
+		"rank": 963
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "HGH",
+		"rank": 963
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "NYU",
+		"rank": 965
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "MIL",
+		"rank": 966
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "PER",
+		"rank": 967
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "REK",
+		"rank": 968
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "KUL",
+		"rank": 969
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "KTM",
+		"rank": 970
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "HRB",
+		"rank": 971
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "MIL",
+		"rank": 972
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "LPQ",
+		"rank": 973
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "LGK",
+		"rank": 974
+	  },
+	  {
+		"departureCityCode": "CZX",
+		"arrivalCityCode": "BKK",
+		"rank": 975
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "NYU",
+		"rank": 976
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "DAD",
+		"rank": 977
+	  },
+	  {
+		"departureCityCode": "NYC",
+		"arrivalCityCode": "SHA",
+		"rank": 978
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "NKG",
+		"rank": 979
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "NYU",
+		"rank": 980
+	  },
+	  {
+		"departureCityCode": "KHN",
+		"arrivalCityCode": "TPE",
+		"rank": 981
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BRU",
+		"rank": 982
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "WAS",
+		"rank": 983
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "BWN",
+		"rank": 984
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "NYU",
+		"rank": 985
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "CNS",
+		"rank": 986
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "SIN",
+		"rank": 987
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "KHH",
+		"rank": 988
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "DEL",
+		"rank": 989
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "HKT",
+		"rank": 990
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "NYU",
+		"rank": 991
+	  },
+	  {
+		"departureCityCode": "OSA",
+		"arrivalCityCode": "TYO",
+		"rank": 992
+	  },
+	  {
+		"departureCityCode": "OSA",
+		"arrivalCityCode": "DLC",
+		"rank": 993
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "LGK",
+		"rank": 994
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "MAD",
+		"rank": 995
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "DAD",
+		"rank": 996
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "NHA",
+		"rank": 997
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "WLG",
+		"rank": 998
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "BCN",
+		"rank": 999
+	  },
+	  {
+		"departureCityCode": "NNG",
+		"arrivalCityCode": "HKG",
+		"rank": 999
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "IST",
+		"rank": 1001
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "BCN",
+		"rank": 1002
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "THR",
+		"rank": 1003
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "MAD",
+		"rank": 1004
+	  },
+	  {
+		"departureCityCode": "HAN",
+		"arrivalCityCode": "NHA",
+		"rank": 1005
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "MDC",
+		"rank": 1006
+	  },
+	  {
+		"departureCityCode": "SYD",
+		"arrivalCityCode": "BJS",
+		"rank": 1007
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "NHA",
+		"rank": 1008
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "ROM",
+		"rank": 1009
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SEZ",
+		"rank": 1010
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "NYU",
+		"rank": 1011
+	  },
+	  {
+		"departureCityCode": "BOM",
+		"arrivalCityCode": "NYC",
+		"rank": 1012
+	  },
+	  {
+		"departureCityCode": "YVR",
+		"arrivalCityCode": "SHA",
+		"rank": 1012
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MDC",
+		"rank": 1014
+	  },
+	  {
+		"departureCityCode": "NYC",
+		"arrivalCityCode": "BJS",
+		"rank": 1015
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "AUH",
+		"rank": 1016
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "MIL",
+		"rank": 1017
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "FUK",
+		"rank": 1018
+	  },
+	  {
+		"departureCityCode": "KUL",
+		"arrivalCityCode": "PEN",
+		"rank": 1019
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "HKT",
+		"rank": 1019
+	  },
+	  {
+		"departureCityCode": "JJN",
+		"arrivalCityCode": "MFM",
+		"rank": 1021
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "OSA",
+		"rank": 1022
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "CAN",
+		"rank": 1023
+	  },
+	  {
+		"departureCityCode": "LXA",
+		"arrivalCityCode": "KTM",
+		"rank": 1024
+	  },
+	  {
+		"departureCityCode": "NTG",
+		"arrivalCityCode": "TPE",
+		"rank": 1025
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "YVR",
+		"rank": 1026
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "AUH",
+		"rank": 1026
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "KHH",
+		"rank": 1028
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "NHA",
+		"rank": 1029
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "HRB",
+		"rank": 1029
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "YVR",
+		"rank": 1031
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "DEL",
+		"rank": 1032
+	  },
+	  {
+		"departureCityCode": "BOM",
+		"arrivalCityCode": "BJS",
+		"rank": 1033
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "PRG",
+		"rank": 1034
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "TAO",
+		"rank": 1035
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "TPE",
+		"rank": 1035
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "YVR",
+		"rank": 1037
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "LPQ",
+		"rank": 1038
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "UTP",
+		"rank": 1039
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "CAI",
+		"rank": 1039
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "TAO",
+		"rank": 1041
+	  },
+	  {
+		"departureCityCode": "YNT",
+		"arrivalCityCode": "TPE",
+		"rank": 1042
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "HEL",
+		"rank": 1043
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "DBV",
+		"rank": 1044
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "CTU",
+		"rank": 1045
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "NKG",
+		"rank": 1045
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "YVR",
+		"rank": 1047
+	  },
+	  {
+		"departureCityCode": "BOM",
+		"arrivalCityCode": "SHA",
+		"rank": 1048
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "PER",
+		"rank": 1049
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "KTM",
+		"rank": 1050
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CNS",
+		"rank": 1051
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "UTP",
+		"rank": 1052
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "TSN",
+		"rank": 1053
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "SEZ",
+		"rank": 1054
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "FUK",
+		"rank": 1055
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "SFO",
+		"rank": 1056
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "EDI",
+		"rank": 1056
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "CAI",
+		"rank": 1058
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "REK",
+		"rank": 1059
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "CAI",
+		"rank": 1060
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "LGK",
+		"rank": 1061
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "THR",
+		"rank": 1062
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "LED",
+		"rank": 1063
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "CAI",
+		"rank": 1064
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "HNL",
+		"rank": 1065
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "DEL",
+		"rank": 1066
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "CNX",
+		"rank": 1067
+	  },
+	  {
+		"departureCityCode": "SJW",
+		"arrivalCityCode": "TPE",
+		"rank": 1068
+	  },
+	  {
+		"departureCityCode": "HFE",
+		"arrivalCityCode": "MFM",
+		"rank": 1069
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "SJC",
+		"rank": 1070
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "BCN",
+		"rank": 1071
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "IST",
+		"rank": 1072
+	  },
+	  {
+		"departureCityCode": "LHW",
+		"arrivalCityCode": "BKK",
+		"rank": 1073
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "CAI",
+		"rank": 1074
+	  },
+	  {
+		"departureCityCode": "HKT",
+		"arrivalCityCode": "BKK",
+		"rank": 1075
+	  },
+	  {
+		"departureCityCode": "YVR",
+		"arrivalCityCode": "LAX",
+		"rank": 1076
+	  },
+	  {
+		"departureCityCode": "BOM",
+		"arrivalCityCode": "LAX",
+		"rank": 1077
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "CNX",
+		"rank": 1078
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "LAX",
+		"rank": 1079
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "AMS",
+		"rank": 1080
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "LAS",
+		"rank": 1081
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "BKK",
+		"rank": 1082
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "IST",
+		"rank": 1082
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "LAX",
+		"rank": 1084
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "LGK",
+		"rank": 1085
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "NYC",
+		"rank": 1086
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "ZHA",
+		"rank": 1087
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "DEL",
+		"rank": 1088
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "WUH",
+		"rank": 1089
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "HGH",
+		"rank": 1090
+	  },
+	  {
+		"departureCityCode": "LAX",
+		"arrivalCityCode": "BJS",
+		"rank": 1091
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "RGN",
+		"rank": 1092
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "HKG",
+		"rank": 1093
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "MDC",
+		"rank": 1094
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "LPQ",
+		"rank": 1095
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "DBV",
+		"rank": 1096
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "AUH",
+		"rank": 1097
+	  },
+	  {
+		"departureCityCode": "NYC",
+		"arrivalCityCode": "LAX",
+		"rank": 1098
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "ROM",
+		"rank": 1099
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "VCE",
+		"rank": 1100
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "MIA",
+		"rank": 1101
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "CMB",
+		"rank": 1102
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CAS",
+		"rank": 1103
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "YVR",
+		"rank": 1103
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "CAN",
+		"rank": 1105
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "DUS",
+		"rank": 1106
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "HEL",
+		"rank": 1107
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "MIL",
+		"rank": 1108
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "DBV",
+		"rank": 1109
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "SPN",
+		"rank": 1110
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "HKT",
+		"rank": 1110
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "KTM",
+		"rank": 1112
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "MAD",
+		"rank": 1113
+	  },
+	  {
+		"departureCityCode": "ATH",
+		"arrivalCityCode": "JTR",
+		"rank": 1114
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "TWU",
+		"rank": 1115
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "DBV",
+		"rank": 1116
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "DPS",
+		"rank": 1117
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "HNL",
+		"rank": 1118
+	  },
+	  {
+		"departureCityCode": "BOM",
+		"arrivalCityCode": "HGH",
+		"rank": 1119
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "JKT",
+		"rank": 1120
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "SFO",
+		"rank": 1121
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "SYD",
+		"rank": 1122
+	  },
+	  {
+		"departureCityCode": "KUL",
+		"arrivalCityCode": "SHA",
+		"rank": 1123
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "AUH",
+		"rank": 1124
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "NGO",
+		"rank": 1125
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "TYO",
+		"rank": 1125
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "MAD",
+		"rank": 1127
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "NGB",
+		"rank": 1128
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "MEL",
+		"rank": 1129
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "TYO",
+		"rank": 1129
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "AUH",
+		"rank": 1131
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "PNH",
+		"rank": 1132
+	  },
+	  {
+		"departureCityCode": "SYD",
+		"arrivalCityCode": "OOL",
+		"rank": 1133
+	  },
+	  {
+		"departureCityCode": "WUX",
+		"arrivalCityCode": "KHH",
+		"rank": 1134
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "TWU",
+		"rank": 1134
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "WUH",
+		"rank": 1136
+	  },
+	  {
+		"departureCityCode": "DEL",
+		"arrivalCityCode": "BJS",
+		"rank": 1137
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "KLO",
+		"rank": 1138
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "MEL",
+		"rank": 1139
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "HRB",
+		"rank": 1140
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "IBR",
+		"rank": 1141
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "ATH",
+		"rank": 1142
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "KHH",
+		"rank": 1143
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "LPQ",
+		"rank": 1144
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "HNL",
+		"rank": 1145
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "LPQ",
+		"rank": 1146
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "CTU",
+		"rank": 1147
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "LAX",
+		"rank": 1148
+	  },
+	  {
+		"departureCityCode": "PNH",
+		"arrivalCityCode": "CAN",
+		"rank": 1149
+	  },
+	  {
+		"departureCityCode": "NNG",
+		"arrivalCityCode": "SIN",
+		"rank": 1150
+	  },
+	  {
+		"departureCityCode": "KWE",
+		"arrivalCityCode": "OSA",
+		"rank": 1150
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "LPQ",
+		"rank": 1152
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "TBS",
+		"rank": 1153
+	  },
+	  {
+		"departureCityCode": "LON",
+		"arrivalCityCode": "HKG",
+		"rank": 1154
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "RGN",
+		"rank": 1155
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "VIE",
+		"rank": 1156
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "WLG",
+		"rank": 1157
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "HNL",
+		"rank": 1158
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "STO",
+		"rank": 1159
+	  },
+	  {
+		"departureCityCode": "WNZ",
+		"arrivalCityCode": "CNX",
+		"rank": 1160
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "CNS",
+		"rank": 1161
+	  },
+	  {
+		"departureCityCode": "SYD",
+		"arrivalCityCode": "CNS",
+		"rank": 1162
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "MFM",
+		"rank": 1162
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "NGO",
+		"rank": 1164
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MPH",
+		"rank": 1165
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "LPQ",
+		"rank": 1165
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "OSA",
+		"rank": 1168
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "REK",
+		"rank": 1169
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "MNL",
+		"rank": 1170
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "REK",
+		"rank": 1171
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "PRG",
+		"rank": 1172
+	  },
+	  {
+		"departureCityCode": "KWL",
+		"arrivalCityCode": "BKK",
+		"rank": 1173
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "DXB",
+		"rank": 1174
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CHC",
+		"rank": 1175
+	  },
+	  {
+		"departureCityCode": "BOM",
+		"arrivalCityCode": "CAN",
+		"rank": 1176
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "FUK",
+		"rank": 1177
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "NHA",
+		"rank": 1178
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "JHB",
+		"rank": 1178
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "CNX",
+		"rank": 1180
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "FAI",
+		"rank": 1181
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "KLO",
+		"rank": 1182
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "DUB",
+		"rank": 1183
+	  },
+	  {
+		"departureCityCode": "PNH",
+		"arrivalCityCode": "REP",
+		"rank": 1184
+	  },
+	  {
+		"departureCityCode": "OSA",
+		"arrivalCityCode": "TAO",
+		"rank": 1185
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "CAI",
+		"rank": 1186
+	  },
+	  {
+		"departureCityCode": "NGB",
+		"arrivalCityCode": "TYO",
+		"rank": 1187
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "MNL",
+		"rank": 1188
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "AHO",
+		"rank": 1189
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "HIJ",
+		"rank": 1190
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "ATH",
+		"rank": 1191
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "AHO",
+		"rank": 1192
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "REK",
+		"rank": 1192
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "NBO",
+		"rank": 1194
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BRU",
+		"rank": 1195
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "KUL",
+		"rank": 1196
+	  },
+	  {
+		"departureCityCode": "MAN",
+		"arrivalCityCode": "PAR",
+		"rank": 1197
+	  },
+	  {
+		"departureCityCode": "YIW",
+		"arrivalCityCode": "HKG",
+		"rank": 1198
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "STO",
+		"rank": 1199
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "MUC",
+		"rank": 1200
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "MEL",
+		"rank": 1201
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "VVO",
+		"rank": 1202
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "UTP",
+		"rank": 1203
+	  },
+	  {
+		"departureCityCode": "DEL",
+		"arrivalCityCode": "NYC",
+		"rank": 1203
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "LPQ",
+		"rank": 1205
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "REK",
+		"rank": 1206
+	  },
+	  {
+		"departureCityCode": "DEL",
+		"arrivalCityCode": "LAX",
+		"rank": 1207
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "REK",
+		"rank": 1208
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "BUD",
+		"rank": 1208
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "PUS",
+		"rank": 1210
+	  },
+	  {
+		"departureCityCode": "KHN",
+		"arrivalCityCode": "UTP",
+		"rank": 1212
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "LAS",
+		"rank": 1213
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "AHO",
+		"rank": 1214
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "VTE",
+		"rank": 1215
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "FUK",
+		"rank": 1216
+	  },
+	  {
+		"departureCityCode": "KWE",
+		"arrivalCityCode": "SIN",
+		"rank": 1217
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "SGN",
+		"rank": 1218
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "BKK",
+		"rank": 1219
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "FRA",
+		"rank": 1220
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "FUK",
+		"rank": 1220
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "DBV",
+		"rank": 1223
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "TWU",
+		"rank": 1224
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "AUH",
+		"rank": 1225
+	  },
+	  {
+		"departureCityCode": "AKL",
+		"arrivalCityCode": "CHC",
+		"rank": 1226
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "LAX",
+		"rank": 1226
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "RIO",
+		"rank": 1226
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "KTM",
+		"rank": 1229
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "CNS",
+		"rank": 1229
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "AHO",
+		"rank": 1231
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "REK",
+		"rank": 1232
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "DBV",
+		"rank": 1233
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "AKL",
+		"rank": 1234
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "WUX",
+		"rank": 1235
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "KMG",
+		"rank": 1236
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CNS",
+		"rank": 1237
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "AHO",
+		"rank": 1238
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "HEL",
+		"rank": 1239
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "AHO",
+		"rank": 1240
+	  },
+	  {
+		"departureCityCode": "FUK",
+		"arrivalCityCode": "SHA",
+		"rank": 1241
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "MNL",
+		"rank": 1242
+	  },
+	  {
+		"departureCityCode": "DEL",
+		"arrivalCityCode": "SFO",
+		"rank": 1243
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "AHO",
+		"rank": 1244
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "CPT",
+		"rank": 1245
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "YVR",
+		"rank": 1246
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "MIA",
+		"rank": 1247
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "TNA",
+		"rank": 1248
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "BKI",
+		"rank": 1249
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "SPN",
+		"rank": 1250
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "HEL",
+		"rank": 1251
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "JKT",
+		"rank": 1252
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "PNH",
+		"rank": 1253
+	  },
+	  {
+		"departureCityCode": "DLC",
+		"arrivalCityCode": "LAX",
+		"rank": 1254
+	  },
+	  {
+		"departureCityCode": "NYC",
+		"arrivalCityCode": "ORL",
+		"rank": 1255
+	  },
+	  {
+		"departureCityCode": "WUX",
+		"arrivalCityCode": "SEL",
+		"rank": 1255
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "JJN",
+		"rank": 1257
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "KHH",
+		"rank": 1257
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "SIN",
+		"rank": 1259
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "WUX",
+		"rank": 1260
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "CJU",
+		"rank": 1261
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "DBV",
+		"rank": 1262
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "DBV",
+		"rank": 1263
+	  },
+	  {
+		"departureCityCode": "URC",
+		"arrivalCityCode": "BKK",
+		"rank": 1264
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "DBV",
+		"rank": 1265
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "USM",
+		"rank": 1266
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "CNX",
+		"rank": 1267
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "AHO",
+		"rank": 1268
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "AHO",
+		"rank": 1269
+	  },
+	  {
+		"departureCityCode": "WUX",
+		"arrivalCityCode": "HKT",
+		"rank": 1270
+	  },
+	  {
+		"departureCityCode": "YVR",
+		"arrivalCityCode": "YTO",
+		"rank": 1270
+	  },
+	  {
+		"departureCityCode": "HRB",
+		"arrivalCityCode": "OSA",
+		"rank": 1272
+	  },
+	  {
+		"departureCityCode": "KNH",
+		"arrivalCityCode": "TPE",
+		"rank": 1272
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "DBV",
+		"rank": 1274
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "AHO",
+		"rank": 1274
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "DUB",
+		"rank": 1274
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "MNL",
+		"rank": 1277
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MUC",
+		"rank": 1278
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "NGO",
+		"rank": 1279
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "MEL",
+		"rank": 1280
+	  },
+	  {
+		"departureCityCode": "SYD",
+		"arrivalCityCode": "CAN",
+		"rank": 1281
+	  },
+	  {
+		"departureCityCode": "HAN",
+		"arrivalCityCode": "DAD",
+		"rank": 1282
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "CKG",
+		"rank": 1283
+	  },
+	  {
+		"departureCityCode": "KWE",
+		"arrivalCityCode": "TPE",
+		"rank": 1284
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "DPS",
+		"rank": 1285
+	  },
+	  {
+		"departureCityCode": "DEL",
+		"arrivalCityCode": "YVR",
+		"rank": 1286
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "STO",
+		"rank": 1287
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "HEL",
+		"rank": 1288
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "ATH",
+		"rank": 1289
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "NCE",
+		"rank": 1289
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "VIE",
+		"rank": 1291
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "BWN",
+		"rank": 1292
+	  },
+	  {
+		"departureCityCode": "AKL",
+		"arrivalCityCode": "SHA",
+		"rank": 1293
+	  },
+	  {
+		"departureCityCode": "MEL",
+		"arrivalCityCode": "HBA",
+		"rank": 1294
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "ATH",
+		"rank": 1295
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "SIN",
+		"rank": 1296
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "SZX",
+		"rank": 1297
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "HSG",
+		"rank": 1298
+	  },
+	  {
+		"departureCityCode": "HRB",
+		"arrivalCityCode": "VVO",
+		"rank": 1298
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "HIJ",
+		"rank": 1300
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "CHC",
+		"rank": 1301
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "ROR",
+		"rank": 1302
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "FAI",
+		"rank": 1303
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "PRG",
+		"rank": 1304
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "DXB",
+		"rank": 1305
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "CHC",
+		"rank": 1306
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "HRB",
+		"rank": 1307
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "CKG",
+		"rank": 1308
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "PAR",
+		"rank": 1309
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "KLO",
+		"rank": 1310
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "HOU",
+		"rank": 1311
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "RIO",
+		"rank": 1311
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "MFM",
+		"rank": 1313
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "CEB",
+		"rank": 1314
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MAN",
+		"rank": 1314
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "KOJ",
+		"rank": 1316
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "CHC",
+		"rank": 1316
+	  },
+	  {
+		"departureCityCode": "NNG",
+		"arrivalCityCode": "MFM",
+		"rank": 1318
+	  },
+	  {
+		"departureCityCode": "SGN",
+		"arrivalCityCode": "CAN",
+		"rank": 1319
+	  },
+	  {
+		"departureCityCode": "MDG",
+		"arrivalCityCode": "SEL",
+		"rank": 1320
+	  },
+	  {
+		"departureCityCode": "NYC",
+		"arrivalCityCode": "MIA",
+		"rank": 1321
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "SIA",
+		"rank": 1322
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "CEB",
+		"rank": 1323
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "JKT",
+		"rank": 1323
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "BNE",
+		"rank": 1325
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "BLR",
+		"rank": 1326
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "DXB",
+		"rank": 1327
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "SFO",
+		"rank": 1328
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "KLO",
+		"rank": 1329
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "NGO",
+		"rank": 1331
+	  },
+	  {
+		"departureCityCode": "YIW",
+		"arrivalCityCode": "BKK",
+		"rank": 1331
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "CGO",
+		"rank": 1333
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "BOS",
+		"rank": 1334
+	  },
+	  {
+		"departureCityCode": "MAN",
+		"arrivalCityCode": "BJS",
+		"rank": 1335
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "PAR",
+		"rank": 1336
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "STO",
+		"rank": 1337
+	  },
+	  {
+		"departureCityCode": "NNG",
+		"arrivalCityCode": "SEL",
+		"rank": 1338
+	  },
+	  {
+		"departureCityCode": "TYN",
+		"arrivalCityCode": "TPE",
+		"rank": 1339
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "LED",
+		"rank": 1340
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "KTM",
+		"rank": 1341
+	  },
+	  {
+		"departureCityCode": "SJW",
+		"arrivalCityCode": "HKT",
+		"rank": 1342
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "CPT",
+		"rank": 1343
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "TAO",
+		"rank": 1344
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "VTE",
+		"rank": 1345
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "NYC",
+		"rank": 1346
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "SPK",
+		"rank": 1347
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "HEL",
+		"rank": 1347
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "CNS",
+		"rank": 1349
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "NKG",
+		"rank": 1349
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "PER",
+		"rank": 1351
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "VIE",
+		"rank": 1352
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "ZRH",
+		"rank": 1353
+	  },
+	  {
+		"departureCityCode": "NNG",
+		"arrivalCityCode": "NHA",
+		"rank": 1354
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "HEL",
+		"rank": 1355
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "BEG",
+		"rank": 1356
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "VCE",
+		"rank": 1357
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "WAW",
+		"rank": 1358
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "BUD",
+		"rank": 1358
+	  },
+	  {
+		"departureCityCode": "XUZ",
+		"arrivalCityCode": "HKG",
+		"rank": 1360
+	  },
+	  {
+		"departureCityCode": "TAO",
+		"arrivalCityCode": "NGO",
+		"rank": 1361
+	  },
+	  {
+		"departureCityCode": "CNX",
+		"arrivalCityCode": "BKK",
+		"rank": 1362
+	  },
+	  {
+		"departureCityCode": "KUL",
+		"arrivalCityCode": "BJS",
+		"rank": 1363
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "RIO",
+		"rank": 1364
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "OSL",
+		"rank": 1364
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "VRN",
+		"rank": 1364
+	  },
+	  {
+		"departureCityCode": "SWA",
+		"arrivalCityCode": "HKT",
+		"rank": 1367
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "LED",
+		"rank": 1368
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "KBV",
+		"rank": 1369
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "JKT",
+		"rank": 1370
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "DPS",
+		"rank": 1371
+	  },
+	  {
+		"departureCityCode": "SIN",
+		"arrivalCityCode": "TPE",
+		"rank": 1372
+	  },
+	  {
+		"departureCityCode": "BOS",
+		"arrivalCityCode": "BJS",
+		"rank": 1373
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "NHA",
+		"rank": 1374
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "CEB",
+		"rank": 1374
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "PPT",
+		"rank": 1376
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "BWN",
+		"rank": 1377
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "SYD",
+		"rank": 1378
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "CPH",
+		"rank": 1378
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "DTT",
+		"rank": 1380
+	  },
+	  {
+		"departureCityCode": "PAR",
+		"arrivalCityCode": "SHA",
+		"rank": 1381
+	  },
+	  {
+		"departureCityCode": "YNT",
+		"arrivalCityCode": "BKK",
+		"rank": 1382
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "KMQ",
+		"rank": 1383
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "WAW",
+		"rank": 1384
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "DFW",
+		"rank": 1385
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "MEL",
+		"rank": 1386
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "KHH",
+		"rank": 1387
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "WAW",
+		"rank": 1388
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "PUS",
+		"rank": 1388
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "NHA",
+		"rank": 1390
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "USU",
+		"rank": 1391
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "UTP",
+		"rank": 1392
+	  },
+	  {
+		"departureCityCode": "KWE",
+		"arrivalCityCode": "SEL",
+		"rank": 1392
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "LGB",
+		"rank": 1394
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "PRG",
+		"rank": 1395
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "SPN",
+		"rank": 1396
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "BUD",
+		"rank": 1397
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "DPS",
+		"rank": 1398
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "LED",
+		"rank": 1399
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "CHC",
+		"rank": 1400
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "JKT",
+		"rank": 1401
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "BEG",
+		"rank": 1401
+	  },
+	  {
+		"departureCityCode": "FOC",
+		"arrivalCityCode": "SYD",
+		"rank": 1403
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "LPQ",
+		"rank": 1404
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "YVR",
+		"rank": 1405
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "SYD",
+		"rank": 1406
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "SZX",
+		"rank": 1407
+	  },
+	  {
+		"departureCityCode": "BOS",
+		"arrivalCityCode": "SHA",
+		"rank": 1408
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "PNH",
+		"rank": 1408
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "BOM",
+		"rank": 1410
+	  },
+	  {
+		"departureCityCode": "HFE",
+		"arrivalCityCode": "SIN",
+		"rank": 1411
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "MUC",
+		"rank": 1412
+	  },
+	  {
+		"departureCityCode": "MEL",
+		"arrivalCityCode": "BJS",
+		"rank": 1413
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "CPT",
+		"rank": 1414
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "OKA",
+		"rank": 1415
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "SPN",
+		"rank": 1416
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CSX",
+		"rank": 1417
+	  },
+	  {
+		"departureCityCode": "SWA",
+		"arrivalCityCode": "KUL",
+		"rank": 1418
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "EDI",
+		"rank": 1419
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "LAX",
+		"rank": 1420
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "OKA",
+		"rank": 1421
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "MOW",
+		"rank": 1421
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "LON",
+		"rank": 1423
+	  },
+	  {
+		"departureCityCode": "CGO",
+		"arrivalCityCode": "LAX",
+		"rank": 1424
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "ATH",
+		"rank": 1425
+	  },
+	  {
+		"departureCityCode": "MFM",
+		"arrivalCityCode": "RMQ",
+		"rank": 1426
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "EDI",
+		"rank": 1427
+	  },
+	  {
+		"departureCityCode": "PUS",
+		"arrivalCityCode": "TAO",
+		"rank": 1428
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "CNS",
+		"rank": 1429
+	  },
+	  {
+		"departureCityCode": "NKG",
+		"arrivalCityCode": "KLO",
+		"rank": 1429
+	  },
+	  {
+		"departureCityCode": "SEL",
+		"arrivalCityCode": "OSA",
+		"rank": 1431
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "BNE",
+		"rank": 1432
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "TBS",
+		"rank": 1433
+	  },
+	  {
+		"departureCityCode": "SJW",
+		"arrivalCityCode": "SEL",
+		"rank": 1434
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "CNS",
+		"rank": 1435
+	  },
+	  {
+		"departureCityCode": "YTO",
+		"arrivalCityCode": "NYC",
+		"rank": 1436
+	  },
+	  {
+		"departureCityCode": "MOW",
+		"arrivalCityCode": "BJS",
+		"rank": 1437
+	  },
+	  {
+		"departureCityCode": "LON",
+		"arrivalCityCode": "CAN",
+		"rank": 1437
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "LED",
+		"rank": 1439
+	  },
+	  {
+		"departureCityCode": "XMN",
+		"arrivalCityCode": "CNX",
+		"rank": 1440
+	  },
+	  {
+		"departureCityCode": "SHA",
+		"arrivalCityCode": "OSL",
+		"rank": 1440
+	  },
+	  {
+		"departureCityCode": "CZX",
+		"arrivalCityCode": "HKG",
+		"rank": 1442
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "WLG",
+		"rank": 1443
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "SHA",
+		"rank": 1444
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "CHC",
+		"rank": 1445
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "CGQ",
+		"rank": 1446
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "NGO",
+		"rank": 1447
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "PQC",
+		"rank": 1448
+	  },
+	  {
+		"departureCityCode": "ZHA",
+		"arrivalCityCode": "HKG",
+		"rank": 1449
+	  },
+	  {
+		"departureCityCode": "MNL",
+		"arrivalCityCode": "DGT",
+		"rank": 1450
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "VCE",
+		"rank": 1451
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "DXB",
+		"rank": 1452
+	  },
+	  {
+		"departureCityCode": "KWE",
+		"arrivalCityCode": "MFM",
+		"rank": 1452
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "MDL",
+		"rank": 1454
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "EDI",
+		"rank": 1454
+	  },
+	  {
+		"departureCityCode": "WUX",
+		"arrivalCityCode": "TYO",
+		"rank": 1456
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "SGN",
+		"rank": 1457
+	  },
+	  {
+		"departureCityCode": "CSX",
+		"arrivalCityCode": "MNL",
+		"rank": 1458
+	  },
+	  {
+		"departureCityCode": "YVR",
+		"arrivalCityCode": "CAN",
+		"rank": 1459
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "VCE",
+		"rank": 1461
+	  },
+	  {
+		"departureCityCode": "BJS",
+		"arrivalCityCode": "KOJ",
+		"rank": 1462
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "REP",
+		"rank": 1463
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "CHI",
+		"rank": 1463
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "EDI",
+		"rank": 1463
+	  },
+	  {
+		"departureCityCode": "TYO",
+		"arrivalCityCode": "XMN",
+		"rank": 1463
+	  },
+	  {
+		"departureCityCode": "CJU",
+		"arrivalCityCode": "SHA",
+		"rank": 1467
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "STO",
+		"rank": 1468
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "SHE",
+		"rank": 1469
+	  },
+	  {
+		"departureCityCode": "TSN",
+		"arrivalCityCode": "WLG",
+		"rank": 1470
+	  },
+	  {
+		"departureCityCode": "HET",
+		"arrivalCityCode": "BKK",
+		"rank": 1470
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "LAS",
+		"rank": 1472
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "CHC",
+		"rank": 1473
+	  },
+	  {
+		"departureCityCode": "PUS",
+		"arrivalCityCode": "SHA",
+		"rank": 1474
+	  },
+	  {
+		"departureCityCode": "LYG",
+		"arrivalCityCode": "BKK",
+		"rank": 1474
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "LAS",
+		"rank": 1476
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "WLG",
+		"rank": 1477
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "BUD",
+		"rank": 1478
+	  },
+	  {
+		"departureCityCode": "TNA",
+		"arrivalCityCode": "KUL",
+		"rank": 1479
+	  },
+	  {
+		"departureCityCode": "KMG",
+		"arrivalCityCode": "SGN",
+		"rank": 1480
+	  },
+	  {
+		"departureCityCode": "HAK",
+		"arrivalCityCode": "TPE",
+		"rank": 1481
+	  },
+	  {
+		"departureCityCode": "SIA",
+		"arrivalCityCode": "SYD",
+		"rank": 1482
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "VTE",
+		"rank": 1483
+	  },
+	  {
+		"departureCityCode": "CTU",
+		"arrivalCityCode": "OKA",
+		"rank": 1484
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "BWN",
+		"rank": 1485
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "BWN",
+		"rank": 1486
+	  },
+	  {
+		"departureCityCode": "YNT",
+		"arrivalCityCode": "OSA",
+		"rank": 1487
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "BEG",
+		"rank": 1488
+	  },
+	  {
+		"departureCityCode": "TPE",
+		"arrivalCityCode": "WUH",
+		"rank": 1488
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "THR",
+		"rank": 1488
+	  },
+	  {
+		"departureCityCode": "BKK",
+		"arrivalCityCode": "SWA",
+		"rank": 1491
+	  },
+	  {
+		"departureCityCode": "SZX",
+		"arrivalCityCode": "SEZ",
+		"rank": 1492
+	  },
+	  {
+		"departureCityCode": "HGH",
+		"arrivalCityCode": "STO",
+		"rank": 1492
+	  },
+	  {
+		"departureCityCode": "SHE",
+		"arrivalCityCode": "SGN",
+		"rank": 1494
+	  },
+	  {
+		"departureCityCode": "HKG",
+		"arrivalCityCode": "WLG",
+		"rank": 1494
+	  },
+	  {
+		"departureCityCode": "CAN",
+		"arrivalCityCode": "MFM",
+		"rank": 1496
+	  },
+	  {
+		"departureCityCode": "PNH",
+		"arrivalCityCode": "SHA",
+		"rank": 1497
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "BEG",
+		"rank": 1497
+	  },
+	  {
+		"departureCityCode": "WUH",
+		"arrivalCityCode": "CNS",
+		"rank": 1499
+	  },
+	  {
+		"departureCityCode": "CKG",
+		"arrivalCityCode": "PRG",
+		"rank": 1500
+	  }
+	]
+  }
+}
