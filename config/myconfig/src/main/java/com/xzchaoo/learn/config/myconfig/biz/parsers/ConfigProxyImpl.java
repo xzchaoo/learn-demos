@@ -6,8 +6,11 @@ import com.xzchaoo.learn.config.myconfig.core.ConfigObserver;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -18,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ConfigProxyImpl implements ConfigProxy, ConfigObserver {
   /**
    * TODO 分离出去
-   * 存放默认的 parser
+   * 存放默认的 valueParser
    */
   private static final Map<Class, Parser<?>> DEFAULT_PARSER;
 
@@ -71,24 +74,39 @@ public class ConfigProxyImpl implements ConfigProxy, ConfigObserver {
   private static PropertyConfig<Object> parseProperty(Property property, Field field) throws Exception {
     Class<?> fieldType = field.getType();
     Parser parser;
-    Class<? extends Parser> parserClass = property.parser();
-    ParseAsList parseAsList = field.getAnnotation(ParseAsList.class);
-    if (parseAsList != null) {
-      char separator = parseAsList.separator();
-      Class<?> contentType = (Class<?>) ((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
 
+    if (property.asList() && property.asMap()) {
+      throw new IllegalArgumentException();
+    } else if (property.asList()) {
+      if (!fieldType.isAssignableFrom(List.class)) {
+        throw new IllegalArgumentException();
+      }
+      Class<?> valueType = (Class<?>) ((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
+      Parser valueParser = findParser(valueType, property.valueParser());
+      parser = Parsers.listParser(property.separator(), valueType, valueParser);
+    } else if (property.asMap()) {
+      Type[] args = ((ParameterizedType) field.getGenericType()).getActualTypeArguments();
+      Class<?> keyType = (Class<?>) args[0];
+      Class<?> valueType = (Class<?>) args[1];
+      Parser keyParser = findParser(keyType, property.valueParser());
+      Parser valueParser = findParser(valueType, property.valueParser());
+      parser = Parsers.mapParser(property.separator(), property.separator2(), keyType, keyParser, valueType, valueParser);
+    } else {
+      parser = findParser(fieldType, property.valueParser());
     }
+
+    return new PropertyConfig<Object>(property.value(), (Class) fieldType, parser, property.defaultValue());
+  }
+
+  private static Parser findParser(Class<?> clazz, Class<? extends Parser> parserClass) throws IllegalAccessException, InstantiationException {
     if (parserClass == Parser.None.class) {
-      // find default
-      parser = DEFAULT_PARSER.get(fieldType);
+      Parser<?> parser = DEFAULT_PARSER.get(clazz);
       if (parser == null) {
         throw new IllegalArgumentException();
       }
-    } else {
-      // cache parser?
-      parser = parserClass.newInstance();
+      return parser;
     }
-    return new PropertyConfig<Object>(property.value(), (Class) fieldType, parser, property.defaultValue());
+    return parserClass.newInstance();
   }
 
   /**
@@ -155,7 +173,7 @@ public class ConfigProxyImpl implements ConfigProxy, ConfigObserver {
       PropertyConfig pc = e.getValue();
       // null empty check?
       String strValue = configMap.get(pc.getKey());
-      if (strValue == null) {
+      if (strValue == null && !pc.getDefaultValue().equals(Property.NONE)) {
         strValue = pc.getDefaultValue();
       }
       Object objectValue = pc.getParser().parse(pc.getClazz(), strValue);

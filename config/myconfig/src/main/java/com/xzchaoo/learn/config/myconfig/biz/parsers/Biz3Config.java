@@ -3,6 +3,7 @@ package com.xzchaoo.learn.config.myconfig.biz.parsers;
 import com.xzchaoo.learn.config.myconfig.biz.Property;
 
 import java.util.List;
+import java.util.Map;
 
 import lombok.Getter;
 
@@ -45,7 +46,10 @@ public class Biz3Config {
   private int aint2;
 
   @Getter
-  @Property(value = "biz3.stringlist")
-  @ParseAsList
+  @Property(value = "biz3.stringlist", asList = true)
   private List<String> stringList;
+
+  @Getter
+  @Property(value = "biz3.map1", asMap = true)
+  private Map<String, Integer> map1;
 }

@@ -1,6 +1,6 @@
 package com.xzchaoo.learn.config.myconfig.biz.parsers;
 
-import com.xzchaoo.learn.config.myconfig.configs.MapConfig;
+import com.xzchaoo.learn.config.myconfig.config.MapConfig;
 import com.xzchaoo.learn.config.myconfig.core.Config;
 
 import org.assertj.core.data.Offset;
@@ -27,6 +27,8 @@ public class Biz3ConfigTest {
     configMap.put("biz3.along", "123456");
     configMap.put("biz3.aboolean1", "false");
     configMap.put("biz3.aboolean2", "true");
+    configMap.put("biz3.stringlist", "1|2|3");
+    configMap.put("biz3.map1", "a:1|b:2");
 
     Config config = new MapConfig(configMap);
     ConfigProxy configProxy = ConfigProxyFactory.from(config);
@@ -39,6 +41,7 @@ public class Biz3ConfigTest {
     assertThat(bc.isAboolean1()).isEqualTo(false);
     assertThat(bc.isAboolean2()).isEqualTo(true);
     assertThat(bc.getAint2()).isEqualTo(123);
-
+    assertThat(bc.getStringList()).containsOnly("1", "2", "3");
+    System.out.println(bc.getMap1());
   }
 }

@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Property {
-  String NONE = "####################################";
+  String NONE = "#NONE#";
 
   /**
    * key 但是value可以省略不写
@@ -25,5 +25,15 @@ public @interface Property {
 
   String defaultValue() default NONE;
 
-  Class<? extends Parser> parser() default Parser.None.class;
+  Class<? extends Parser> keyParser() default Parser.None.class;
+
+  Class<? extends Parser> valueParser() default Parser.None.class;
+
+  char separator() default '|';
+
+  char separator2() default ':';
+
+  boolean asList() default false;
+
+  boolean asMap() default false;
 }
