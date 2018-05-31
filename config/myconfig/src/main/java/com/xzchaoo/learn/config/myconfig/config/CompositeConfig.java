@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.config.myconfig.configs;
+package com.xzchaoo.learn.config.myconfig.config;
 
 import com.xzchaoo.learn.config.myconfig.core.Config;
 import com.xzchaoo.learn.config.myconfig.core.Subscription;
@@ -14,7 +14,8 @@ import java.util.Map;
  * @date 2018/5/25
  */
 public class CompositeConfig extends AbstractConfig {
-  private static final CompositeState EMPTY = new CompositeState(Collections.emptyList(), Collections.emptyMap(), Collections.emptyList());
+  private static final CompositeState EMPTY = new CompositeState(Collections.emptyList(), Collections.emptyMap(),
+    Collections.emptyList());
   private CompositeState state = EMPTY;
 
   public CompositeConfig() {

@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.config.myconfig.configs;
+package com.xzchaoo.learn.config.myconfig.config;
 
 import com.xzchaoo.learn.config.myconfig.core.Config;
 import com.xzchaoo.learn.config.myconfig.core.ConfigObserver;
@@ -39,6 +39,7 @@ public abstract class AbstractConfig implements Config {
   @Override
   public int getInt(String key, int defaultValue) {
     String value = getString(key);
+    // exception
     return value == null ? defaultValue : Integer.parseInt(value);
   }
 
