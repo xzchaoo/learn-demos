@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.config.myconfig.configs;
+package com.xzchaoo.learn.config.myconfig.config;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -38,7 +38,7 @@ public class MapConfig extends AbstractConfig {
     return map.containsKey(key);
   }
 
-  public void replace(Map<String, String> map) {
+  public synchronized void replace(Map<String, String> map) {
     if (map == null) {
       throw new NullPointerException();
     }

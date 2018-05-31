@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.config.myconfig.configs;
+package com.xzchaoo.learn.config.myconfig.config;
 
 import java.util.Collections;
 import java.util.Map;

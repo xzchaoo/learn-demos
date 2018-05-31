@@ -1,7 +1,7 @@
 package com.xzchaoo.learn.config.myconfig;
 
-import com.xzchaoo.learn.config.myconfig.configs.CompositeConfig;
-import com.xzchaoo.learn.config.myconfig.configs.MapConfig;
+import com.xzchaoo.learn.config.myconfig.config.CompositeConfig;
+import com.xzchaoo.learn.config.myconfig.config.MapConfig;
 import com.xzchaoo.learn.config.myconfig.core.Config;
 import com.xzchaoo.learn.config.myconfig.core.ConfigObserver;
 
