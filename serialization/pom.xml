@@ -20,6 +20,7 @@
 		<module>protostuff</module>
 		<module>jprotobuf</module>
 		<module>kryo</module>
+		<module>fastjson</module>
 	</modules>
 
 </project>
