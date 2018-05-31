@@ -20,16 +20,22 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @date 2018/5/30
  */
 public class ConfigParseUtilsTest {
+  private <T> List<T> getAsList() {
+    return null;
+  }
+
   @Test
   public void test_parseList() {
     // 兼容空值
+    List<Integer> integers = ConfigParseUtils.parseCollection(null, '|', Integer::parseInt, ArrayList::new);
+    // assertThat().isNotNull().isEmpty();
     assertThat(ConfigParseUtils.parseList(null, '|', Integer::parseInt)).isNotNull().isEmpty();
     assertThat(ConfigParseUtils.parseList("", '|', Integer::parseInt)).isNotNull().isEmpty();
     assertThat(ConfigParseUtils.parseList("|", '|', Integer::parseInt)).isNotNull().isEmpty();
-    assertThat(ConfigParseUtils.parseList("||||||||", '|', Integer::parseInt)).isNotNull().isEmpty();
+    assertThat(ConfigParseUtils.parseList("||||||||", '|', Integer::parseInt)).isNotNull()
+      .isEmpty();
 
-    // parseList 方法负责一级拆分 后续拆分由用户自己完成
-    List<Integer> result1 = ConfigParseUtils.parseList("1|2|3|4", '|', Integer::parseInt);
+    List<Integer> result1 = ConfigParseUtils.parseList("1|  2  |3|4", '|', Integer::parseInt);
     assertThat(result1).containsSequence(1, 2, 3, 4);
 
     List<String> result2 = ConfigParseUtils.parseList("a,b,c,d", ',', Function.identity());
@@ -43,6 +49,13 @@ public class ConfigParseUtilsTest {
       return ConfigParseUtils.parseList(sub, ',', Integer::parseInt);
     });
     assertThat(result4).containsSequence(Lists.newArrayList(1, 2), Lists.newArrayList(3, 4));
+
+    List<EngineAndValue> result5 = ConfigParseUtils.parseList("Ctrip,4|SharedPlatform,4|Amadeus,288|Abacus,32|Consolidator,32|Pricing," +
+      "32|CtripIntelligence,64", '|', sub -> {
+      String[] ss = StringUtils.split(sub, ',');
+      return new EngineAndValue(ss[0], Integer.parseInt(ss[1]));
+    });
+    assertThat(result5).contains(new EngineAndValue("Ctrip", 4), new EngineAndValue("Amadeus", 288));
   }
 
   @Test
@@ -84,11 +97,18 @@ public class ConfigParseUtilsTest {
       .containsEntry("c", Lists.newArrayList(5))
       .containsEntry("d", Lists.newArrayList());
 
-    Map<String, List<String>> map4 = ConfigParseUtils.parseMap("Amadeus:YDSB,LTEB,HMSP,,,,,,,,,,,,;Abacus:YDSB;" +
-      "Ctrip:HMLS", ';', ':', ',', Function.identity(), Function.identity());
-    assertThat(map4).containsEntry("Amadeus", Lists.newArrayList("YDSB", "LTEB", "HMSP"))
-      .containsEntry("Abacus", Lists.newArrayList("YDSB"))
-      .containsEntry("Ctrip", Lists.newArrayList("HMLS"));
+
+//
+//    Map<String, Set<String>> map4 = ConfigParseUtils.parseMap("Amadeus:YDSB,LTEB,HMSP,,,,,,,,,,,,;Abacus:YDSB;" +
+//      "Ctrip:HMLS", ';', ':', ',', Function.identity(), value -> {
+//
+//       // return ConfigParseUtils.parseSet(value,',',Function.identity());
+//
+//    });
+//
+//    assertThat(map4).containsEntry("Amadeus", Lists.newArrayList("YDSB", "LTEB", "HMSP"))
+//      .containsEntry("Abacus", Lists.newArrayList("YDSB"))
+//      .containsEntry("Ctrip", Lists.newArrayList("HMLS"));
   }
 
   private static Point parsePoint(String str) {

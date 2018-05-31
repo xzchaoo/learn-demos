@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.deser.BeanDeserializerModifier;
 import com.fasterxml.jackson.databind.introspect.BeanPropertyDefinition;
 import com.fasterxml.jackson.databind.module.SimpleModule;
@@ -22,6 +23,7 @@ import java.util.List;
  * @author xzchaoo
  */
 public class CustomSerializeTest {
+	@JsonSerialize()
 	@Test
 	public void test1() throws IOException {
 		ObjectMapper om = new ObjectMapper();
