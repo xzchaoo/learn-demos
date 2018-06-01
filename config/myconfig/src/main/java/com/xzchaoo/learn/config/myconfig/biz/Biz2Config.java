@@ -6,14 +6,16 @@ import java.awt.Point;
 import java.util.Collections;
 import java.util.List;
 
+import lombok.Getter;
+
 /**
  * @author xzchaoo
  * @date 2018/5/31
  */
 public class Biz2Config extends AbstractBizConfig {
-
+  @Getter
   private List<String> engines = Collections.emptyList();
-
+  @Getter
   private List<Point> points = Collections.emptyList();
 
   @Override
@@ -26,24 +28,5 @@ public class Biz2Config extends AbstractBizConfig {
     // x,y
     String[] ss = StringUtils.split(s, ',');
     return new Point(Integer.parseInt(ss[0]), Integer.parseInt(ss[1]));
-  }
-
-
-  /**
-   * 获取所有配置的引擎
-   *
-   * @return
-   */
-  public List<String> getEngines() {
-    return engines;
-  }
-
-  /**
-   * 获取所有配置的坐标
-   *
-   * @return
-   */
-  public List<Point> getPoints() {
-    return points;
   }
 }

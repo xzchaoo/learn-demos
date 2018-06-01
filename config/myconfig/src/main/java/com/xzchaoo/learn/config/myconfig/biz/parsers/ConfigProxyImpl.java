@@ -7,11 +7,11 @@ import com.xzchaoo.learn.config.myconfig.core.ConfigObserver;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -75,20 +75,22 @@ public class ConfigProxyImpl implements ConfigProxy, ConfigObserver {
     Class<?> fieldType = field.getType();
     Parser parser;
 
-    if (property.asList() && property.asMap()) {
-      throw new IllegalArgumentException();
-    } else if (property.asList()) {
-      if (!fieldType.isAssignableFrom(List.class)) {
-        throw new IllegalArgumentException();
-      }
+    // TODO 其他集合类型?
+    if (fieldType.isAssignableFrom(List.class)) {
       Class<?> valueType = (Class<?>) ((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
       Parser valueParser = findParser(valueType, property.valueParser());
       parser = Parsers.listParser(property.separator(), valueType, valueParser);
-    } else if (property.asMap()) {
+    } else if (fieldType.isAssignableFrom(Set.class)) {
+      // TODO 代码重复
+      Class<?> valueType = (Class<?>) ((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
+      Parser valueParser = findParser(valueType, property.valueParser());
+      parser = Parsers.setParser(property.separator(), valueType, valueParser);
+      // 通常很少在代码里直接使用 Collection 接口的
+    } else if (fieldType.isAssignableFrom(Map.class)) {
       Type[] args = ((ParameterizedType) field.getGenericType()).getActualTypeArguments();
       Class<?> keyType = (Class<?>) args[0];
       Class<?> valueType = (Class<?>) args[1];
-      Parser keyParser = findParser(keyType, property.valueParser());
+      Parser keyParser = findParser(keyType, property.keyParser());
       Parser valueParser = findParser(valueType, property.valueParser());
       parser = Parsers.mapParser(property.separator(), property.separator2(), keyType, keyParser, valueType, valueParser);
     } else {

@@ -6,6 +6,7 @@ import com.xzchaoo.learn.config.myconfig.core.Config;
 import org.assertj.core.data.Offset;
 import org.junit.Test;
 
+import java.awt.Point;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,8 +32,17 @@ public class Biz3ConfigTest {
     configMap.put("biz3.map1", "a:1|b:2");
 
     Config config = new MapConfig(configMap);
+
+
+
     ConfigProxy configProxy = ConfigProxyFactory.from(config);
+
+    // 返回的是单例
     Biz3Config bc = configProxy.getConfig(Biz3Config.class);
+    Biz3Config bc2 = configProxy.getConfig(Biz3Config.class);
+    assertThat(bc).isSameAs(bc2);
+
+
     assertThat(bc.getAstring()).isEqualTo("ssttrr");
     assertThat(bc.getAint()).isEqualTo(123);
     assertThat(bc.getAfloat()).isCloseTo(1.2f, Offset.offset(0.001f));
@@ -42,6 +52,7 @@ public class Biz3ConfigTest {
     assertThat(bc.isAboolean2()).isEqualTo(true);
     assertThat(bc.getAint2()).isEqualTo(123);
     assertThat(bc.getStringList()).containsOnly("1", "2", "3");
-    System.out.println(bc.getMap1());
+    assertThat(bc.getMap1()).containsEntry("a", 1).containsEntry("b", 2);
+    assertThat(bc.getSet1()).containsOnly(new Point(1, 2));
   }
 }

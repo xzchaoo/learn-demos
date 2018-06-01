@@ -1,6 +1,4 @@
-package com.xzchaoo.learn.config.myconfig.biz;
-
-import com.xzchaoo.learn.config.myconfig.biz.parsers.Parser;
+package com.xzchaoo.learn.config.myconfig.biz.parsers;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,22 +7,12 @@ import java.lang.annotation.Target;
 
 /**
  * @author xzchaoo
- * @date 2018/5/31
+ * @date 2018/6/1
  */
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Property {
-  String NONE = "#NONE#";
-
-  /**
-   * key 但是value可以省略不写
-   *
-   * @return
-   */
-  String value();
-
-  String defaultValue() default NONE;
-
+@Deprecated
+public @interface ParseAsMap {
   char separator() default '|';
 
   char separator2() default ':';
