@@ -45,6 +45,7 @@
 		<module>lombok</module>
 		<module>rabbitmq2</module>
 		<module>dozer</module>
+		<module>reflectasm</module>
 	</modules>
 
 	<dependencies>

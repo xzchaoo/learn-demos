@@ -26,7 +26,7 @@ public class HashMapConcurrentTest {
         System.out.println("start " + index);
         Random random = ThreadLocalRandom.current();
         try {
-          for (int j = 0; j < 10000; ++j) {
+          for (int j = 0; j < 1000000; ++j) {
             int x = random.nextInt(100000);
             map.put(Integer.toString(x), Integer.toString(x));
           }
