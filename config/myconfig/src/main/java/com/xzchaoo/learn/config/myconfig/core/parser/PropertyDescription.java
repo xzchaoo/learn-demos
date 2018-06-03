@@ -3,9 +3,12 @@ package com.xzchaoo.learn.config.myconfig.core.parser;
 import java.lang.reflect.Field;
 
 /**
+ * 描述一个配置的属性
+ *
  * @author xzchaoo
  * @date 2018/5/31
  */
+@SuppressWarnings("WeakerAccess")
 public class PropertyDescription<T> {
   private final String key;
   private final Field field;

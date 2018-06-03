@@ -12,6 +12,7 @@ import java.util.Map;
  * @author xzchaoo
  * @date 2018/6/2
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class PrefixedViewConfig extends AbstractConfig {
   private final Config parent;
   private final String prefix;
@@ -27,7 +28,7 @@ public class PrefixedViewConfig extends AbstractConfig {
 
   private void onParentChange(Config parent) {
     this.state = new State(parent, prefix);
-    super.notifyChanged();
+    super.notifyConfigChanged();
   }
 
   @Override

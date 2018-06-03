@@ -3,8 +3,8 @@ package com.xzchaoo.learn.config.myconfig.core;
 import java.util.Map;
 
 /**
- * TODO 其他基本数据类型
- * 用于描述一份 properties 配置
+ * 用于描述一份 properties 配置, 一个Config基本对应了一个 properties 文件, 并且提供了对一些基本数据类型的解析
+ * 本类不需要支持解析器
  *
  * @author xzchaoo
  * @date 2018/5/25
@@ -136,7 +136,6 @@ public interface Config {
    * @return long
    */
   long getLong(String key, long defaultValue);
-
 
   /**
    * 判断是否包含某个key

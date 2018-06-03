@@ -7,13 +7,16 @@ import com.xzchaoo.learn.config.myconfig.core.config.AbstractConfig;
 import java.util.Map;
 
 /**
+ * 将实际配置委托给另外一个Config
+ *
  * @author xzchaoo
  * @date 2018/6/2
  */
-public class ConfigDelegate extends AbstractConfig {
+@SuppressWarnings({"unused", "WeakerAccess"})
+public class DelegateConfig extends AbstractConfig {
   private volatile Config delegate;
 
-  public ConfigDelegate(String name, Config delegate) {
+  public DelegateConfig(String name, Config delegate) {
     super(name);
     Preconditions.checkNotNull(delegate);
     this.delegate = delegate;
@@ -45,9 +48,9 @@ public class ConfigDelegate extends AbstractConfig {
    * @param config
    */
   @SuppressWarnings("unused")
-  public void replaceConfig(Config config) {
+  public synchronized void replaceConfig(Config config) {
     this.delegate = config;
-    super.notifyChanged();
+    super.notifyConfigChanged();
   }
 
   @Override

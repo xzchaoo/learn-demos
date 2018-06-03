@@ -5,5 +5,5 @@ package com.xzchaoo.learn.config.myconfig.core.property;
  * @date 2018/6/3
  */
 public interface PropertySource {
-  <T> PropertyContainer<T> getProperty(String key, Class<T> clazz, T defaultValue);
+  <T> Property<T> getProperty(String key, Class<T> clazz, T defaultValue);
 }

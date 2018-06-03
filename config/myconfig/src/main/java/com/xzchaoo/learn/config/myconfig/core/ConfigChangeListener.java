@@ -11,5 +11,5 @@ public interface ConfigChangeListener {
    *
    * @param config 发生变化的config
    */
-  void onChange(Config config);
+  void onConfigChange(Config config);
 }

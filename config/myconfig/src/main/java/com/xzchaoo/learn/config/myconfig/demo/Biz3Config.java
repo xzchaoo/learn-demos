@@ -1,7 +1,7 @@
 package com.xzchaoo.learn.config.myconfig.demo;
 
 
-import com.xzchaoo.learn.config.myconfig.core.Property;
+import com.xzchaoo.learn.config.myconfig.core.annotation.Property;
 
 import java.awt.Point;
 import java.util.List;

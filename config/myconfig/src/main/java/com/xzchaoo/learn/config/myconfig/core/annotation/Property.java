@@ -1,4 +1,4 @@
-package com.xzchaoo.learn.config.myconfig.core;
+package com.xzchaoo.learn.config.myconfig.core.annotation;
 
 
 import com.xzchaoo.learn.config.myconfig.core.parser.Parser;

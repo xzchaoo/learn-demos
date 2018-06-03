@@ -10,5 +10,5 @@ public interface PropertyChangeListener<T> {
    * @param oldValue 旧值
    * @param newValue 新值
    */
-  void onPropertyChange(PropertyContainer<T> property, T oldValue, T newValue);
+  void onPropertyChange(Property<T> property, T oldValue, T newValue);
 }

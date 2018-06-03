@@ -11,18 +11,18 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author xzchaoo
  * @date 2018/6/3
  */
-public class PropertyContainerImpl<T> implements PropertyContainer<T> {
+public class PropertyImpl<T> implements Property<T> {
   private final String key;
   private final Parser<T> parser;
   private final T defaultValue;
   private final List<PropertyChangeListener<T>> listeners = new CopyOnWriteArrayList<>();
-  // private final List<PropertyContainer<?>> dProperties = new CopyOnWriteArrayList<CachedProperty<?>>();
+  // private final List<Property<?>> dProperties = new CopyOnWriteArrayList<CachedProperty<?>>();
 
   private volatile String rawString;
   private volatile T cachedValue;
 
 
-  public PropertyContainerImpl(String key, Config config, Parser<T> parser, T defaultValue) {
+  public PropertyImpl(String key, Config config, Parser<T> parser, T defaultValue) {
     this.key = key;
     this.parser = parser;
     this.defaultValue = defaultValue;
@@ -71,5 +71,10 @@ public class PropertyContainerImpl<T> implements PropertyContainer<T> {
     for (PropertyChangeListener<T> listener : listeners) {
       listener.onPropertyChange(this, oldValue, newValue);
     }
+  }
+
+  @Override
+  public String toString() {
+    return key + "=" + cachedValue;
   }
 }

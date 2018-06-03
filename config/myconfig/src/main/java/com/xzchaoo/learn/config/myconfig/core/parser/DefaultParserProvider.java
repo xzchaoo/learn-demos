@@ -28,10 +28,10 @@ import javax.xml.bind.DatatypeConverter;
  * @author xzchaoo
  * @date 2018/6/1
  */
+@SuppressWarnings("unchecked")
 public class DefaultParserProvider implements ParserProvider {
   private static final ConcurrentHashMap<Class, Parser<?>> PROPERTY_PARSER_CACHE = new ConcurrentHashMap<>();
   /**
-   * TODO 分离出去
    * 存放默认的 valueParser
    */
   private static final Map<Class<?>, Parser<?>> DEFAULT_PARSER;
@@ -76,17 +76,6 @@ public class DefaultParserProvider implements ParserProvider {
     DEFAULT_PARSER = Collections.unmodifiableMap(defaultParserMap);
   }
 
-  @SuppressWarnings("unchecked")
-  private static <T> Parser<T> getOrCreateParser(Class<? extends Parser<? extends T>> parserClass) {
-    return (Parser<T>) PROPERTY_PARSER_CACHE.computeIfAbsent(parserClass, clazz2 -> {
-      try {
-        return (Parser<?>) clazz2.newInstance();
-      } catch (Exception e) {
-        throw new RuntimeException(e);
-      }
-    });
-  }
-
   private final Map<Class<?>, Parser<?>> parserMap;
 
   public DefaultParserProvider() {
@@ -104,6 +93,16 @@ public class DefaultParserProvider implements ParserProvider {
   }
 
   @SuppressWarnings("unchecked")
+  private static <T> Parser<T> getOrCreateParser(Class<? extends Parser<? extends T>> parserClass) {
+    return (Parser<T>) PROPERTY_PARSER_CACHE.computeIfAbsent(parserClass, clazz2 -> {
+      try {
+        return (Parser<?>) clazz2.newInstance();
+      } catch (Exception e) {
+        throw new RuntimeException(e);
+      }
+    });
+  }
+
   @Override
   public <T> Parser<T> getParser(Class<T> clazz) {
     return (Parser<T>) parserMap.get(clazz);

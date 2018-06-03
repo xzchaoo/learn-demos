@@ -10,6 +10,7 @@ import java.util.function.Supplier;
  * @author xzchaoo
  * @date 2018/6/1
  */
+@SuppressWarnings("WeakerAccess")
 public class CollectionParser<T, C extends Collection<? super T>> implements Parser<C> {
   private final char separator;
   private final Parser<? extends T> parser;

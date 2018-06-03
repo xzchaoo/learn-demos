@@ -10,6 +10,7 @@ import java.util.Map;
  * @author xzchaoo
  * @date 2018/5/25
  */
+@SuppressWarnings("WeakerAccess")
 public class MapConfig extends AbstractConfig {
   public static class Builder {
     private final Map<String, String> map = new HashMap<>();
@@ -60,7 +61,7 @@ public class MapConfig extends AbstractConfig {
 
   public synchronized void replace(Map<String, String> map) {
     internalSetMap(map);
-    notifyChanged();
+    notifyConfigChanged();
   }
 
   /**

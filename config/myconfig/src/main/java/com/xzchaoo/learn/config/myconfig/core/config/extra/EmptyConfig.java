@@ -6,8 +6,8 @@ package com.xzchaoo.learn.config.myconfig.core.config.extra;
  * @author xzchaoo
  * @date 2018/6/2
  */
-@SuppressWarnings("unused")
-public class EmptyConfig extends UnmodifiableMapConfig {
+@SuppressWarnings({"unused", "WeakerAccess"})
+public class EmptyConfig extends AbstractUnmodifiableMapConfig {
   public static final EmptyConfig INSTANCE = new EmptyConfig();
 
   public EmptyConfig() {

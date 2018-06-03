@@ -8,7 +8,8 @@ import java.util.Map;
  * @author xzchaoo
  * @date 2018/5/25
  */
-public class SystemPropertyConfig extends UnmodifiableMapConfig {
+@SuppressWarnings({"unused", "WeakerAccess"})
+public class SystemPropertyConfig extends AbstractUnmodifiableMapConfig {
   public static final SystemPropertyConfig INSTANCE = new SystemPropertyConfig();
 
   public SystemPropertyConfig() {

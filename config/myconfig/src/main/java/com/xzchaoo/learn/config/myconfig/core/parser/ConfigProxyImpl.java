@@ -2,7 +2,7 @@ package com.xzchaoo.learn.config.myconfig.core.parser;
 
 
 import com.xzchaoo.learn.config.myconfig.core.Config;
-import com.xzchaoo.learn.config.myconfig.core.Property;
+import com.xzchaoo.learn.config.myconfig.core.annotation.Property;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -162,11 +162,6 @@ public class ConfigProxyImpl implements ConfigProxy {
    * @return
    */
   private PojoWrapper createConfigItem(Class<?> clazz) {
-    PojoDescription description = createConfigInstanceDescription(clazz);
-    return new PojoWrapper(createInstance(clazz), description);
-  }
-
-  private PojoDescription createConfigInstanceDescription(Class<?> clazz) {
     // TODO 需要考虑继承关系么? 如果要的话 这里就需要做遍历了
     Map<Field, PropertyDescription<?>> fieldMap = new HashMap<>();
     Field[] fields = clazz.getDeclaredFields();
@@ -178,8 +173,9 @@ public class ConfigProxyImpl implements ConfigProxy {
         fieldMap.put(field, parseProperty(property, field));
       }
     }
-    return new PojoDescription(clazz, fieldMap);
+    return new PojoWrapper(createInstance(clazz), clazz, fieldMap);
   }
+
 
   /**
    * 根据给定的配置, 设置pojo的属性
@@ -190,7 +186,7 @@ public class ConfigProxyImpl implements ConfigProxy {
   @SuppressWarnings("unchecked")
   private static void setPojoProperties(PojoWrapper wrapper, Map<String, String> configMap) {
     Object pojo = wrapper.getPojo();
-    for (Map.Entry<Field, PropertyDescription<?>> e : wrapper.getDescription().getFieldPropertyConfigs().entrySet()) {
+    for (Map.Entry<Field, PropertyDescription<?>> e : wrapper.getFieldPropertyConfigs().entrySet()) {
       Field field = e.getKey();
       PropertyDescription pc = e.getValue();
       String strValue = configMap.get(pc.getKey());

@@ -10,9 +10,9 @@ public interface ConfigProxy {
   /**
    * 将一个实例和配置绑定起来
    *
-   * @param clazz
-   * @param <T>
-   * @return
+   * @param clazz clazz
+   * @param <T>   泛型
+   * @return T的实例
    */
   <T> T getConfig(Class<T> clazz);
 }

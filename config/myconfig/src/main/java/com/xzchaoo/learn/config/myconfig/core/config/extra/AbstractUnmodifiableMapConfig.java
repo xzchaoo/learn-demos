@@ -12,7 +12,8 @@ import java.util.Properties;
  * @author xzchaoo
  * @date 2018/6/2
  */
-public abstract class UnmodifiableMapConfig extends AbstractConfig {
+@SuppressWarnings("WeakerAccess")
+public abstract class AbstractUnmodifiableMapConfig extends AbstractConfig {
 
   private final Map<String, String> map;
 
@@ -27,7 +28,7 @@ public abstract class UnmodifiableMapConfig extends AbstractConfig {
     return map;
   }
 
-  protected UnmodifiableMapConfig(String name, Map<String, String> map) {
+  protected AbstractUnmodifiableMapConfig(String name, Map<String, String> map) {
     super(name);
     this.map = map == null ? Collections.emptyMap() : Collections.unmodifiableMap(new HashMap<>(map));
   }
@@ -54,9 +55,11 @@ public abstract class UnmodifiableMapConfig extends AbstractConfig {
 
   @Override
   public void addListener(ConfigChangeListener listener) {
+    // empty
   }
 
   @Override
   public void removeListener(ConfigChangeListener listener) {
+    // empty
   }
 }

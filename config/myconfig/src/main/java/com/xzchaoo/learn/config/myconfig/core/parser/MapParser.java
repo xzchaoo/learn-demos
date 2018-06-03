@@ -9,6 +9,7 @@ import java.util.Map;
  * @author xzchaoo
  * @date 2018/6/1
  */
+@SuppressWarnings("WeakerAccess")
 public class MapParser<K, V> implements Parser<Map<K, V>> {
   private final char separator;
   private final char separator2;

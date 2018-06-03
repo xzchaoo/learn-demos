@@ -6,7 +6,8 @@ package com.xzchaoo.learn.config.myconfig.core.config.extra;
  * @author xzchaoo
  * @date 2018/5/25
  */
-public class EnvironmentConfig extends UnmodifiableMapConfig {
+@SuppressWarnings({"unused", "WeakerAccess"})
+public class EnvironmentConfig extends AbstractUnmodifiableMapConfig {
   public static final EnvironmentConfig INSTANCE = new EnvironmentConfig();
 
   public EnvironmentConfig() {

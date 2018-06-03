@@ -1,6 +1,6 @@
 package com.xzchaoo.learn.config.myconfig.core;
 
-import com.ctrip.flight.intl.config.core.utils.ConfigParseUtils;
+import com.xzchaoo.learn.config.myconfig.core.utils.ConfigParseUtils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;

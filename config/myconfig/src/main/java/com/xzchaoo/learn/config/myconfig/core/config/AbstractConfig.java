@@ -8,6 +8,7 @@ import org.assertj.core.util.Preconditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -35,7 +36,7 @@ public abstract class AbstractConfig implements Config {
   /**
    * 用于存放所有观察者
    */
-  private CopyOnWriteArrayList<ConfigChangeListener> listenerList = new CopyOnWriteArrayList<>();
+  private List<ConfigChangeListener> listenerList = new CopyOnWriteArrayList<>();
 
   /**
    * 默认构造函数, 生成一个名字
@@ -47,7 +48,7 @@ public abstract class AbstractConfig implements Config {
   /**
    * 由调用方指定名字
    *
-   * @param name
+   * @param name name
    */
   public AbstractConfig(String name) {
     if (name == null) {
@@ -70,17 +71,17 @@ public abstract class AbstractConfig implements Config {
   @Override
   public void removeListener(ConfigChangeListener listener) {
     Preconditions.checkNotNull(listener);
-    listenerList.add(listener);
+    listenerList.remove(listener);
   }
 
   /**
-   * 通知配置发生变化
+   * 通知listener配置发生变化
    */
   @SuppressWarnings("WeakerAccess")
-  protected void notifyChanged() {
+  protected void notifyConfigChanged() {
     for (ConfigChangeListener listener : listenerList) {
       try {
-        listener.onChange(this);
+        listener.onConfigChange(this);
       } catch (Exception e) {
         logger.error("更新配置失败 {}", listener, e);
       }
@@ -88,9 +89,14 @@ public abstract class AbstractConfig implements Config {
   }
 
   @Override
+  public String toString() {
+    return getName() + " : " + asMap();
+  }
+
+  @Override
   public Boolean getBoolean(String key) {
     String value = getString(key);
-    return value == null ? null : Boolean.parseBoolean(value);
+    return value == null ? null : Boolean.valueOf(value);
   }
 
   @Override
@@ -110,7 +116,7 @@ public abstract class AbstractConfig implements Config {
   @Override
   public Short getShort(String key) {
     String value = getString(key);
-    return value == null ? null : Short.parseShort(value);
+    return value == null ? null : Short.valueOf(value);
   }
 
   @Override
@@ -130,7 +136,7 @@ public abstract class AbstractConfig implements Config {
   @Override
   public Float getFloat(String key) {
     String value = getString(key);
-    return value == null ? null : Float.parseFloat(key);
+    return value == null ? null : Float.valueOf(key);
   }
 
   @Override
@@ -150,7 +156,7 @@ public abstract class AbstractConfig implements Config {
   @Override
   public Double getDouble(String key) {
     String value = getString(key);
-    return value == null ? null : Double.parseDouble(key);
+    return value == null ? null : Double.valueOf(key);
   }
 
   @Override
@@ -170,7 +176,7 @@ public abstract class AbstractConfig implements Config {
   @Override
   public Long getLong(String key) {
     String value = getString(key);
-    return value == null ? null : Long.parseLong(key);
+    return value == null ? null : Long.valueOf(key);
   }
 
   @Override
@@ -204,7 +210,6 @@ public abstract class AbstractConfig implements Config {
   @Override
   public Integer getInteger(String key) {
     String value = getString(key);
-    return value == null ? null : Integer.parseInt(value);
+    return value == null ? null : Integer.valueOf(value);
   }
-
 }

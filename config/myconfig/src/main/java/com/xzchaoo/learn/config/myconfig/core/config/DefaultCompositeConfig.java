@@ -1,9 +1,9 @@
 package com.xzchaoo.learn.config.myconfig.core.config;
 
-import com.ctrip.flight.intl.config.core.CompositeConfig;
-import com.ctrip.flight.intl.config.core.Config;
-import com.ctrip.flight.intl.config.core.ConfigChangeListener;
 import com.google.common.base.Preconditions;
+import com.xzchaoo.learn.config.myconfig.core.CompositeConfig;
+import com.xzchaoo.learn.config.myconfig.core.Config;
+import com.xzchaoo.learn.config.myconfig.core.ConfigChangeListener;
 
 import java.util.AbstractSet;
 import java.util.ArrayList;
@@ -22,19 +22,26 @@ import static java.util.Collections.emptyList;
  * @author xzchaoo
  * @date 2018/5/25
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class DefaultCompositeConfig extends AbstractConfig implements CompositeConfig {
   private static final State EMPTY = new State(emptyList());
 
   public static class Builder {
+    private String name;
     private List<Config> configs = new ArrayList<>();
 
-    public DefaultCompositeConfig build() {
-      return new DefaultCompositeConfig(null, configs);
+    public Builder withName(String name) {
+      this.name = name;
+      return this;
     }
 
     public Builder addConfig(Config config) {
       this.configs.add(config);
       return this;
+    }
+
+    public DefaultCompositeConfig build() {
+      return new DefaultCompositeConfig(name, configs);
     }
   }
 
@@ -67,7 +74,7 @@ public class DefaultCompositeConfig extends AbstractConfig implements CompositeC
   /**
    * 替换内部配置, 必须用锁来保证有序性
    *
-   * @param originalConfigs
+   * @param originalConfigs 原始配置列表
    */
   @Override
   public synchronized void replaceConfigs(List<Config> originalConfigs) {
@@ -95,9 +102,14 @@ public class DefaultCompositeConfig extends AbstractConfig implements CompositeC
     }
 
     // 5. 通知变化
-    notifyChanged();
+    notifyConfigChanged();
   }
 
+  /**
+   * 子配置发生变化时的回调
+   *
+   * @param childConfig
+   */
   private synchronized void onChildConfigChange(Config childConfig) {
     State oldState = this.state;
     if (!oldState.configSet.contains(childConfig)) {
@@ -105,7 +117,18 @@ public class DefaultCompositeConfig extends AbstractConfig implements CompositeC
     }
     this.state = new State(oldState);
 
-    notifyChanged();
+    notifyConfigChanged();
+  }
+
+  @Override
+  public String toString() {
+    State state = this.state;
+    StringBuilder sb = new StringBuilder();
+    sb.append(getName()).append(" : ").append(state.map).append("\r\n");
+    for (Config config : state.configs) {
+      sb.append("  ").append(config.getName()).append(" : ").append(config.asMap()).append("\r\n");
+    }
+    return sb.toString();
   }
 
   @Override
@@ -160,8 +183,14 @@ public class DefaultCompositeConfig extends AbstractConfig implements CompositeC
     }
   }
 
+  /**
+   * 通过引用相等来判断Key相等的Set
+   *
+   * @param <E>
+   */
+  @SuppressWarnings({"SuspiciousMethodCalls", "NullableProblems"})
   static class IdentitySet<E> extends AbstractSet<E> {
-    private final IdentityHashMap<E, Boolean> map = new IdentityHashMap<>();
+    private final Map<E, Boolean> map = new IdentityHashMap<>();
 
     @Override
     public Iterator<E> iterator() {
@@ -170,8 +199,7 @@ public class DefaultCompositeConfig extends AbstractConfig implements CompositeC
 
     @Override
     public boolean add(E e) {
-      Boolean value = map.put(e, Boolean.TRUE);
-      return value == null;
+      return map.put(e, Boolean.TRUE) != null;
     }
 
     @Override

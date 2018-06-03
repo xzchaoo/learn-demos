@@ -1,6 +1,7 @@
 package com.xzchaoo.learn.config.myconfig.core.property;
 
 
+import com.xzchaoo.learn.config.myconfig.core.config.MapConfig;
 import com.xzchaoo.learn.config.myconfig.core.parser.DefaultParserProvider;
 
 import org.junit.Test;
@@ -15,16 +16,26 @@ import java.util.Map;
 public class TestConfigTest {
   @Test
   public void test() {
-    TestConfig tc = new TestConfig(new DefaultParserProvider());
 
     Map<String, String> map = new HashMap<>();
     map.put("a", "1");
-    tc.replace(map);
 
-    PropertyContainer<Integer> p = tc.getProperty("a", Integer.class, 0);
+    MapConfig mc = new MapConfig(map);
+
+    ConfigBasedPropertySource ps = new ConfigBasedPropertySource(mc, new DefaultParserProvider());
+
+    Property<Integer> p = ps.getProperty("a", Integer.class, 0);
+    System.out.println(p.get());
+
+    p.addListener(new PropertyChangeListener<Integer>() {
+      @Override
+      public void onPropertyChange(Property<Integer> property, Integer oldValue, Integer newValue) {
+        System.out.println("配置发生变化 " + property + " " + oldValue + " " + newValue);
+      }
+    });
 
     map.put("a", "2");
-    tc.replace(map);
+    mc.replace(map);
 
     System.out.println(p.get());
   }
