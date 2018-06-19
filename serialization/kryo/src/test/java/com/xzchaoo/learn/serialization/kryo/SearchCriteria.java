@@ -1,7 +1,9 @@
 package com.xzchaoo.learn.serialization.kryo;
 
+import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import com.esotericsoftware.kryo.serializers.TaggedFieldSerializer;
 
+import java.beans.Transient;
 import java.time.LocalDate;
 
 import lombok.Getter;
@@ -18,6 +20,7 @@ import lombok.ToString;
 public class SearchCriteria {
   @TaggedFieldSerializer.Tag(1)
   private boolean aboolean;
+  @FieldSerializer.Optional("")
   @TaggedFieldSerializer.Tag(2)
   private byte abyte;
   @TaggedFieldSerializer.Tag(3)

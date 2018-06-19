@@ -46,6 +46,7 @@
 		<module>rabbitmq2</module>
 		<module>dozer</module>
 		<module>reflectasm</module>
+		<module>jsoup</module>
 	</modules>
 
 	<dependencies>
