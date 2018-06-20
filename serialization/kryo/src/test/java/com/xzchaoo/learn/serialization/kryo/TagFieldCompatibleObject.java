@@ -1,6 +1,7 @@
 package com.xzchaoo.learn.serialization.kryo;
 
 import com.esotericsoftware.kryo.serializers.TaggedFieldSerializer;
+import com.esotericsoftware.kryo.serializers.VersionFieldSerializer;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +19,7 @@ public class TagFieldCompatibleObject {
   private int aint;
   @TaggedFieldSerializer.Tag(value = 2)
   private String astring;
-//  @TaggedFieldSerializer.Tag(3)
+//  @TaggedFieldSerializer.Tag(3)w
 //  private String foo;
 //  @TaggedFieldSerializer.Tag(value = 4)
 //  private TagFieldCompatibleNestedObject1 nestedObject1;
